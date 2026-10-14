@@ -1,0 +1,64 @@
+torch 2.14.0, device mps, seed 18, batch 100, Adam lr 0.001
+
+== cifar: train (50000, 3, 32, 32), test (10000, 3, 32, 32), loaded in 5.8s
+
+-- cifar/classic (nn.Module (ПР №10)): 303952 parameters
+  epoch  1  train loss 1.1893  test loss 1.0221  test acc 0.6399  25.5s
+  epoch  2  train loss 0.8603  test loss 0.8866  test acc 0.6910  22.0s
+  epoch  3  train loss 0.7226  test loss 0.8247  test acc 0.7166  20.9s
+  epoch  4  train loss 0.6234  test loss 0.8127  test acc 0.7241  27.0s
+  epoch  5  train loss 0.5375  test loss 0.8133  test acc 0.7287  25.0s
+  epoch  6  train loss 0.4684  test loss 0.8460  test acc 0.7319  26.5s
+  epoch  7  train loss 0.3968  test loss 0.8649  test acc 0.7298  41.3s
+  epoch  8  train loss 0.3378  test loss 0.9009  test acc 0.7323  40.5s
+
+-- cifar/sequential (nn.Sequential): 303952 parameters
+  epoch  1  train loss 1.1893  test loss 1.0221  test acc 0.6399  38.2s
+  epoch  2  train loss 0.8603  test loss 0.8866  test acc 0.6910  40.1s
+  epoch  3  train loss 0.7226  test loss 0.8247  test acc 0.7166  33.1s
+  epoch  4  train loss 0.6234  test loss 0.8127  test acc 0.7241  33.2s
+  epoch  5  train loss 0.5375  test loss 0.8133  test acc 0.7287  42.8s
+  epoch  6  train loss 0.4684  test loss 0.8460  test acc 0.7319  36.0s
+  epoch  7  train loss 0.3968  test loss 0.8649  test acc 0.7298  33.4s
+  epoch  8  train loss 0.3378  test loss 0.9009  test acc 0.7323  18.7s
+
+-- cifar/modular (модулі: relu): 303952 parameters
+  epoch  1  train loss 1.1893  test loss 1.0221  test acc 0.6399  20.1s
+  epoch  2  train loss 0.8603  test loss 0.8866  test acc 0.6910  17.1s
+  epoch  3  train loss 0.7226  test loss 0.8247  test acc 0.7166  18.2s
+  epoch  4  train loss 0.6234  test loss 0.8127  test acc 0.7241  18.5s
+  epoch  5  train loss 0.5375  test loss 0.8133  test acc 0.7287  19.5s
+  epoch  6  train loss 0.4684  test loss 0.8460  test acc 0.7319  20.1s
+  epoch  7  train loss 0.3968  test loss 0.8649  test acc 0.7298  16.2s
+  epoch  8  train loss 0.3378  test loss 0.9009  test acc 0.7323  16.8s
+
+-- cifar/modular_lrelu (модулі: lrelu): 303952 parameters
+  epoch  1  train loss 1.1832  test loss 0.9931  test acc 0.6555  17.2s
+  epoch  2  train loss 0.8516  test loss 0.8639  test acc 0.7040  17.0s
+  epoch  3  train loss 0.7066  test loss 0.8229  test acc 0.7148  16.7s
+  epoch  4  train loss 0.6120  test loss 0.8351  test acc 0.7159  16.8s
+  epoch  5  train loss 0.5342  test loss 0.8197  test acc 0.7275  17.9s
+  epoch  6  train loss 0.4632  test loss 0.8322  test acc 0.7296  17.9s
+  epoch  7  train loss 0.3976  test loss 0.8637  test acc 0.7309  17.2s
+  epoch  8  train loss 0.3430  test loss 0.9036  test acc 0.7276  17.4s
+
+-- cifar/modular_wide (модулі: 32-64-128): 635984 parameters
+  epoch  1  train loss 1.1261  test loss 0.9267  test acc 0.6769  27.5s
+  epoch  2  train loss 0.8068  test loss 0.8368  test acc 0.7126  27.4s
+  epoch  3  train loss 0.6743  test loss 0.7886  test acc 0.7337  26.5s
+  epoch  4  train loss 0.5786  test loss 0.7497  test acc 0.7485  25.7s
+  epoch  5  train loss 0.5018  test loss 0.7311  test acc 0.7567  27.8s
+  epoch  6  train loss 0.4413  test loss 0.7371  test acc 0.7629  25.3s
+  epoch  7  train loss 0.3854  test loss 0.7533  test acc 0.7586  26.0s
+  epoch  8  train loss 0.3363  test loss 0.7864  test acc 0.7573  28.3s
+
+-- cifar: classic weights in the other styles
+  classic -> sequential: acc 0.7323 (classic 0.7323), max |logit diff| 0.00e+00, same predictions 1.0000
+  classic -> modular: acc 0.7323 (classic 0.7323), max |logit diff| 0.00e+00, same predictions 1.0000
+
+summary (best / last test accuracy, mean epoch time):
+  cifar  classic        0.7323 / 0.7323  28.6s
+  cifar  sequential     0.7323 / 0.7323  34.4s
+  cifar  modular        0.7323 / 0.7323  18.3s
+  cifar  modular_lrelu  0.7309 / 0.7276  17.3s
+  cifar  modular_wide   0.7629 / 0.7573  26.8s

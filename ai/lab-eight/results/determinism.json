@@ -1,0 +1,61 @@
+{
+ "cuda": false,
+ "runs": [
+  {
+   "device": "cpu",
+   "deterministic": true,
+   "repeat": 0,
+   "seconds": 1.090773458010517,
+   "test_acc": 0.9667
+  },
+  {
+   "device": "cpu",
+   "deterministic": false,
+   "repeat": 0,
+   "seconds": 1.1074242079630494,
+   "test_acc": 0.9667
+  },
+  {
+   "device": "cpu",
+   "deterministic": true,
+   "repeat": 1,
+   "seconds": 1.1261477069929242,
+   "test_acc": 0.9667
+  },
+  {
+   "device": "cpu",
+   "deterministic": false,
+   "repeat": 1,
+   "seconds": 1.1317980409949087,
+   "test_acc": 0.9667
+  },
+  {
+   "device": "mps",
+   "deterministic": true,
+   "repeat": 0,
+   "seconds": 3.192257582966704,
+   "test_acc": 0.9663
+  },
+  {
+   "device": "mps",
+   "deterministic": false,
+   "repeat": 0,
+   "seconds": 2.795948833983857,
+   "test_acc": 0.9663
+  },
+  {
+   "device": "mps",
+   "deterministic": true,
+   "repeat": 1,
+   "seconds": 2.616849334037397,
+   "test_acc": 0.9663
+  },
+  {
+   "device": "mps",
+   "deterministic": false,
+   "repeat": 1,
+   "seconds": 2.618159375968389,
+   "test_acc": 0.9663
+  }
+ ]
+}

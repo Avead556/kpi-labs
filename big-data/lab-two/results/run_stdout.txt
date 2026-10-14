@@ -1,0 +1,64 @@
+Spark 4.2.0, local[*], 12 cores, Python 3.14.3, networkx 3.7
+
+== toy: toy.txt - іграшковий граф із 5 сторінок, E без вихідних посилань ==
+nodes 5, edges 6, without out-links 1; loaded in 1.6 s
+Spark MapReduce: 28 iterations, 8.7 s (0.31 s/iteration), sum of ranks 1.000000
+networkx.pagerank: 0.00 s
+vs networkx: L1 1.53e-07, max diff 7.64e-08, top-10 overlap 5/5, Kendall tau top-100 1.0000
+classic Spark example (10 it.): 3 of 5 pages kept, sum 3.1, top-10 overlap 3/5, L1 after normalising 0.192
+top-10: C 0.36540, A 0.35018, B 0.18842, E 0.05642, D 0.03959
+
+== email: email-Eu-core.txt.gz - листування в європейському дослідницькому інституті ==
+nodes 1005, edges 25571, without out-links 137; loaded in 0.6 s
+Spark MapReduce: 57 iterations, 18.7 s (0.33 s/iteration), sum of ranks 1.000000
+networkx.pagerank: 0.02 s
+vs networkx: L1 4.66e-06, max diff 5.41e-07, top-10 overlap 10/10, Kendall tau top-100 1.0000
+classic Spark example (10 it.): 991 of 1005 pages kept, sum 823.6, top-10 overlap 10/10, L1 after normalising 0.020
+top-10: 1 0.00998, 130 0.00730, 160 0.00674, 62 0.00531, 86 0.00511, 107 0.00499, 365 0.00477, 121 0.00471, 5 0.00451, 129 0.00444
+
+== wiki: wiki-Vote.txt.gz - голосування за адміністраторів Вікіпедії ==
+nodes 7115, edges 103689, without out-links 1005; loaded in 0.9 s
+Spark MapReduce: 16 iterations, 6.9 s (0.43 s/iteration), sum of ranks 1.000000
+networkx.pagerank: 0.05 s
+vs networkx: L1 7.61e-07, max diff 6.79e-08, top-10 overlap 10/10, Kendall tau top-100 1.0000
+classic Spark example (10 it.): 2316 of 7115 pages kept, sum 822.5, top-10 overlap 5/10, L1 after normalising 0.544
+top-10: 4037 0.00461, 15 0.00368, 6634 0.00359, 2625 0.00328, 2398 0.00261, 2470 0.00252, 2237 0.00250, 4191 0.00227, 7553 0.00217, 5254 0.00215
+
+== gnutella: p2p-Gnutella31.txt.gz - однорангова мережа Gnutella ==
+nodes 62586, edges 147892, without out-links 46199; loaded in 1.0 s
+Spark MapReduce: 9 iterations, 4.5 s (0.50 s/iteration), sum of ranks 1.000000
+networkx.pagerank: 0.26 s
+vs networkx: L1 2.32e-07, max diff 3.99e-09, top-10 overlap 10/10, Kendall tau top-100 1.0000
+classic Spark example (10 it.): 60826 of 62586 pages kept, sum 12171.5, top-10 overlap 9/10, L1 after normalising 0.050
+top-10: 164 0.00013, 2118 0.00012, 2372 0.00009, 5832 0.00009, 2906 0.00009, 13770 0.00008, 2464 0.00008, 5428 0.00008, 610 0.00008, 3 0.00008
+
+== epinions: soc-Epinions1.txt.gz - мережа довіри Epinions.com ==
+nodes 75879, edges 508837, without out-links 15538; loaded in 3.0 s
+Spark MapReduce: 54 iterations, 32.9 s (0.61 s/iteration), sum of ranks 1.000000
+networkx.pagerank: 0.30 s
+vs networkx: L1 1.42e-06, max diff 4.49e-08, top-10 overlap 10/10, Kendall tau top-100 1.0000
+classic Spark example (10 it.): 49604 of 75879 pages kept, sum 37102.6, top-10 overlap 9/10, L1 after normalising 0.207
+top-10: 18 0.00454, 737 0.00315, 118 0.00212, 1719 0.00208, 136 0.00199, 790 0.00197, 143 0.00196, 40 0.00182, 1619 0.00154, 725 0.00150
+
+== notredame: web-NotreDame.txt.gz - веб-граф домену nd.edu ==
+nodes 325729, edges 1497134, without out-links 187788; loaded in 6.0 s
+Spark MapReduce: 58 iterations, 55.4 s (0.96 s/iteration), sum of ranks 1.000000
+networkx.pagerank: 0.94 s
+vs networkx: L1 2.89e-06, max diff 8.56e-08, top-10 overlap 10/10, Kendall tau top-100 1.0000
+classic Spark example (10 it.): 325729 of 325729 pages kept, sum 125164.5, top-10 overlap 10/10, L1 after normalising 0.020
+top-10: 1963 0.00547, 0 0.00547, 10336 0.00498, 212843 0.00380, 124802 0.00322, 12129 0.00271, 191267 0.00267, 32830 0.00266, 83606 0.00239, 1973 0.00231
+
+== Damping factor, wiki-Vote ==
+d = 0.50:  10 iterations,   3.8 s, max rank 0.00355, top-10 hold 2.04 %, min rank 8.49e-05, top-10 shared with d = 0.85: 9/10
+d = 0.70:  13 iterations,   3.7 s, max rank 0.00427, top-10 hold 2.58 %, min rank 6.49e-05, top-10 shared with d = 0.85: 9/10
+d = 0.85:  16 iterations,   3.9 s, max rank 0.00461, top-10 hold 2.94 %, min rank 5.05e-05, top-10 shared with d = 0.85: 10/10
+d = 0.90:  18 iterations,   4.4 s, max rank 0.00468, top-10 hold 3.06 %, min rank 4.58e-05, top-10 shared with d = 0.85: 10/10
+d = 0.95:  19 iterations,   4.9 s, max rank 0.00473, top-10 hold 3.17 %, min rank 4.12e-05, top-10 shared with d = 0.85: 10/10
+
+== Partitions, soc-Epinions1, 10 iterations ==
+  1 partitions:   7.3 s, 0.73 s/iteration
+  2 partitions:   4.3 s, 0.43 s/iteration
+  4 partitions:   3.1 s, 0.31 s/iteration
+  8 partitions:   3.3 s, 0.33 s/iteration
+ 12 partitions:   4.3 s, 0.43 s/iteration
+ 24 partitions:   7.0 s, 0.70 s/iteration

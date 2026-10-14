@@ -1,0 +1,15 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+PyOpenGL==3.1.10
+glfw==2.10.2
+numpy==2.5.3
+pydicom==3.0.2
+
+torch==2.14.0
+torchvision==0.29.0
+pandas==3.0.6
+matplotlib==3.11.2
+scikit-learn==1.9.1
+
+fastapi==0.121.2
+uvicorn[standard]==0.41.0

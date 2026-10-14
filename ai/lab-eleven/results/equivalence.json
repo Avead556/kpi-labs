@@ -1,0 +1,28 @@
+{
+ "mnist": {
+  "classic_acc": 0.9907,
+  "sequential": {
+   "acc": 0.9907,
+   "max_logit_diff": 0.0,
+   "same_argmax": 1.0
+  },
+  "modular": {
+   "acc": 0.9907,
+   "max_logit_diff": 0.0,
+   "same_argmax": 1.0
+  }
+ },
+ "cifar": {
+  "classic_acc": 0.7323,
+  "sequential": {
+   "acc": 0.7323,
+   "max_logit_diff": 0.0,
+   "same_argmax": 1.0
+  },
+  "modular": {
+   "acc": 0.7323,
+   "max_logit_diff": 0.0,
+   "same_argmax": 1.0
+  }
+ }
+}

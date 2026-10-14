@@ -1,0 +1,120 @@
+part 1: SineNet on noisy sin(x)
+RegressionNet(
+  (layers): Sequential(
+    (0): Linear(in_features=1, out_features=50, bias=True)
+    (1): Tanh()
+    (2): Linear(in_features=50, out_features=1, bias=True)
+  )
+)
+  epoch    1: train MSE 1.1092, validation MSE 0.4894, MAE 0.6164
+  epoch   10: train MSE 0.6309, validation MSE 0.4845, MAE 0.6057
+  epoch  100: train MSE 0.3051, validation MSE 0.2424, MAE 0.4044
+  epoch  500: train MSE 0.0702, validation MSE 0.0746, MAE 0.1834
+  epoch 1000: train MSE 0.0312, validation MSE 0.0233, MAE 0.1130
+  epoch 2000: train MSE 0.0279, validation MSE 0.0296, MAE 0.1251
+  trained in 4.21 s
+
+a) кількість нейронів
+         1: validation MSE 0.4740, MAE 0.6055, final train loss 0.6226, 4 parameters
+         2: validation MSE 0.3594, MAE 0.4830, final train loss 0.4596, 7 parameters
+         3: validation MSE 0.3166, MAE 0.4237, final train loss 0.3348, 10 parameters
+         4: validation MSE 0.0843, MAE 0.2098, final train loss 0.1093, 13 parameters
+         5: validation MSE 0.0850, MAE 0.1866, final train loss 0.0605, 16 parameters
+         6: validation MSE 0.0493, MAE 0.1686, final train loss 0.0473, 19 parameters
+         7: validation MSE 0.0885, MAE 0.1926, final train loss 0.0608, 22 parameters
+         8: validation MSE 0.0187, MAE 0.1093, final train loss 0.0346, 25 parameters
+         9: validation MSE 0.0225, MAE 0.1162, final train loss 0.0326, 28 parameters
+        10: validation MSE 0.0241, MAE 0.1171, final train loss 0.0309, 31 parameters
+
+b) кількість епох
+        50: validation MSE 0.3094, MAE 0.4863, final train loss 0.4407
+       200: validation MSE 0.1806, MAE 0.2835, final train loss 0.1832
+       500: validation MSE 0.0746, MAE 0.1834, final train loss 0.0702
+      1000: validation MSE 0.0233, MAE 0.1130, final train loss 0.0312
+      2000: validation MSE 0.0296, MAE 0.1251, final train loss 0.0279
+      5000: validation MSE 0.0352, MAE 0.1373, final train loss 0.0237
+
+c) функція активації
+      tanh: validation MSE 0.0296, MAE 0.1251, final train loss 0.0279, 151 parameters
+      relu: validation MSE 0.1764, MAE 0.2272, final train loss 0.1047, 151 parameters
+   sigmoid: validation MSE 0.0238, MAE 0.1166, final train loss 0.0320, 151 parameters
+       elu: validation MSE 0.0451, MAE 0.1289, final train loss 0.0522, 151 parameters
+      gelu: validation MSE 0.0189, MAE 0.1092, final train loss 0.0355, 151 parameters
+
+d) кількість прихованих шарів
+         0: validation MSE 0.4741, MAE 0.6055, final train loss 0.6224, 2 parameters
+      1×50: validation MSE 0.0296, MAE 0.1251, final train loss 0.0279, 151 parameters
+      2×50: validation MSE 0.0367, MAE 0.1381, final train loss 0.0212, 2701 parameters
+      3×50: validation MSE 0.0432, MAE 0.1558, final train loss 0.0188, 5251 parameters
+
+e) функція втрат
+       mse: validation MSE 0.0296, MAE 0.1251, final train loss 0.0279, 151 parameters
+       mae: validation MSE 0.0410, MAE 0.1681, final train loss 0.1505, 151 parameters
+     huber: validation MSE 0.0382, MAE 0.1547, final train loss 0.0158, 151 parameters
+
+correlation with the targets:
+      Y1    Y2
+X1  0.62  0.63
+X2 -0.66 -0.67
+X3  0.46  0.43
+X4 -0.86 -0.86
+X5  0.89  0.90
+X6 -0.00  0.01
+X7  0.27  0.21
+X8  0.09  0.05
+Y1  1.00  0.98
+Y2  0.98  1.00
+age            0.19
+sex            0.04
+bmi            0.59
+bp             0.44
+s1             0.21
+s2             0.17
+s3            -0.39
+s4             0.43
+s5             0.57
+s6             0.38
+progression    1.00
+
+energy: 768 rows -> train 461, validation 154, test 153; Adam lr 0.01, L2 0.0
+  усі 8          hidden []             validation MSE(z) best 0.1148 at epoch 1268, last 0.1150 | test R2 0.929 0.902
+  усі 8          hidden [16]           validation MSE(z) best 0.0208 at epoch 1977, last 0.0209 | test R2 0.994 0.974
+  усі 8          hidden [64]           validation MSE(z) best 0.0072 at epoch  989, last 0.0080 | test R2 0.998 0.988
+  усі 8          hidden [64, 32]       validation MSE(z) best 0.0129 at epoch 1621, last 0.0129 | test R2 0.997 0.985
+  усі 8          hidden [128, 64, 32]  validation MSE(z) best 0.0086 at epoch 1903, last 0.0088 | test R2 0.996 0.992
+  без X6, X8     hidden []             validation MSE(z) best 0.1146 at epoch 1059, last 0.1149 | test R2 0.929 0.901
+  без X6, X8     hidden [16]           validation MSE(z) best 0.0206 at epoch 1643, last 0.0207 | test R2 0.997 0.973
+  без X6, X8     hidden [64]           validation MSE(z) best 0.0209 at epoch  383, last 0.0221 | test R2 0.998 0.973
+  без X6, X8     hidden [64, 32]       validation MSE(z) best 0.0203 at epoch  112, last 0.0228 | test R2 0.997 0.974
+  без X6, X8     hidden [128, 64, 32]  validation MSE(z) best 0.0213 at epoch  181, last 0.0222 | test R2 0.998 0.972
+  без X1, X6, X8 hidden []             validation MSE(z) best 0.1182 at epoch 2000, last 0.1182 | test R2 0.923 0.894
+  без X1, X6, X8 hidden [16]           validation MSE(z) best 0.0209 at epoch 1942, last 0.0211 | test R2 0.998 0.973
+  без X1, X6, X8 hidden [64]           validation MSE(z) best 0.0210 at epoch  347, last 0.0222 | test R2 0.998 0.973
+  без X1, X6, X8 hidden [64, 32]       validation MSE(z) best 0.0216 at epoch  338, last 0.0222 | test R2 0.998 0.973
+  без X1, X6, X8 hidden [128, 64, 32]  validation MSE(z) best 0.0210 at epoch  168, last 0.0222 | test R2 0.998 0.973
+  chosen: усі 8, hidden [64]
+  Y1: test MSE 0.218, MAE 0.364, R2 0.9978 (validation MAE 0.330; predicting the train mean: MAE 9.099)
+  Y2: test MSE 1.052, MAE 0.760, R2 0.9876 (validation MAE 0.744; predicting the train mean: MAE 8.434)
+  best epoch 989, retrained in 0.83 s
+
+diabetes: 442 rows -> train 265, validation 88, test 89; Adam lr 0.001, L2 0.1
+  усі 10         hidden []             validation MSE(z) best 0.6475 at epoch 2000, last 0.6475 | test R2 0.422
+  усі 10         hidden [16]           validation MSE(z) best 0.6095 at epoch  495, last 0.6207 | test R2 0.392
+  усі 10         hidden [64]           validation MSE(z) best 0.6153 at epoch  430, last 0.6262 | test R2 0.404
+  усі 10         hidden [64, 32]       validation MSE(z) best 0.6141 at epoch  429, last 0.6224 | test R2 0.401
+  усі 10         hidden [128, 64, 32]  validation MSE(z) best 0.6162 at epoch  379, last 0.6205 | test R2 0.400
+  без sex        hidden []             validation MSE(z) best 0.6356 at epoch  901, last 0.6364 | test R2 0.390
+  без sex        hidden [16]           validation MSE(z) best 0.6173 at epoch  404, last 0.6221 | test R2 0.376
+  без sex        hidden [64]           validation MSE(z) best 0.6218 at epoch  372, last 0.6241 | test R2 0.381
+  без sex        hidden [64, 32]       validation MSE(z) best 0.6126 at epoch  320, last 0.6181 | test R2 0.370
+  без sex        hidden [128, 64, 32]  validation MSE(z) best 0.6108 at epoch  144, last 0.6219 | test R2 0.375
+  |r| > 0.3      hidden []             validation MSE(z) best 0.6456 at epoch 1556, last 0.6456 | test R2 0.388
+  |r| > 0.3      hidden [16]           validation MSE(z) best 0.6566 at epoch 1454, last 0.6567 | test R2 0.388
+  |r| > 0.3      hidden [64]           validation MSE(z) best 0.6537 at epoch  194, last 0.6550 | test R2 0.398
+  |r| > 0.3      hidden [64, 32]       validation MSE(z) best 0.6481 at epoch  526, last 0.6537 | test R2 0.393
+  |r| > 0.3      hidden [128, 64, 32]  validation MSE(z) best 0.6415 at epoch  399, last 0.6526 | test R2 0.389
+  chosen: усі 10, hidden [16]
+  progression: test MSE 3242.419, MAE 47.598, R2 0.3924 (validation MAE 49.088; predicting the train mean: MAE 63.397)
+  best epoch 495, retrained in 0.69 s
+
+all done in 89.6 s

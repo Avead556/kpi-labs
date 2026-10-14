@@ -1,0 +1,21 @@
+services:
+  hub:
+    build: .
+    image: kpi-lab-hub
+    restart: unless-stopped
+    networks:
+      default:
+        aliases:
+          - lab-hub
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/labs').read()"]
+      interval: 30s
+      timeout: 10s
+      start_period: 40s
+      retries: 3
+
+networks:
+  default:
+    name: app_default
+    external: true

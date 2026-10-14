@@ -1,0 +1,873 @@
+{
+ "mnist": {
+  "classic": {
+   "label": "nn.Module (ПР №10)",
+   "repr": "LeNet5(\n  (conv1_1): Conv2d(1, 6, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n  (conv1_2): Conv2d(6, 6, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n  (act1): ReLU()\n  (bn1): BatchNorm2d(6, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n  (pool1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n  (conv2_1): Conv2d(6, 16, kernel_size=(3, 3), stride=(1, 1))\n  (conv2_2): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1))\n  (act2): ReLU()\n  (bn2): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n  (pool2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n  (fc1): Linear(in_features=400, out_features=120, bias=True)\n  (act3): ReLU()\n  (fc2): Linear(in_features=120, out_features=84, bias=True)\n  (act4): ReLU()\n  (fc3): Linear(in_features=84, out_features=10, bias=True)\n)",
+   "type": "LeNet5",
+   "params": 62768,
+   "modules": 16,
+   "leaves": 15,
+   "children": [
+    {
+     "name": "conv1_1",
+     "type": "Conv2d",
+     "params": 60
+    },
+    {
+     "name": "conv1_2",
+     "type": "Conv2d",
+     "params": 330
+    },
+    {
+     "name": "act1",
+     "type": "ReLU",
+     "params": 0
+    },
+    {
+     "name": "bn1",
+     "type": "BatchNorm2d",
+     "params": 12
+    },
+    {
+     "name": "pool1",
+     "type": "MaxPool2d",
+     "params": 0
+    },
+    {
+     "name": "conv2_1",
+     "type": "Conv2d",
+     "params": 880
+    },
+    {
+     "name": "conv2_2",
+     "type": "Conv2d",
+     "params": 2320
+    },
+    {
+     "name": "act2",
+     "type": "ReLU",
+     "params": 0
+    },
+    {
+     "name": "bn2",
+     "type": "BatchNorm2d",
+     "params": 32
+    },
+    {
+     "name": "pool2",
+     "type": "MaxPool2d",
+     "params": 0
+    },
+    {
+     "name": "fc1",
+     "type": "Linear",
+     "params": 48120
+    },
+    {
+     "name": "act3",
+     "type": "ReLU",
+     "params": 0
+    },
+    {
+     "name": "fc2",
+     "type": "Linear",
+     "params": 10164
+    },
+    {
+     "name": "act4",
+     "type": "ReLU",
+     "params": 0
+    },
+    {
+     "name": "fc3",
+     "type": "Linear",
+     "params": 850
+    }
+   ],
+   "kinds": {
+    "Conv2d": 4,
+    "ReLU": 4,
+    "BatchNorm2d": 2,
+    "MaxPool2d": 2,
+    "Linear": 3
+   },
+   "containers": [],
+   "state_keys": [
+    "conv1_1.weight",
+    "conv1_1.bias",
+    "conv1_2.weight",
+    "conv1_2.bias",
+    "bn1.weight",
+    "bn1.bias"
+   ]
+  },
+  "sequential": {
+   "label": "nn.Sequential",
+   "repr": "Sequential(\n  (conv1_1): Conv2d(1, 6, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n  (conv1_2): Conv2d(6, 6, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n  (act1): ReLU()\n  (bn1): BatchNorm2d(6, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n  (pool1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n  (conv2_1): Conv2d(6, 16, kernel_size=(3, 3), stride=(1, 1))\n  (conv2_2): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1))\n  (act2): ReLU()\n  (bn2): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n  (pool2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n  (flatten): Flatten(start_dim=1, end_dim=-1)\n  (fc1): Linear(in_features=400, out_features=120, bias=True)\n  (act3): ReLU()\n  (fc2): Linear(in_features=120, out_features=84, bias=True)\n  (act4): ReLU()\n  (fc3): Linear(in_features=84, out_features=10, bias=True)\n)",
+   "type": "Sequential",
+   "params": 62768,
+   "modules": 17,
+   "leaves": 16,
+   "children": [
+    {
+     "name": "conv1_1",
+     "type": "Conv2d",
+     "params": 60
+    },
+    {
+     "name": "conv1_2",
+     "type": "Conv2d",
+     "params": 330
+    },
+    {
+     "name": "act1",
+     "type": "ReLU",
+     "params": 0
+    },
+    {
+     "name": "bn1",
+     "type": "BatchNorm2d",
+     "params": 12
+    },
+    {
+     "name": "pool1",
+     "type": "MaxPool2d",
+     "params": 0
+    },
+    {
+     "name": "conv2_1",
+     "type": "Conv2d",
+     "params": 880
+    },
+    {
+     "name": "conv2_2",
+     "type": "Conv2d",
+     "params": 2320
+    },
+    {
+     "name": "act2",
+     "type": "ReLU",
+     "params": 0
+    },
+    {
+     "name": "bn2",
+     "type": "BatchNorm2d",
+     "params": 32
+    },
+    {
+     "name": "pool2",
+     "type": "MaxPool2d",
+     "params": 0
+    },
+    {
+     "name": "flatten",
+     "type": "Flatten",
+     "params": 0
+    },
+    {
+     "name": "fc1",
+     "type": "Linear",
+     "params": 48120
+    },
+    {
+     "name": "act3",
+     "type": "ReLU",
+     "params": 0
+    },
+    {
+     "name": "fc2",
+     "type": "Linear",
+     "params": 10164
+    },
+    {
+     "name": "act4",
+     "type": "ReLU",
+     "params": 0
+    },
+    {
+     "name": "fc3",
+     "type": "Linear",
+     "params": 850
+    }
+   ],
+   "kinds": {
+    "Conv2d": 4,
+    "ReLU": 4,
+    "BatchNorm2d": 2,
+    "MaxPool2d": 2,
+    "Flatten": 1,
+    "Linear": 3
+   },
+   "containers": [
+    "Sequential"
+   ],
+   "state_keys": [
+    "conv1_1.weight",
+    "conv1_1.bias",
+    "conv1_2.weight",
+    "conv1_2.bias",
+    "bn1.weight",
+    "bn1.bias"
+   ]
+  },
+  "modular": {
+   "label": "модулі: relu",
+   "repr": "ModularCNN(\n  (encoder): Encoder(\n    (input_norm): Identity()\n    (blocks): ModuleList(\n      (0): Sequential(\n        (0): Conv2d(1, 6, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (1): Conv2d(6, 6, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (2): ReLU()\n        (3): BatchNorm2d(6, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n        (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n      )\n      (1): Sequential(\n        (0): Conv2d(6, 16, kernel_size=(3, 3), stride=(1, 1))\n        (1): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1))\n        (2): ReLU()\n        (3): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n        (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n      )\n    )\n  )\n  (decoder): Decoder(\n    (blocks): Sequential(\n      (0): Sequential(\n        (0): Linear(in_features=400, out_features=120, bias=True)\n        (1): ReLU()\n      )\n      (1): Sequential(\n        (0): Linear(in_features=120, out_features=84, bias=True)\n        (1): ReLU()\n      )\n    )\n    (last): Linear(in_features=84, out_features=10, bias=True)\n  )\n)",
+   "type": "ModularCNN",
+   "params": 62768,
+   "modules": 25,
+   "leaves": 16,
+   "children": [
+    {
+     "name": "encoder",
+     "type": "Encoder",
+     "params": 3634
+    },
+    {
+     "name": "decoder",
+     "type": "Decoder",
+     "params": 59134
+    }
+   ],
+   "kinds": {
+    "Identity": 1,
+    "Conv2d": 4,
+    "ReLU": 4,
+    "BatchNorm2d": 2,
+    "MaxPool2d": 2,
+    "Linear": 3
+   },
+   "containers": [
+    "ModuleList",
+    "Sequential"
+   ],
+   "state_keys": [
+    "encoder.blocks.0.0.weight",
+    "encoder.blocks.0.0.bias",
+    "encoder.blocks.0.1.weight",
+    "encoder.blocks.0.1.bias",
+    "encoder.blocks.0.3.weight",
+    "encoder.blocks.0.3.bias"
+   ]
+  },
+  "modular_lrelu": {
+   "label": "модулі: lrelu",
+   "repr": "ModularCNN(\n  (encoder): Encoder(\n    (input_norm): Identity()\n    (blocks): ModuleList(\n      (0): Sequential(\n        (0): Conv2d(1, 6, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (1): Conv2d(6, 6, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (2): LeakyReLU(negative_slope=0.01)\n        (3): BatchNorm2d(6, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n        (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n      )\n      (1): Sequential(\n        (0): Conv2d(6, 16, kernel_size=(3, 3), stride=(1, 1))\n        (1): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1))\n        (2): LeakyReLU(negative_slope=0.01)\n        (3): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n        (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n      )\n    )\n  )\n  (decoder): Decoder(\n    (blocks): Sequential(\n      (0): Sequential(\n        (0): Linear(in_features=400, out_features=120, bias=True)\n        (1): LeakyReLU(negative_slope=0.01)\n      )\n      (1): Sequential(\n        (0): Linear(in_features=120, out_features=84, bias=True)\n        (1): LeakyReLU(negative_slope=0.01)\n      )\n    )\n    (last): Linear(in_features=84, out_features=10, bias=True)\n  )\n)",
+   "type": "ModularCNN",
+   "params": 62768,
+   "modules": 25,
+   "leaves": 16,
+   "children": [
+    {
+     "name": "encoder",
+     "type": "Encoder",
+     "params": 3634
+    },
+    {
+     "name": "decoder",
+     "type": "Decoder",
+     "params": 59134
+    }
+   ],
+   "kinds": {
+    "Identity": 1,
+    "Conv2d": 4,
+    "LeakyReLU": 4,
+    "BatchNorm2d": 2,
+    "MaxPool2d": 2,
+    "Linear": 3
+   },
+   "containers": [
+    "ModuleList",
+    "Sequential"
+   ],
+   "state_keys": [
+    "encoder.blocks.0.0.weight",
+    "encoder.blocks.0.0.bias",
+    "encoder.blocks.0.1.weight",
+    "encoder.blocks.0.1.bias",
+    "encoder.blocks.0.3.weight",
+    "encoder.blocks.0.3.bias"
+   ]
+  }
+ },
+ "cifar": {
+  "classic": {
+   "label": "nn.Module (ПР №10)",
+   "repr": "CifarNet(\n  (bn0): BatchNorm2d(3, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n  (conv1): Conv2d(3, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n  (act1): ReLU()\n  (bn1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n  (pool1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n  (conv2): Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n  (act2): ReLU()\n  (bn2): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n  (pool2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n  (conv3): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n  (act3): ReLU()\n  (bn3): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n  (pool3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n  (fc1): Linear(in_features=1024, out_features=256, bias=True)\n  (act4): Tanh()\n  (bn4): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n  (fc2): Linear(in_features=256, out_features=64, bias=True)\n  (act5): Tanh()\n  (bn5): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n  (fc3): Linear(in_features=64, out_features=10, bias=True)\n)",
+   "type": "CifarNet",
+   "params": 303952,
+   "modules": 21,
+   "leaves": 20,
+   "children": [
+    {
+     "name": "bn0",
+     "type": "BatchNorm2d",
+     "params": 6
+    },
+    {
+     "name": "conv1",
+     "type": "Conv2d",
+     "params": 448
+    },
+    {
+     "name": "act1",
+     "type": "ReLU",
+     "params": 0
+    },
+    {
+     "name": "bn1",
+     "type": "BatchNorm2d",
+     "params": 32
+    },
+    {
+     "name": "pool1",
+     "type": "MaxPool2d",
+     "params": 0
+    },
+    {
+     "name": "conv2",
+     "type": "Conv2d",
+     "params": 4640
+    },
+    {
+     "name": "act2",
+     "type": "ReLU",
+     "params": 0
+    },
+    {
+     "name": "bn2",
+     "type": "BatchNorm2d",
+     "params": 64
+    },
+    {
+     "name": "pool2",
+     "type": "MaxPool2d",
+     "params": 0
+    },
+    {
+     "name": "conv3",
+     "type": "Conv2d",
+     "params": 18496
+    },
+    {
+     "name": "act3",
+     "type": "ReLU",
+     "params": 0
+    },
+    {
+     "name": "bn3",
+     "type": "BatchNorm2d",
+     "params": 128
+    },
+    {
+     "name": "pool3",
+     "type": "MaxPool2d",
+     "params": 0
+    },
+    {
+     "name": "fc1",
+     "type": "Linear",
+     "params": 262400
+    },
+    {
+     "name": "act4",
+     "type": "Tanh",
+     "params": 0
+    },
+    {
+     "name": "bn4",
+     "type": "BatchNorm1d",
+     "params": 512
+    },
+    {
+     "name": "fc2",
+     "type": "Linear",
+     "params": 16448
+    },
+    {
+     "name": "act5",
+     "type": "Tanh",
+     "params": 0
+    },
+    {
+     "name": "bn5",
+     "type": "BatchNorm1d",
+     "params": 128
+    },
+    {
+     "name": "fc3",
+     "type": "Linear",
+     "params": 650
+    }
+   ],
+   "groups": [
+    [
+     "bn0",
+     6
+    ],
+    [
+     "conv1",
+     448
+    ],
+    [
+     "bn1",
+     32
+    ],
+    [
+     "conv2",
+     4640
+    ],
+    [
+     "bn2",
+     64
+    ],
+    [
+     "conv3",
+     18496
+    ],
+    [
+     "bn3",
+     128
+    ],
+    [
+     "fc1",
+     262400
+    ],
+    [
+     "bn4",
+     512
+    ],
+    [
+     "fc2",
+     16448
+    ],
+    [
+     "bn5",
+     128
+    ],
+    [
+     "fc3",
+     650
+    ]
+   ],
+   "kinds": {
+    "BatchNorm2d": 4,
+    "Conv2d": 3,
+    "ReLU": 3,
+    "MaxPool2d": 3,
+    "Linear": 3,
+    "Tanh": 2,
+    "BatchNorm1d": 2
+   },
+   "containers": [],
+   "state_keys": [
+    "bn0.weight",
+    "bn0.bias",
+    "bn0.running_mean",
+    "bn0.running_var",
+    "bn0.num_batches_tracked",
+    "conv1.weight"
+   ]
+  },
+  "sequential": {
+   "label": "nn.Sequential",
+   "repr": "Sequential(\n  (bn0): BatchNorm2d(3, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n  (conv1): Conv2d(3, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n  (act1): ReLU()\n  (bn1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n  (pool1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n  (conv2): Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n  (act2): ReLU()\n  (bn2): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n  (pool2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n  (conv3): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n  (act3): ReLU()\n  (bn3): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n  (pool3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n  (flatten): Flatten(start_dim=1, end_dim=-1)\n  (fc1): Linear(in_features=1024, out_features=256, bias=True)\n  (act4): Tanh()\n  (bn4): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n  (fc2): Linear(in_features=256, out_features=64, bias=True)\n  (act5): Tanh()\n  (bn5): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n  (fc3): Linear(in_features=64, out_features=10, bias=True)\n)",
+   "type": "Sequential",
+   "params": 303952,
+   "modules": 22,
+   "leaves": 21,
+   "children": [
+    {
+     "name": "bn0",
+     "type": "BatchNorm2d",
+     "params": 6
+    },
+    {
+     "name": "conv1",
+     "type": "Conv2d",
+     "params": 448
+    },
+    {
+     "name": "act1",
+     "type": "ReLU",
+     "params": 0
+    },
+    {
+     "name": "bn1",
+     "type": "BatchNorm2d",
+     "params": 32
+    },
+    {
+     "name": "pool1",
+     "type": "MaxPool2d",
+     "params": 0
+    },
+    {
+     "name": "conv2",
+     "type": "Conv2d",
+     "params": 4640
+    },
+    {
+     "name": "act2",
+     "type": "ReLU",
+     "params": 0
+    },
+    {
+     "name": "bn2",
+     "type": "BatchNorm2d",
+     "params": 64
+    },
+    {
+     "name": "pool2",
+     "type": "MaxPool2d",
+     "params": 0
+    },
+    {
+     "name": "conv3",
+     "type": "Conv2d",
+     "params": 18496
+    },
+    {
+     "name": "act3",
+     "type": "ReLU",
+     "params": 0
+    },
+    {
+     "name": "bn3",
+     "type": "BatchNorm2d",
+     "params": 128
+    },
+    {
+     "name": "pool3",
+     "type": "MaxPool2d",
+     "params": 0
+    },
+    {
+     "name": "flatten",
+     "type": "Flatten",
+     "params": 0
+    },
+    {
+     "name": "fc1",
+     "type": "Linear",
+     "params": 262400
+    },
+    {
+     "name": "act4",
+     "type": "Tanh",
+     "params": 0
+    },
+    {
+     "name": "bn4",
+     "type": "BatchNorm1d",
+     "params": 512
+    },
+    {
+     "name": "fc2",
+     "type": "Linear",
+     "params": 16448
+    },
+    {
+     "name": "act5",
+     "type": "Tanh",
+     "params": 0
+    },
+    {
+     "name": "bn5",
+     "type": "BatchNorm1d",
+     "params": 128
+    },
+    {
+     "name": "fc3",
+     "type": "Linear",
+     "params": 650
+    }
+   ],
+   "groups": [
+    [
+     "bn0",
+     6
+    ],
+    [
+     "conv1",
+     448
+    ],
+    [
+     "bn1",
+     32
+    ],
+    [
+     "conv2",
+     4640
+    ],
+    [
+     "bn2",
+     64
+    ],
+    [
+     "conv3",
+     18496
+    ],
+    [
+     "bn3",
+     128
+    ],
+    [
+     "fc1",
+     262400
+    ],
+    [
+     "bn4",
+     512
+    ],
+    [
+     "fc2",
+     16448
+    ],
+    [
+     "bn5",
+     128
+    ],
+    [
+     "fc3",
+     650
+    ]
+   ],
+   "kinds": {
+    "BatchNorm2d": 4,
+    "Conv2d": 3,
+    "ReLU": 3,
+    "MaxPool2d": 3,
+    "Flatten": 1,
+    "Linear": 3,
+    "Tanh": 2,
+    "BatchNorm1d": 2
+   },
+   "containers": [
+    "Sequential"
+   ],
+   "state_keys": [
+    "bn0.weight",
+    "bn0.bias",
+    "bn0.running_mean",
+    "bn0.running_var",
+    "bn0.num_batches_tracked",
+    "conv1.weight"
+   ]
+  },
+  "modular": {
+   "label": "модулі: relu",
+   "repr": "ModularCNN(\n  (encoder): Encoder(\n    (input_norm): BatchNorm2d(3, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n    (blocks): ModuleList(\n      (0): Sequential(\n        (0): Conv2d(3, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (1): ReLU()\n        (2): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n        (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n      )\n      (1): Sequential(\n        (0): Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (1): ReLU()\n        (2): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n        (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n      )\n      (2): Sequential(\n        (0): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (1): ReLU()\n        (2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n        (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n      )\n    )\n  )\n  (decoder): Decoder(\n    (blocks): Sequential(\n      (0): Sequential(\n        (0): Linear(in_features=1024, out_features=256, bias=True)\n        (1): Tanh()\n        (2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n      )\n      (1): Sequential(\n        (0): Linear(in_features=256, out_features=64, bias=True)\n        (1): Tanh()\n        (2): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n      )\n    )\n    (last): Linear(in_features=64, out_features=10, bias=True)\n  )\n)",
+   "type": "ModularCNN",
+   "params": 303952,
+   "modules": 30,
+   "leaves": 20,
+   "children": [
+    {
+     "name": "encoder",
+     "type": "Encoder",
+     "params": 23814
+    },
+    {
+     "name": "decoder",
+     "type": "Decoder",
+     "params": 280138
+    }
+   ],
+   "groups": [
+    [
+     "encoder.input_norm",
+     6
+    ],
+    [
+     "encoder.blocks.0",
+     480
+    ],
+    [
+     "encoder.blocks.1",
+     4704
+    ],
+    [
+     "encoder.blocks.2",
+     18624
+    ],
+    [
+     "decoder.blocks.0",
+     262912
+    ],
+    [
+     "decoder.blocks.1",
+     16576
+    ],
+    [
+     "decoder.last",
+     650
+    ]
+   ],
+   "kinds": {
+    "BatchNorm2d": 4,
+    "Conv2d": 3,
+    "ReLU": 3,
+    "MaxPool2d": 3,
+    "Linear": 3,
+    "Tanh": 2,
+    "BatchNorm1d": 2
+   },
+   "containers": [
+    "ModuleList",
+    "Sequential"
+   ],
+   "state_keys": [
+    "encoder.input_norm.weight",
+    "encoder.input_norm.bias",
+    "encoder.input_norm.running_mean",
+    "encoder.input_norm.running_var",
+    "encoder.input_norm.num_batches_tracked",
+    "encoder.blocks.0.0.weight"
+   ]
+  },
+  "modular_lrelu": {
+   "label": "модулі: lrelu",
+   "repr": "ModularCNN(\n  (encoder): Encoder(\n    (input_norm): BatchNorm2d(3, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n    (blocks): ModuleList(\n      (0): Sequential(\n        (0): Conv2d(3, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (1): LeakyReLU(negative_slope=0.01)\n        (2): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n        (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n      )\n      (1): Sequential(\n        (0): Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (1): LeakyReLU(negative_slope=0.01)\n        (2): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n        (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n      )\n      (2): Sequential(\n        (0): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (1): LeakyReLU(negative_slope=0.01)\n        (2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n        (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n      )\n    )\n  )\n  (decoder): Decoder(\n    (blocks): Sequential(\n      (0): Sequential(\n        (0): Linear(in_features=1024, out_features=256, bias=True)\n        (1): Tanh()\n        (2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n      )\n      (1): Sequential(\n        (0): Linear(in_features=256, out_features=64, bias=True)\n        (1): Tanh()\n        (2): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n      )\n    )\n    (last): Linear(in_features=64, out_features=10, bias=True)\n  )\n)",
+   "type": "ModularCNN",
+   "params": 303952,
+   "modules": 30,
+   "leaves": 20,
+   "children": [
+    {
+     "name": "encoder",
+     "type": "Encoder",
+     "params": 23814
+    },
+    {
+     "name": "decoder",
+     "type": "Decoder",
+     "params": 280138
+    }
+   ],
+   "groups": [
+    [
+     "encoder.input_norm",
+     6
+    ],
+    [
+     "encoder.blocks.0",
+     480
+    ],
+    [
+     "encoder.blocks.1",
+     4704
+    ],
+    [
+     "encoder.blocks.2",
+     18624
+    ],
+    [
+     "decoder.blocks.0",
+     262912
+    ],
+    [
+     "decoder.blocks.1",
+     16576
+    ],
+    [
+     "decoder.last",
+     650
+    ]
+   ],
+   "kinds": {
+    "BatchNorm2d": 4,
+    "Conv2d": 3,
+    "LeakyReLU": 3,
+    "MaxPool2d": 3,
+    "Linear": 3,
+    "Tanh": 2,
+    "BatchNorm1d": 2
+   },
+   "containers": [
+    "ModuleList",
+    "Sequential"
+   ],
+   "state_keys": [
+    "encoder.input_norm.weight",
+    "encoder.input_norm.bias",
+    "encoder.input_norm.running_mean",
+    "encoder.input_norm.running_var",
+    "encoder.input_norm.num_batches_tracked",
+    "encoder.blocks.0.0.weight"
+   ]
+  },
+  "modular_wide": {
+   "label": "модулі: 32-64-128",
+   "repr": "ModularCNN(\n  (encoder): Encoder(\n    (input_norm): BatchNorm2d(3, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n    (blocks): ModuleList(\n      (0): Sequential(\n        (0): Conv2d(3, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (1): ReLU()\n        (2): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n        (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n      )\n      (1): Sequential(\n        (0): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (1): ReLU()\n        (2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n        (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n      )\n      (2): Sequential(\n        (0): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (1): ReLU()\n        (2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n        (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n      )\n    )\n  )\n  (decoder): Decoder(\n    (blocks): Sequential(\n      (0): Sequential(\n        (0): Linear(in_features=2048, out_features=256, bias=True)\n        (1): Tanh()\n        (2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n      )\n      (1): Sequential(\n        (0): Linear(in_features=256, out_features=64, bias=True)\n        (1): Tanh()\n        (2): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n      )\n    )\n    (last): Linear(in_features=64, out_features=10, bias=True)\n  )\n)",
+   "type": "ModularCNN",
+   "params": 635984,
+   "modules": 30,
+   "leaves": 20,
+   "children": [
+    {
+     "name": "encoder",
+     "type": "Encoder",
+     "params": 93702
+    },
+    {
+     "name": "decoder",
+     "type": "Decoder",
+     "params": 542282
+    }
+   ],
+   "groups": [
+    [
+     "encoder.input_norm",
+     6
+    ],
+    [
+     "encoder.blocks.0",
+     960
+    ],
+    [
+     "encoder.blocks.1",
+     18624
+    ],
+    [
+     "encoder.blocks.2",
+     74112
+    ],
+    [
+     "decoder.blocks.0",
+     525056
+    ],
+    [
+     "decoder.blocks.1",
+     16576
+    ],
+    [
+     "decoder.last",
+     650
+    ]
+   ],
+   "kinds": {
+    "BatchNorm2d": 4,
+    "Conv2d": 3,
+    "ReLU": 3,
+    "MaxPool2d": 3,
+    "Linear": 3,
+    "Tanh": 2,
+    "BatchNorm1d": 2
+   },
+   "containers": [
+    "ModuleList",
+    "Sequential"
+   ],
+   "state_keys": [
+    "encoder.input_norm.weight",
+    "encoder.input_norm.bias",
+    "encoder.input_norm.running_mean",
+    "encoder.input_norm.running_var",
+    "encoder.input_norm.num_batches_tracked",
+    "encoder.blocks.0.0.weight"
+   ]
+  }
+ }
+}

@@ -1,0 +1,7 @@
+pyspark==4.2.0
+networkx==3.7
+scipy==1.18.1
+rdflib==7.6.0
+owlready2==0.51
+kafka-python==3.0.11
+psutil==7.2.2

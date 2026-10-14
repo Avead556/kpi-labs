@@ -1,0 +1,465 @@
+@prefix : <http://kpi.ua/ontologies/devices.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://kpi.ua/ontologies/devices.owl> a owl:Ontology ;
+    rdfs:label "Онтологія технічних пристроїв"@uk ;
+    rdfs:comment "Технічні пристрої (смартфон, планшет, ноутбук, смарт-годинник, настільний комп'ютер), їхні компоненти, виробники й операційні системи. Варіант 5 лабораторної роботи №3 з дисципліни «Обробка надвеликих масивів даних»"@uk ;
+    owl:versionInfo "1.0"^^xsd:string .
+
+:CameraDevice a owl:Class ;
+    rdfs:label "Пристрій з камерою"@uk ;
+    rdfs:comment "Визначений клас: пристрій, що має хоча б одну камеру"@uk ;
+    rdfs:subClassOf :Device ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Device [ a owl:Restriction ;
+                        owl:onProperty :hasCamera ;
+                        owl:someValuesFrom :Camera ] ) ] .
+
+:DesktopComputer a owl:Class ;
+    rdfs:label "Настільний комп'ютер"@uk ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :hasProcessor ;
+            owl:someValuesFrom :Processor ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+            owl:onClass :Screen ;
+            owl:onProperty :hasScreen ],
+        :StationaryDevice .
+
+:GalaxyS24 a :Smartphone,
+        owl:NamedIndividual ;
+    :hasBattery :GalaxyS24_Battery ;
+    :hasCamera :GalaxyS24_Camera ;
+    :hasMemory :GalaxyS24_RAM ;
+    :hasProcessor :Exynos2400 ;
+    :hasScreen :GalaxyS24_Screen ;
+    :hasStorage :GalaxyS24_SSD ;
+    :manufacturedBy :Samsung ;
+    :modelName "Galaxy S24"^^xsd:string ;
+    :releaseYear 2024 ;
+    :runsOn :Android .
+
+:GalaxyTabS9 a :Tablet,
+        owl:NamedIndividual ;
+    :hasBattery :GalaxyTabS9_Battery ;
+    :hasCamera :GalaxyTabS9_Camera ;
+    :hasMemory :GalaxyTabS9_RAM ;
+    :hasProcessor :Snapdragon8Gen2 ;
+    :hasScreen :GalaxyTabS9_Screen ;
+    :hasStorage :GalaxyTabS9_SSD ;
+    :manufacturedBy :Samsung ;
+    :modelName "Galaxy Tab S9"^^xsd:string ;
+    :releaseYear 2023 ;
+    :runsOn :Android .
+
+:LargeScreenDevice a owl:Class ;
+    rdfs:label "Пристрій з великим екраном"@uk ;
+    rdfs:comment "Визначений клас: екран від 10 дюймів"@uk ;
+    rdfs:subClassOf :Device ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Device [ a owl:Restriction ;
+                        owl:onProperty :hasScreen ;
+                        owl:someValuesFrom [ a owl:Class ;
+                                owl:intersectionOf ( :Screen [ a owl:Restriction ;
+                                            owl:onProperty :screenSizeInches ;
+                                            owl:someValuesFrom [ a rdfs:Datatype ;
+                                                    owl:onDatatype xsd:decimal ;
+                                                    owl:withRestrictions ( [ xsd:minInclusive 10.0 ] ) ] ] ) ] ] ) ] .
+
+:MacBookAirM3 a :Laptop,
+        owl:NamedIndividual ;
+    :hasBattery :MacBookAirM3_Battery ;
+    :hasCamera :MacBookAirM3_Camera ;
+    :hasMemory :MacBookAirM3_RAM ;
+    :hasProcessor :AppleM3 ;
+    :hasScreen :MacBookAirM3_Screen ;
+    :hasStorage :MacBookAirM3_SSD ;
+    :manufacturedBy :Apple ;
+    :modelName "MacBook Air 13 M3"^^xsd:string ;
+    :releaseYear 2024 ;
+    :runsOn :macOS .
+
+:capacityMAh a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ємність акумулятора, мА·год"@uk ;
+    rdfs:domain :Battery ;
+    rdfs:range xsd:integer .
+
+:clockSpeedGHz a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "частота процесора, ГГц"@uk ;
+    rdfs:domain :Processor ;
+    rdfs:range xsd:decimal .
+
+:coreCount a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "кількість ядер"@uk ;
+    rdfs:domain :Processor ;
+    rdfs:range xsd:integer .
+
+:developedBy a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "розроблена"@uk ;
+    rdfs:domain :OperatingSystem ;
+    rdfs:range :Manufacturer .
+
+:iPhone15 a :Smartphone,
+        owl:NamedIndividual ;
+    :hasBattery :iPhone15_Battery ;
+    :hasCamera :iPhone15_Camera ;
+    :hasMemory :iPhone15_RAM ;
+    :hasProcessor :A16Bionic ;
+    :hasScreen :iPhone15_Screen ;
+    :hasStorage :iPhone15_SSD ;
+    :manufacturedBy :Apple ;
+    :modelName "iPhone 15"^^xsd:string ;
+    :releaseYear 2023 ;
+    :runsOn :iOS .
+
+:megapixels a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "роздільність камери, Мп"@uk ;
+    rdfs:domain :Camera ;
+    rdfs:range xsd:decimal .
+
+:modelName a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "модель"@uk ;
+    rdfs:domain :Device ;
+    rdfs:range xsd:string .
+
+:releaseYear a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "рік випуску"@uk ;
+    rdfs:domain :Device ;
+    rdfs:range xsd:integer .
+
+:resolution a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "роздільна здатність"@uk ;
+    rdfs:domain :Screen ;
+    rdfs:range xsd:string .
+
+:sizeGB a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "обсяг, ГБ"@uk ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( :Memory :Storage ) ] ;
+    rdfs:range xsd:integer .
+
+:A16Bionic a :Processor,
+        owl:NamedIndividual ;
+    :clockSpeedGHz 3.46 ;
+    :coreCount 6 .
+
+:AppleM3 a :Processor,
+        owl:NamedIndividual ;
+    :clockSpeedGHz 4.05 ;
+    :coreCount 8 .
+
+:Exynos2400 a :Processor,
+        owl:NamedIndividual ;
+    :clockSpeedGHz 3.2 ;
+    :coreCount 10 .
+
+:GalaxyS24_Battery a :Battery,
+        owl:NamedIndividual ;
+    :capacityMAh 4000 .
+
+:GalaxyS24_Camera a :Camera,
+        owl:NamedIndividual ;
+    :megapixels 50.0 .
+
+:GalaxyS24_RAM a :Memory,
+        owl:NamedIndividual ;
+    :sizeGB 8 .
+
+:GalaxyS24_SSD a :Storage,
+        owl:NamedIndividual ;
+    :sizeGB 128 .
+
+:GalaxyS24_Screen a :Screen,
+        owl:NamedIndividual ;
+    :resolution "2340x1080"^^xsd:string ;
+    :screenSizeInches 6.2 .
+
+:GalaxyTabS9_Battery a :Battery,
+        owl:NamedIndividual ;
+    :capacityMAh 8400 .
+
+:GalaxyTabS9_Camera a :Camera,
+        owl:NamedIndividual ;
+    :megapixels 13.0 .
+
+:GalaxyTabS9_RAM a :Memory,
+        owl:NamedIndividual ;
+    :sizeGB 8 .
+
+:GalaxyTabS9_SSD a :Storage,
+        owl:NamedIndividual ;
+    :sizeGB 128 .
+
+:GalaxyTabS9_Screen a :Screen,
+        owl:NamedIndividual ;
+    :resolution "2560x1600"^^xsd:string ;
+    :screenSizeInches 11.0 .
+
+:Google a :Manufacturer,
+        owl:NamedIndividual .
+
+:MacBookAirM3_Battery a :Battery,
+        owl:NamedIndividual ;
+    :capacityMAh 4614 .
+
+:MacBookAirM3_Camera a :Camera,
+        owl:NamedIndividual ;
+    :megapixels 2.1 .
+
+:MacBookAirM3_RAM a :Memory,
+        owl:NamedIndividual ;
+    :sizeGB 8 .
+
+:MacBookAirM3_SSD a :Storage,
+        owl:NamedIndividual ;
+    :sizeGB 256 .
+
+:MacBookAirM3_Screen a :Screen,
+        owl:NamedIndividual ;
+    :resolution "2560x1664"^^xsd:string ;
+    :screenSizeInches 13.6 .
+
+:Smartwatch a owl:Class ;
+    rdfs:label "Смарт-годинник"@uk ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+            owl:onClass :Camera ;
+            owl:onProperty :hasCamera ],
+        [ a owl:Restriction ;
+            owl:onClass :Screen ;
+            owl:onProperty :hasScreen ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        :PortableDevice .
+
+:Snapdragon8Gen2 a :Processor,
+        owl:NamedIndividual ;
+    :clockSpeedGHz 3.36 ;
+    :coreCount 8 .
+
+:hasMemory a owl:ObjectProperty ;
+    rdfs:label "має оперативну пам'ять"@uk ;
+    rdfs:range :Memory ;
+    rdfs:subPropertyOf :hasComponent .
+
+:hasStorage a owl:ObjectProperty ;
+    rdfs:label "має накопичувач"@uk ;
+    rdfs:range :Storage ;
+    rdfs:subPropertyOf :hasComponent .
+
+:iOS a :OperatingSystem,
+        owl:NamedIndividual ;
+    :developedBy :Apple .
+
+:iPhone15_Battery a :Battery,
+        owl:NamedIndividual ;
+    :capacityMAh 3349 .
+
+:iPhone15_Camera a :Camera,
+        owl:NamedIndividual ;
+    :megapixels 48.0 .
+
+:iPhone15_RAM a :Memory,
+        owl:NamedIndividual ;
+    :sizeGB 6 .
+
+:iPhone15_SSD a :Storage,
+        owl:NamedIndividual ;
+    :sizeGB 128 .
+
+:iPhone15_Screen a :Screen,
+        owl:NamedIndividual ;
+    :resolution "2556x1179"^^xsd:string ;
+    :screenSizeInches 6.1 .
+
+:isComponentOf a owl:ObjectProperty ;
+    rdfs:label "є компонентом"@uk ;
+    owl:inverseOf :hasComponent .
+
+:macOS a :OperatingSystem,
+        owl:NamedIndividual ;
+    :developedBy :Apple .
+
+:manufacturedBy a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "виготовлений"@uk ;
+    rdfs:domain :Device ;
+    rdfs:range :Manufacturer ;
+    owl:inverseOf :manufactures .
+
+:manufactures a owl:ObjectProperty ;
+    rdfs:label "виготовляє"@uk ;
+    owl:inverseOf :manufacturedBy .
+
+:runsOn a owl:ObjectProperty ;
+    rdfs:label "працює під"@uk ;
+    rdfs:domain :Device ;
+    rdfs:range :OperatingSystem .
+
+:screenSizeInches a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "розмір екрана, дюймів"@uk ;
+    rdfs:domain :Screen ;
+    rdfs:range xsd:decimal .
+
+:Android a :OperatingSystem,
+        owl:NamedIndividual ;
+    :developedBy :Google .
+
+:Laptop a owl:Class ;
+    rdfs:label "Ноутбук"@uk ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass :Screen ;
+            owl:onProperty :hasScreen ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onProperty :hasMemory ;
+            owl:someValuesFrom :Memory ],
+        [ a owl:Restriction ;
+            owl:onProperty :hasStorage ;
+            owl:someValuesFrom :Storage ],
+        [ a owl:Restriction ;
+            owl:onProperty :hasProcessor ;
+            owl:someValuesFrom :Processor ],
+        :PortableDevice .
+
+:Samsung a :Manufacturer,
+        owl:NamedIndividual .
+
+:StationaryDevice a owl:Class ;
+    rdfs:label "Стаціонарний пристрій"@uk ;
+    rdfs:comment "Пристрій, що працює від мережі на одному місці"@uk ;
+    rdfs:subClassOf :Device .
+
+:Tablet a owl:Class ;
+    rdfs:label "Планшет"@uk ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :hasProcessor ;
+            owl:someValuesFrom :Processor ],
+        [ a owl:Restriction ;
+            owl:onClass :Screen ;
+            owl:onProperty :hasScreen ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        :PortableDevice .
+
+:hasBattery a owl:ObjectProperty ;
+    rdfs:label "має акумулятор"@uk ;
+    rdfs:range :Battery ;
+    rdfs:subPropertyOf :hasComponent .
+
+:Smartphone a owl:Class ;
+    rdfs:label "Смартфон"@uk ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass :Battery ;
+            owl:onProperty :hasBattery ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onProperty :hasProcessor ;
+            owl:someValuesFrom :Processor ],
+        [ a owl:Restriction ;
+            owl:onClass :Screen ;
+            owl:onProperty :hasScreen ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onProperty :runsOn ;
+            owl:someValuesFrom :OperatingSystem ],
+        [ a owl:Restriction ;
+            owl:onProperty :hasCamera ;
+            owl:someValuesFrom :Camera ],
+        :PortableDevice .
+
+:hasCamera a owl:ObjectProperty ;
+    rdfs:label "має камеру"@uk ;
+    rdfs:range :Camera ;
+    rdfs:subPropertyOf :hasComponent .
+
+:Apple a :Manufacturer,
+        owl:NamedIndividual .
+
+:PortableDevice a owl:Class ;
+    rdfs:label "Портативний пристрій"@uk ;
+    rdfs:comment "Пристрій з власним акумулятором, який носять із собою"@uk ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :hasBattery ;
+            owl:someValuesFrom :Battery ],
+        :Device ;
+    owl:disjointWith :StationaryDevice .
+
+:hasProcessor a owl:ObjectProperty ;
+    rdfs:label "має процесор"@uk ;
+    rdfs:range :Processor ;
+    rdfs:subPropertyOf :hasComponent .
+
+:Manufacturer a owl:Class ;
+    rdfs:label "Виробник"@uk ;
+    rdfs:subClassOf owl:Thing .
+
+:hasScreen a owl:ObjectProperty ;
+    rdfs:label "має екран"@uk ;
+    rdfs:range :Screen ;
+    rdfs:subPropertyOf :hasComponent .
+
+:OperatingSystem a owl:Class ;
+    rdfs:label "Операційна система"@uk ;
+    rdfs:subClassOf owl:Thing .
+
+:hasComponent a owl:ObjectProperty ;
+    rdfs:label "має компонент"@uk ;
+    rdfs:domain :Device ;
+    rdfs:range :Component ;
+    owl:inverseOf :isComponentOf .
+
+:Component a owl:Class ;
+    rdfs:label "Компонент"@uk ;
+    rdfs:comment "Складова частина пристрою"@uk ;
+    rdfs:subClassOf owl:Thing .
+
+:Memory a owl:Class ;
+    rdfs:label "Оперативна пам'ять"@uk ;
+    rdfs:subClassOf :Component .
+
+:Storage a owl:Class ;
+    rdfs:label "Накопичувач"@uk ;
+    rdfs:subClassOf :Component .
+
+:Battery a owl:Class ;
+    rdfs:label "Акумулятор"@uk ;
+    rdfs:subClassOf :Component .
+
+:Camera a owl:Class ;
+    rdfs:label "Камера"@uk ;
+    rdfs:subClassOf :Component .
+
+:Device a owl:Class ;
+    rdfs:label "Технічний пристрій"@uk ;
+    rdfs:comment "Електронний пристрій, яким користується людина"@uk ;
+    rdfs:subClassOf owl:Thing .
+
+:Processor a owl:Class ;
+    rdfs:label "Процесор"@uk ;
+    rdfs:subClassOf :Component .
+
+:Screen a owl:Class ;
+    rdfs:label "Екран"@uk ;
+    rdfs:subClassOf :Component .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :Screen :Processor :Battery :Camera :Memory :Storage ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :Device :Component :Manufacturer :OperatingSystem ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :Smartphone :Tablet :Laptop :Smartwatch ) .
+

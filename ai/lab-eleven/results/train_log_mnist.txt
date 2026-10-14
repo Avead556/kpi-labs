@@ -1,0 +1,61 @@
+torch 2.14.0, device mps, seed 18, batch 100, Adam lr 0.001
+
+== mnist: train (60000, 1, 28, 28), test (10000, 1, 28, 28), loaded in 0.7s
+
+-- mnist/classic (nn.Module (ПР №10)): 62768 parameters
+  epoch  1  train loss 0.1557  test loss 0.0442  test acc 0.9846  4.1s
+  epoch  2  train loss 0.0458  test loss 0.0437  test acc 0.9854  4.2s
+  epoch  3  train loss 0.0338  test loss 0.0368  test acc 0.9880  4.4s
+  epoch  4  train loss 0.0258  test loss 0.0305  test acc 0.9903  5.8s
+  epoch  5  train loss 0.0220  test loss 0.0300  test acc 0.9904  6.3s
+  epoch  6  train loss 0.0177  test loss 0.0366  test acc 0.9896  10.1s
+  epoch  7  train loss 0.0133  test loss 0.0375  test acc 0.9888  6.9s
+  epoch  8  train loss 0.0141  test loss 0.0394  test acc 0.9882  7.7s
+  epoch  9  train loss 0.0138  test loss 0.0356  test acc 0.9888  7.7s
+  epoch 10  train loss 0.0118  test loss 0.0343  test acc 0.9907  5.4s
+
+-- mnist/sequential (nn.Sequential): 62768 parameters
+  epoch  1  train loss 0.1557  test loss 0.0442  test acc 0.9846  5.9s
+  epoch  2  train loss 0.0458  test loss 0.0437  test acc 0.9854  6.2s
+  epoch  3  train loss 0.0338  test loss 0.0368  test acc 0.9880  5.1s
+  epoch  4  train loss 0.0258  test loss 0.0305  test acc 0.9903  6.3s
+  epoch  5  train loss 0.0220  test loss 0.0300  test acc 0.9904  6.6s
+  epoch  6  train loss 0.0177  test loss 0.0366  test acc 0.9896  6.6s
+  epoch  7  train loss 0.0133  test loss 0.0375  test acc 0.9888  6.9s
+  epoch  8  train loss 0.0141  test loss 0.0394  test acc 0.9882  9.3s
+  epoch  9  train loss 0.0138  test loss 0.0356  test acc 0.9888  6.3s
+  epoch 10  train loss 0.0118  test loss 0.0343  test acc 0.9907  5.1s
+
+-- mnist/modular (модулі: relu): 62768 parameters
+  epoch  1  train loss 0.1557  test loss 0.0442  test acc 0.9846  5.0s
+  epoch  2  train loss 0.0458  test loss 0.0437  test acc 0.9854  9.5s
+  epoch  3  train loss 0.0338  test loss 0.0368  test acc 0.9880  9.7s
+  epoch  4  train loss 0.0258  test loss 0.0305  test acc 0.9903  7.0s
+  epoch  5  train loss 0.0220  test loss 0.0300  test acc 0.9904  9.9s
+  epoch  6  train loss 0.0177  test loss 0.0366  test acc 0.9896  13.5s
+  epoch  7  train loss 0.0133  test loss 0.0375  test acc 0.9888  11.4s
+  epoch  8  train loss 0.0141  test loss 0.0394  test acc 0.9882  11.5s
+  epoch  9  train loss 0.0138  test loss 0.0356  test acc 0.9888  13.8s
+  epoch 10  train loss 0.0118  test loss 0.0343  test acc 0.9907  13.7s
+
+-- mnist/modular_lrelu (модулі: lrelu): 62768 parameters
+  epoch  1  train loss 0.1528  test loss 0.0407  test acc 0.9873  14.0s
+  epoch  2  train loss 0.0451  test loss 0.0418  test acc 0.9873  15.1s
+  epoch  3  train loss 0.0326  test loss 0.0406  test acc 0.9866  15.9s
+  epoch  4  train loss 0.0264  test loss 0.0346  test acc 0.9892  20.8s
+  epoch  5  train loss 0.0198  test loss 0.0391  test acc 0.9884  19.7s
+  epoch  6  train loss 0.0174  test loss 0.0400  test acc 0.9873  15.1s
+  epoch  7  train loss 0.0154  test loss 0.0354  test acc 0.9900  15.8s
+  epoch  8  train loss 0.0141  test loss 0.0326  test acc 0.9897  14.3s
+  epoch  9  train loss 0.0118  test loss 0.0369  test acc 0.9884  14.1s
+  epoch 10  train loss 0.0120  test loss 0.0400  test acc 0.9905  9.8s
+
+-- mnist: classic weights in the other styles
+  classic -> sequential: acc 0.9907 (classic 0.9907), max |logit diff| 0.00e+00, same predictions 1.0000
+  classic -> modular: acc 0.9907 (classic 0.9907), max |logit diff| 0.00e+00, same predictions 1.0000
+
+summary (best / last test accuracy, mean epoch time):
+  mnist  classic        0.9907 / 0.9907  6.3s
+  mnist  sequential     0.9907 / 0.9907  6.4s
+  mnist  modular        0.9907 / 0.9907  10.5s
+  mnist  modular_lrelu  0.9905 / 0.9905  15.5s

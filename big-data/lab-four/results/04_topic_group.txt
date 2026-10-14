@@ -1,0 +1,10 @@
+$ kafka-topics.sh --describe --topic telecom-client-service-time
+Topic: telecom-client-service-time	TopicId: x0KRjaMwSMmwTtpd2zRqIw	PartitionCount: 1	ReplicationFactor: 1	Configs: min.insync.replicas=1
+	Topic: telecom-client-service-time	Partition: 0	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+
+$ kafka-consumer-groups.sh --describe --group service-time-metrics
+
+Consumer group 'service-time-metrics' has no active members.
+
+GROUP                TOPIC                       PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+service-time-metrics telecom-client-service-time 0          100             100             0               -               -               -

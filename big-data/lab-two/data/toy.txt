@@ -1,0 +1,7 @@
+# Toy web graph: 5 pages, E has no outgoing links
+A	B
+A	C
+B	C
+C	A
+D	C
+D	E

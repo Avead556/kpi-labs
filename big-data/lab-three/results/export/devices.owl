@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns="http://kpi.ua/ontologies/devices.owl#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+>
+  <rdf:Description rdf:nodeID="N8c1e4428428e494b8978fdea40a8ea4f">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://kpi.ua/ontologies/devices.owl#hasScreen"/>
+    <owl:onClass rdf:resource="http://kpi.ua/ontologies/devices.owl#Screen"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#Camera">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://kpi.ua/ontologies/devices.owl#Component"/>
+    <rdfs:label xml:lang="uk">Камера</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#Component">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label xml:lang="uk">Компонент</rdfs:label>
+    <rdfs:comment xml:lang="uk">Складова частина пристрою</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#Smartphone">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://kpi.ua/ontologies/devices.owl#PortableDevice"/>
+    <rdfs:subClassOf rdf:nodeID="N23232cfd2079416b86e2a0734503febc"/>
+    <rdfs:subClassOf rdf:nodeID="N8c1e4428428e494b8978fdea40a8ea4f"/>
+    <rdfs:subClassOf rdf:nodeID="N511972d021b0408594e09544f3f28c55"/>
+    <rdfs:subClassOf rdf:nodeID="Nc2b49f72e3be456986917681b9bcb5d2"/>
+    <rdfs:subClassOf rdf:nodeID="Nc61fe0963be84db3b43fa4eb10ecc236"/>
+    <rdfs:label xml:lang="uk">Смартфон</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#MacBookAirM3_SSD">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Storage"/>
+    <sizeGB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">256</sizeGB>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#Battery">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://kpi.ua/ontologies/devices.owl#Component"/>
+    <rdfs:label xml:lang="uk">Акумулятор</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N21cede2f33ab44788eeb2b2aa7b0ad44">
+    <rdf:first rdf:resource="http://kpi.ua/ontologies/devices.owl#Smartphone"/>
+    <rdf:rest rdf:nodeID="Nd7e2f4a527b8465c8312a2036b45859d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#Snapdragon8Gen2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Processor"/>
+    <clockSpeedGHz rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.36</clockSpeedGHz>
+    <coreCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</coreCount>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#coreCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://kpi.ua/ontologies/devices.owl#Processor"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label xml:lang="uk">кількість ядер</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#sizeGB">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:nodeID="N491768b9ce6c4aaf94e00639bb1b2d10"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label xml:lang="uk">обсяг, ГБ</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0bdb73deb9324607a8e0dc260c474646">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://kpi.ua/ontologies/devices.owl#hasProcessor"/>
+    <owl:someValuesFrom rdf:resource="http://kpi.ua/ontologies/devices.owl#Processor"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N491768b9ce6c4aaf94e00639bb1b2d10">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N228a46df087248ebac8daf045ad76eed"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#OperatingSystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label xml:lang="uk">Операційна система</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#A16Bionic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Processor"/>
+    <clockSpeedGHz rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.46</clockSpeedGHz>
+    <coreCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</coreCount>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#screenSizeInches">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://kpi.ua/ontologies/devices.owl#Screen"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:label xml:lang="uk">розмір екрана, дюймів</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#MacBookAirM3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Laptop"/>
+    <manufacturedBy rdf:resource="http://kpi.ua/ontologies/devices.owl#Apple"/>
+    <runsOn rdf:resource="http://kpi.ua/ontologies/devices.owl#macOS"/>
+    <hasScreen rdf:resource="http://kpi.ua/ontologies/devices.owl#MacBookAirM3_Screen"/>
+    <hasProcessor rdf:resource="http://kpi.ua/ontologies/devices.owl#AppleM3"/>
+    <hasBattery rdf:resource="http://kpi.ua/ontologies/devices.owl#MacBookAirM3_Battery"/>
+    <hasCamera rdf:resource="http://kpi.ua/ontologies/devices.owl#MacBookAirM3_Camera"/>
+    <hasMemory rdf:resource="http://kpi.ua/ontologies/devices.owl#MacBookAirM3_RAM"/>
+    <hasStorage rdf:resource="http://kpi.ua/ontologies/devices.owl#MacBookAirM3_SSD"/>
+    <modelName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MacBook Air 13 M3</modelName>
+    <releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2024</releaseYear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#GalaxyTabS9_SSD">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Storage"/>
+    <sizeGB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">128</sizeGB>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#Memory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://kpi.ua/ontologies/devices.owl#Component"/>
+    <rdfs:label xml:lang="uk">Оперативна пам'ять</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#GalaxyTabS9_Screen">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Screen"/>
+    <screenSizeInches rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">11.0</screenSizeInches>
+    <resolution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2560x1600</resolution>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#MacBookAirM3_RAM">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Memory"/>
+    <sizeGB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</sizeGB>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#AppleM3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Processor"/>
+    <clockSpeedGHz rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.05</clockSpeedGHz>
+    <coreCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</coreCount>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#DesktopComputer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://kpi.ua/ontologies/devices.owl#StationaryDevice"/>
+    <rdfs:subClassOf rdf:nodeID="Nbd01971e4c794f4888946567869b12f4"/>
+    <rdfs:subClassOf rdf:nodeID="N0bdb73deb9324607a8e0dc260c474646"/>
+    <rdfs:label xml:lang="uk">Настільний комп'ютер</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#modelName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://kpi.ua/ontologies/devices.owl#Device"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="uk">модель</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#StationaryDevice">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://kpi.ua/ontologies/devices.owl#Device"/>
+    <rdfs:label xml:lang="uk">Стаціонарний пристрій</rdfs:label>
+    <rdfs:comment xml:lang="uk">Пристрій, що працює від мережі на одному місці</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#iPhone15">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Smartphone"/>
+    <manufacturedBy rdf:resource="http://kpi.ua/ontologies/devices.owl#Apple"/>
+    <runsOn rdf:resource="http://kpi.ua/ontologies/devices.owl#iOS"/>
+    <hasScreen rdf:resource="http://kpi.ua/ontologies/devices.owl#iPhone15_Screen"/>
+    <hasProcessor rdf:resource="http://kpi.ua/ontologies/devices.owl#A16Bionic"/>
+    <hasBattery rdf:resource="http://kpi.ua/ontologies/devices.owl#iPhone15_Battery"/>
+    <hasCamera rdf:resource="http://kpi.ua/ontologies/devices.owl#iPhone15_Camera"/>
+    <hasMemory rdf:resource="http://kpi.ua/ontologies/devices.owl#iPhone15_RAM"/>
+    <hasStorage rdf:resource="http://kpi.ua/ontologies/devices.owl#iPhone15_SSD"/>
+    <modelName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">iPhone 15</modelName>
+    <releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2023</releaseYear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#GalaxyS24_Battery">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Battery"/>
+    <capacityMAh rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4000</capacityMAh>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#Smartwatch">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://kpi.ua/ontologies/devices.owl#PortableDevice"/>
+    <rdfs:subClassOf rdf:nodeID="N85f6fa73fd4a441693fc78911c369cfd"/>
+    <rdfs:subClassOf rdf:nodeID="N666a217040d34761841337c642670548"/>
+    <rdfs:label xml:lang="uk">Смарт-годинник</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N13f6b6a423684535abc3ae6eb3cfccd6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://kpi.ua/ontologies/devices.owl#hasBattery"/>
+    <owl:someValuesFrom rdf:resource="http://kpi.ua/ontologies/devices.owl#Battery"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#MacBookAirM3_Screen">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Screen"/>
+    <screenSizeInches rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">13.6</screenSizeInches>
+    <resolution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2560x1664</resolution>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncc8d7b434c8b4e6d9212504b771c9e56">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://kpi.ua/ontologies/devices.owl#hasProcessor"/>
+    <owl:someValuesFrom rdf:resource="http://kpi.ua/ontologies/devices.owl#Processor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#megapixels">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://kpi.ua/ontologies/devices.owl#Camera"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:label xml:lang="uk">роздільність камери, Мп</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#MacBookAirM3_Camera">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Camera"/>
+    <megapixels rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.1</megapixels>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#CameraDevice">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://kpi.ua/ontologies/devices.owl#Device"/>
+    <owl:equivalentClass rdf:nodeID="Nafa92eee27594652a69af0d440750d9a"/>
+    <rdfs:label xml:lang="uk">Пристрій з камерою</rdfs:label>
+    <rdfs:comment xml:lang="uk">Визначений клас: пристрій, що має хоча б одну камеру</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6c5c4feb51cf48b2bfbd4fbb726b0a5f">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N21cede2f33ab44788eeb2b2aa7b0ad44"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#clockSpeedGHz">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://kpi.ua/ontologies/devices.owl#Processor"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:label xml:lang="uk">частота процесора, ГГц</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#manufacturedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://kpi.ua/ontologies/devices.owl#Device"/>
+    <rdfs:range rdf:resource="http://kpi.ua/ontologies/devices.owl#Manufacturer"/>
+    <owl:inverseOf rdf:resource="http://kpi.ua/ontologies/devices.owl#manufactures"/>
+    <rdfs:label xml:lang="uk">виготовлений</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#developedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://kpi.ua/ontologies/devices.owl#OperatingSystem"/>
+    <rdfs:range rdf:resource="http://kpi.ua/ontologies/devices.owl#Manufacturer"/>
+    <rdfs:label xml:lang="uk">розроблена</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N666a217040d34761841337c642670548">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://kpi.ua/ontologies/devices.owl#hasCamera"/>
+    <owl:onClass rdf:resource="http://kpi.ua/ontologies/devices.owl#Camera"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxQualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#GalaxyTabS9_RAM">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Memory"/>
+    <sizeGB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</sizeGB>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1a104d26f5f0409bbc797ec8f5d0af13">
+    <rdf:first rdf:resource="http://kpi.ua/ontologies/devices.owl#Device"/>
+    <rdf:rest rdf:nodeID="N70ea0611f4b1441bbfc7ec57cf099f45"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#Tablet">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://kpi.ua/ontologies/devices.owl#PortableDevice"/>
+    <rdfs:subClassOf rdf:nodeID="Nf7d52f288f4f48ce9edaf6379a03bc1b"/>
+    <rdfs:subClassOf rdf:nodeID="N8a7ac23fcb9d47a8a64956a7adae27ab"/>
+    <rdfs:label xml:lang="uk">Планшет</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N86f4fed8b115406386e600a663514afa">
+    <rdf:first rdf:resource="http://kpi.ua/ontologies/devices.owl#Storage"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#iPhone15_SSD">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Storage"/>
+    <sizeGB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">128</sizeGB>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf3925e64d246428fbe5c9901b288f2b6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://kpi.ua/ontologies/devices.owl#hasCamera"/>
+    <owl:someValuesFrom rdf:resource="http://kpi.ua/ontologies/devices.owl#Camera"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#iPhone15_Camera">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Camera"/>
+    <megapixels rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.0</megapixels>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#manufactures">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://kpi.ua/ontologies/devices.owl#manufacturedBy"/>
+    <rdfs:label xml:lang="uk">виготовляє</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#hasProcessor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://kpi.ua/ontologies/devices.owl#hasComponent"/>
+    <rdfs:range rdf:resource="http://kpi.ua/ontologies/devices.owl#Processor"/>
+    <rdfs:label xml:lang="uk">має процесор</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb4ff73f97bd341ceaf47793be3ce5097">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://kpi.ua/ontologies/devices.owl#hasScreen"/>
+    <owl:someValuesFrom rdf:nodeID="Nc0103a76aa8f4ef88f2a056b5275057b"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#capacityMAh">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://kpi.ua/ontologies/devices.owl#Battery"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label xml:lang="uk">ємність акумулятора, мА·год</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N23232cfd2079416b86e2a0734503febc">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://kpi.ua/ontologies/devices.owl#hasBattery"/>
+    <owl:onClass rdf:resource="http://kpi.ua/ontologies/devices.owl#Battery"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N85f6fa73fd4a441693fc78911c369cfd">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://kpi.ua/ontologies/devices.owl#hasScreen"/>
+    <owl:onClass rdf:resource="http://kpi.ua/ontologies/devices.owl#Screen"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#GalaxyTabS9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Tablet"/>
+    <manufacturedBy rdf:resource="http://kpi.ua/ontologies/devices.owl#Samsung"/>
+    <runsOn rdf:resource="http://kpi.ua/ontologies/devices.owl#Android"/>
+    <hasScreen rdf:resource="http://kpi.ua/ontologies/devices.owl#GalaxyTabS9_Screen"/>
+    <hasProcessor rdf:resource="http://kpi.ua/ontologies/devices.owl#Snapdragon8Gen2"/>
+    <hasBattery rdf:resource="http://kpi.ua/ontologies/devices.owl#GalaxyTabS9_Battery"/>
+    <hasCamera rdf:resource="http://kpi.ua/ontologies/devices.owl#GalaxyTabS9_Camera"/>
+    <hasMemory rdf:resource="http://kpi.ua/ontologies/devices.owl#GalaxyTabS9_RAM"/>
+    <hasStorage rdf:resource="http://kpi.ua/ontologies/devices.owl#GalaxyTabS9_SSD"/>
+    <modelName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Galaxy Tab S9</modelName>
+    <releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2023</releaseYear>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N65e07c8a0d71402097f81ab1cca39331">
+    <rdf:first rdf:resource="http://kpi.ua/ontologies/devices.owl#Laptop"/>
+    <rdf:rest rdf:nodeID="N57fcc1f959724ff797ee8be892641a0d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nafa92eee27594652a69af0d440750d9a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N1b7e9cb653bd433189c43d749d56a02c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb2c6debe7cf24e659fc5988cd694e451">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N6ed44c66c8724c18a1af0097ee9e8d56"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label xml:lang="uk">Онтологія технічних пристроїв</rdfs:label>
+    <rdfs:comment xml:lang="uk">Технічні пристрої (смартфон, планшет, ноутбук, смарт-годинник, настільний комп'ютер), їхні компоненти, виробники й операційні системи. Варіант 5 лабораторної роботи №3 з дисципліни «Обробка надвеликих масивів даних»</rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#PortableDevice">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://kpi.ua/ontologies/devices.owl#Device"/>
+    <rdfs:subClassOf rdf:nodeID="N13f6b6a423684535abc3ae6eb3cfccd6"/>
+    <owl:disjointWith rdf:resource="http://kpi.ua/ontologies/devices.owl#StationaryDevice"/>
+    <rdfs:label xml:lang="uk">Портативний пристрій</rdfs:label>
+    <rdfs:comment xml:lang="uk">Пристрій з власним акумулятором, який носять із собою</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#releaseYear">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://kpi.ua/ontologies/devices.owl#Device"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label xml:lang="uk">рік випуску</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#isComponentOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://kpi.ua/ontologies/devices.owl#hasComponent"/>
+    <rdfs:label xml:lang="uk">є компонентом</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#LargeScreenDevice">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://kpi.ua/ontologies/devices.owl#Device"/>
+    <owl:equivalentClass rdf:nodeID="Nb2c6debe7cf24e659fc5988cd694e451"/>
+    <rdfs:label xml:lang="uk">Пристрій з великим екраном</rdfs:label>
+    <rdfs:comment xml:lang="uk">Визначений клас: екран від 10 дюймів</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd288dab5403d43d7bd23b243e70a29b1">
+    <rdf:first rdf:nodeID="Nf3925e64d246428fbe5c9901b288f2b6"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#Samsung">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Manufacturer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#GalaxyS24_Camera">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Camera"/>
+    <megapixels rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50.0</megapixels>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#GalaxyS24_RAM">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Memory"/>
+    <sizeGB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</sizeGB>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#hasComponent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://kpi.ua/ontologies/devices.owl#Device"/>
+    <rdfs:range rdf:resource="http://kpi.ua/ontologies/devices.owl#Component"/>
+    <owl:inverseOf rdf:resource="http://kpi.ua/ontologies/devices.owl#isComponentOf"/>
+    <rdfs:label xml:lang="uk">має компонент</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf7d52f288f4f48ce9edaf6379a03bc1b">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://kpi.ua/ontologies/devices.owl#hasScreen"/>
+    <owl:onClass rdf:resource="http://kpi.ua/ontologies/devices.owl#Screen"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N18c7ac9a21794dd7b13ced3866c41f6a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N031fadcc2a7e479e8e4b219cdeac9fd2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#Exynos2400">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Processor"/>
+    <clockSpeedGHz rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.2</clockSpeedGHz>
+    <coreCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</coreCount>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5cb7024e3d9d472a87f0ee6db1619cf0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://kpi.ua/ontologies/devices.owl#screenSizeInches"/>
+    <owl:someValuesFrom rdf:nodeID="Nedaacddb8b924857bca2d9c1c527dfc4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#GalaxyS24_SSD">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Storage"/>
+    <sizeGB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">128</sizeGB>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#GalaxyS24">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Smartphone"/>
+    <manufacturedBy rdf:resource="http://kpi.ua/ontologies/devices.owl#Samsung"/>
+    <runsOn rdf:resource="http://kpi.ua/ontologies/devices.owl#Android"/>
+    <hasScreen rdf:resource="http://kpi.ua/ontologies/devices.owl#GalaxyS24_Screen"/>
+    <hasProcessor rdf:resource="http://kpi.ua/ontologies/devices.owl#Exynos2400"/>
+    <hasBattery rdf:resource="http://kpi.ua/ontologies/devices.owl#GalaxyS24_Battery"/>
+    <hasCamera rdf:resource="http://kpi.ua/ontologies/devices.owl#GalaxyS24_Camera"/>
+    <hasMemory rdf:resource="http://kpi.ua/ontologies/devices.owl#GalaxyS24_RAM"/>
+    <hasStorage rdf:resource="http://kpi.ua/ontologies/devices.owl#GalaxyS24_SSD"/>
+    <modelName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Galaxy S24</modelName>
+    <releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2024</releaseYear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#iPhone15_RAM">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Memory"/>
+    <sizeGB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</sizeGB>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndcc4925d0fa64d6a86abc90a9c1f6f81">
+    <rdf:first rdf:resource="http://kpi.ua/ontologies/devices.owl#Memory"/>
+    <rdf:rest rdf:nodeID="Nc201d7d23363476eb9b88be2da1079bf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#Android">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#OperatingSystem"/>
+    <developedBy rdf:resource="http://kpi.ua/ontologies/devices.owl#Google"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#iOS">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#OperatingSystem"/>
+    <developedBy rdf:resource="http://kpi.ua/ontologies/devices.owl#Apple"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#iPhone15_Battery">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Battery"/>
+    <capacityMAh rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3349</capacityMAh>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc61fe0963be84db3b43fa4eb10ecc236">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://kpi.ua/ontologies/devices.owl#hasCamera"/>
+    <owl:someValuesFrom rdf:resource="http://kpi.ua/ontologies/devices.owl#Camera"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#runsOn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://kpi.ua/ontologies/devices.owl#Device"/>
+    <rdfs:range rdf:resource="http://kpi.ua/ontologies/devices.owl#OperatingSystem"/>
+    <rdfs:label xml:lang="uk">працює під</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N031fadcc2a7e479e8e4b219cdeac9fd2">
+    <rdf:first rdf:resource="http://kpi.ua/ontologies/devices.owl#Screen"/>
+    <rdf:rest rdf:nodeID="N90675680506d411582e6985b6a50d9fc"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#hasScreen">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://kpi.ua/ontologies/devices.owl#hasComponent"/>
+    <rdfs:range rdf:resource="http://kpi.ua/ontologies/devices.owl#Screen"/>
+    <rdfs:label xml:lang="uk">має екран</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#macOS">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#OperatingSystem"/>
+    <developedBy rdf:resource="http://kpi.ua/ontologies/devices.owl#Apple"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4b58b11c70aa46fc9b9d9fc31dc43272">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://kpi.ua/ontologies/devices.owl#hasMemory"/>
+    <owl:someValuesFrom rdf:resource="http://kpi.ua/ontologies/devices.owl#Memory"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3048515523344ba5930ae0df12a70b4d">
+    <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.0</xsd:minInclusive>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#hasMemory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://kpi.ua/ontologies/devices.owl#hasComponent"/>
+    <rdfs:range rdf:resource="http://kpi.ua/ontologies/devices.owl#Memory"/>
+    <rdfs:label xml:lang="uk">має оперативну пам'ять</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#Laptop">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://kpi.ua/ontologies/devices.owl#PortableDevice"/>
+    <rdfs:subClassOf rdf:nodeID="N31231d5aaef044c1a9646366ffa18306"/>
+    <rdfs:subClassOf rdf:nodeID="Ncc8d7b434c8b4e6d9212504b771c9e56"/>
+    <rdfs:subClassOf rdf:nodeID="N4b58b11c70aa46fc9b9d9fc31dc43272"/>
+    <rdfs:subClassOf rdf:nodeID="Nc4ad670efa4d471dae7477686976b852"/>
+    <rdfs:label xml:lang="uk">Ноутбук</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne57736ee742d4b90b300b2b613504684">
+    <rdf:first rdf:nodeID="N3048515523344ba5930ae0df12a70b4d"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc0103a76aa8f4ef88f2a056b5275057b">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="Nb05ee9d0bc604b858848e8025ee716ad"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#hasStorage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://kpi.ua/ontologies/devices.owl#hasComponent"/>
+    <rdfs:range rdf:resource="http://kpi.ua/ontologies/devices.owl#Storage"/>
+    <rdfs:label xml:lang="uk">має накопичувач</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc201d7d23363476eb9b88be2da1079bf">
+    <rdf:first rdf:resource="http://kpi.ua/ontologies/devices.owl#Storage"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#GalaxyTabS9_Battery">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Battery"/>
+    <capacityMAh rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8400</capacityMAh>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naf517b8ba2cf4e088107a44d1cff77a2">
+    <rdf:first rdf:resource="http://kpi.ua/ontologies/devices.owl#Manufacturer"/>
+    <rdf:rest rdf:nodeID="N8a4b9eb1e951402292441835eefe74e7"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5202dbdc398b47cc8fadbc6183fdeabb">
+    <rdf:first rdf:nodeID="N5cb7024e3d9d472a87f0ee6db1619cf0"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nedaacddb8b924857bca2d9c1c527dfc4">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <owl:withRestrictions rdf:nodeID="Ne57736ee742d4b90b300b2b613504684"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1b7e9cb653bd433189c43d749d56a02c">
+    <rdf:first rdf:resource="http://kpi.ua/ontologies/devices.owl#Device"/>
+    <rdf:rest rdf:nodeID="Nd288dab5403d43d7bd23b243e70a29b1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#GalaxyS24_Screen">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Screen"/>
+    <screenSizeInches rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.2</screenSizeInches>
+    <resolution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2340x1080</resolution>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc4ad670efa4d471dae7477686976b852">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://kpi.ua/ontologies/devices.owl#hasStorage"/>
+    <owl:someValuesFrom rdf:resource="http://kpi.ua/ontologies/devices.owl#Storage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#Google">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Manufacturer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#MacBookAirM3_Battery">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Battery"/>
+    <capacityMAh rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4614</capacityMAh>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#Apple">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Manufacturer"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd7e2f4a527b8465c8312a2036b45859d">
+    <rdf:first rdf:resource="http://kpi.ua/ontologies/devices.owl#Tablet"/>
+    <rdf:rest rdf:nodeID="N65e07c8a0d71402097f81ab1cca39331"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N70ea0611f4b1441bbfc7ec57cf099f45">
+    <rdf:first rdf:resource="http://kpi.ua/ontologies/devices.owl#Component"/>
+    <rdf:rest rdf:nodeID="Naf517b8ba2cf4e088107a44d1cff77a2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8a4b9eb1e951402292441835eefe74e7">
+    <rdf:first rdf:resource="http://kpi.ua/ontologies/devices.owl#OperatingSystem"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6ed44c66c8724c18a1af0097ee9e8d56">
+    <rdf:first rdf:resource="http://kpi.ua/ontologies/devices.owl#Device"/>
+    <rdf:rest rdf:nodeID="N3620ea7161a2404a8c5e2360a6a0c391"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#Device">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label xml:lang="uk">Технічний пристрій</rdfs:label>
+    <rdfs:comment xml:lang="uk">Електронний пристрій, яким користується людина</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#hasCamera">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://kpi.ua/ontologies/devices.owl#hasComponent"/>
+    <rdfs:range rdf:resource="http://kpi.ua/ontologies/devices.owl#Camera"/>
+    <rdfs:label xml:lang="uk">має камеру</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3620ea7161a2404a8c5e2360a6a0c391">
+    <rdf:first rdf:nodeID="Nb4ff73f97bd341ceaf47793be3ce5097"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbd01971e4c794f4888946567869b12f4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://kpi.ua/ontologies/devices.owl#hasScreen"/>
+    <owl:onClass rdf:resource="http://kpi.ua/ontologies/devices.owl#Screen"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxQualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2ad9d25b4ac94941865c18405a385e2c">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N1a104d26f5f0409bbc797ec8f5d0af13"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc2b49f72e3be456986917681b9bcb5d2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://kpi.ua/ontologies/devices.owl#runsOn"/>
+    <owl:someValuesFrom rdf:resource="http://kpi.ua/ontologies/devices.owl#OperatingSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#Storage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://kpi.ua/ontologies/devices.owl#Component"/>
+    <rdfs:label xml:lang="uk">Накопичувач</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#GalaxyTabS9_Camera">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Camera"/>
+    <megapixels rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">13.0</megapixels>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N57fcc1f959724ff797ee8be892641a0d">
+    <rdf:first rdf:resource="http://kpi.ua/ontologies/devices.owl#Smartwatch"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc8528e1f247f4aae88b1e7c22bf30d5d">
+    <rdf:first rdf:resource="http://kpi.ua/ontologies/devices.owl#Battery"/>
+    <rdf:rest rdf:nodeID="Nf228b712b6f64e11957e6c316b2b79d2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#Manufacturer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label xml:lang="uk">Виробник</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N31231d5aaef044c1a9646366ffa18306">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://kpi.ua/ontologies/devices.owl#hasScreen"/>
+    <owl:onClass rdf:resource="http://kpi.ua/ontologies/devices.owl#Screen"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#iPhone15_Screen">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kpi.ua/ontologies/devices.owl#Screen"/>
+    <screenSizeInches rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.1</screenSizeInches>
+    <resolution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2556x1179</resolution>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#resolution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://kpi.ua/ontologies/devices.owl#Screen"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="uk">роздільна здатність</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N90675680506d411582e6985b6a50d9fc">
+    <rdf:first rdf:resource="http://kpi.ua/ontologies/devices.owl#Processor"/>
+    <rdf:rest rdf:nodeID="Nc8528e1f247f4aae88b1e7c22bf30d5d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N228a46df087248ebac8daf045ad76eed">
+    <rdf:first rdf:resource="http://kpi.ua/ontologies/devices.owl#Memory"/>
+    <rdf:rest rdf:nodeID="N86f4fed8b115406386e600a663514afa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#hasBattery">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://kpi.ua/ontologies/devices.owl#hasComponent"/>
+    <rdfs:range rdf:resource="http://kpi.ua/ontologies/devices.owl#Battery"/>
+    <rdfs:label xml:lang="uk">має акумулятор</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N511972d021b0408594e09544f3f28c55">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://kpi.ua/ontologies/devices.owl#hasProcessor"/>
+    <owl:someValuesFrom rdf:resource="http://kpi.ua/ontologies/devices.owl#Processor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#Processor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://kpi.ua/ontologies/devices.owl#Component"/>
+    <rdfs:label xml:lang="uk">Процесор</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb05ee9d0bc604b858848e8025ee716ad">
+    <rdf:first rdf:resource="http://kpi.ua/ontologies/devices.owl#Screen"/>
+    <rdf:rest rdf:nodeID="N5202dbdc398b47cc8fadbc6183fdeabb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kpi.ua/ontologies/devices.owl#Screen">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://kpi.ua/ontologies/devices.owl#Component"/>
+    <rdfs:label xml:lang="uk">Екран</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf228b712b6f64e11957e6c316b2b79d2">
+    <rdf:first rdf:resource="http://kpi.ua/ontologies/devices.owl#Camera"/>
+    <rdf:rest rdf:nodeID="Ndcc4925d0fa64d6a86abc90a9c1f6f81"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8a7ac23fcb9d47a8a64956a7adae27ab">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://kpi.ua/ontologies/devices.owl#hasProcessor"/>
+    <owl:someValuesFrom rdf:resource="http://kpi.ua/ontologies/devices.owl#Processor"/>
+  </rdf:Description>
+</rdf:RDF>

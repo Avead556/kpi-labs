@@ -1,0 +1,12 @@
+.git/
+.venv/
+.idea/
+__pycache__/
+*.pyc
+**/docs/
+*.md
+Dockerfile
+.dockerignore
+compose.yaml
+main.py
+ai/.data/

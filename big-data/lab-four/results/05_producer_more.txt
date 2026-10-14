@@ -1,0 +1,22 @@
+topic telecom-client-service-time already exists
+sent C-000101 call-center   170.2 s -> partition 0, offset 100
+sent C-000102 chat          431.0 s -> partition 0, offset 101
+sent C-000103 self-service   91.8 s -> partition 0, offset 102
+sent C-000104 call-center   208.5 s -> partition 0, offset 103
+sent C-000105 self-service   70.4 s -> partition 0, offset 104
+sent C-000106 call-center   102.1 s -> partition 0, offset 105
+sent C-000107 store         457.2 s -> partition 0, offset 106
+sent C-000108 self-service   36.6 s -> partition 0, offset 107
+sent C-000109 call-center   180.1 s -> partition 0, offset 108
+sent C-000110 self-service   75.7 s -> partition 0, offset 109
+sent C-000111 call-center   244.9 s -> partition 0, offset 110
+sent C-000112 store         289.5 s -> partition 0, offset 111
+sent C-000113 call-center   188.8 s -> partition 0, offset 112
+sent C-000114 store         529.3 s -> partition 0, offset 113
+sent C-000115 chat          205.2 s -> partition 0, offset 114
+sent C-000116 call-center   228.1 s -> partition 0, offset 115
+sent C-000117 store         606.8 s -> partition 0, offset 116
+sent C-000118 call-center   335.3 s -> partition 0, offset 117
+sent C-000119 chat          584.2 s -> partition 0, offset 118
+sent C-000120 chat          568.1 s -> partition 0, offset 119
+20 records in 0.1 s

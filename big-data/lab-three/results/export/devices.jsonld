@@ -1,0 +1,2099 @@
+[
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#Samsung",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Manufacturer"
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Технічні пристрої (смартфон, планшет, ноутбук, смарт-годинник, настільний комп'ютер), їхні компоненти, виробники й операційні системи. Варіант 5 лабораторної роботи №3 з дисципліни «Обробка надвеликих масивів даних»"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Онтологія технічних пристроїв"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "1.0"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#MacBookAirM3",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Laptop"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasBattery": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#MacBookAirM3_Battery"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasCamera": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#MacBookAirM3_Camera"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasMemory": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#MacBookAirM3_RAM"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasProcessor": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#AppleM3"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasScreen": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#MacBookAirM3_Screen"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasStorage": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#MacBookAirM3_SSD"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#manufacturedBy": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Apple"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#modelName": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "MacBook Air 13 M3"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#releaseYear": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 2024
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#runsOn": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#macOS"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#Component",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Складова частина пристрою"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Компонент"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#PortableDevice",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Пристрій з власним акумулятором, який носять із собою"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Портативний пристрій"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Device"
+      },
+      {
+        "@id": "_:N13f6b6a423684535abc3ae6eb3cfccd6"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#StationaryDevice"
+      }
+    ]
+  },
+  {
+    "@id": "_:N13f6b6a423684535abc3ae6eb3cfccd6",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasBattery"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Battery"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#iPhone15_Camera",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Camera"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#megapixels": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "48.0"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#Screen",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Екран"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Component"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyS24_RAM",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Memory"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#sizeGB": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 8
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#modelName",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Device"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "модель"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#StationaryDevice",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Пристрій, що працює від мережі на одному місці"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Стаціонарний пристрій"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Device"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#resolution",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Screen"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "роздільна здатність"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#DesktopComputer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Настільний комп'ютер"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#StationaryDevice"
+      },
+      {
+        "@id": "_:Nbd01971e4c794f4888946567869b12f4"
+      },
+      {
+        "@id": "_:N0bdb73deb9324607a8e0dc260c474646"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nbd01971e4c794f4888946567869b12f4",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#maxQualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "0"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Screen"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasScreen"
+      }
+    ]
+  },
+  {
+    "@id": "_:N0bdb73deb9324607a8e0dc260c474646",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasProcessor"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Processor"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#iPhone15_SSD",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Storage"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#sizeGB": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 128
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#hasStorage",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "має накопичувач"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Storage"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasComponent"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#Battery",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Акумулятор"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Component"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#releaseYear",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Device"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "рік випуску"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#Android",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#OperatingSystem"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#developedBy": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Google"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#runsOn",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Device"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "працює під"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#OperatingSystem"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#megapixels",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Camera"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "роздільність камери, Мп"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyTabS9_Battery",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Battery"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#capacityMAh": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 8400
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#hasScreen",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "має екран"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Screen"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasComponent"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyTabS9_SSD",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Storage"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#sizeGB": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 128
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#clockSpeedGHz",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Processor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "частота процесора, ГГц"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyTabS9_Camera",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Camera"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#megapixels": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "13.0"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#Camera",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Камера"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Component"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#hasMemory",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "має оперативну пам'ять"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Memory"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasComponent"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#sizeGB",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:N491768b9ce6c4aaf94e00639bb1b2d10"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "обсяг, ГБ"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "_:N491768b9ce6c4aaf94e00639bb1b2d10",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://kpi.ua/ontologies/devices.owl#Memory"
+          },
+          {
+            "@id": "http://kpi.ua/ontologies/devices.owl#Storage"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyTabS9_RAM",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Memory"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#sizeGB": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 8
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#MacBookAirM3_SSD",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Storage"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#sizeGB": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 256
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#iPhone15",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Smartphone"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasBattery": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#iPhone15_Battery"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasCamera": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#iPhone15_Camera"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasMemory": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#iPhone15_RAM"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasProcessor": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#A16Bionic"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasScreen": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#iPhone15_Screen"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasStorage": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#iPhone15_SSD"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#manufacturedBy": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Apple"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#modelName": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "iPhone 15"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#releaseYear": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 2023
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#runsOn": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#iOS"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#LargeScreenDevice",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Визначений клас: екран від 10 дюймів"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Пристрій з великим екраном"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Device"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "_:Nb2c6debe7cf24e659fc5988cd694e451"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nb2c6debe7cf24e659fc5988cd694e451",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#intersectionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://kpi.ua/ontologies/devices.owl#Device"
+          },
+          {
+            "@id": "_:Nb4ff73f97bd341ceaf47793be3ce5097"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:Nb4ff73f97bd341ceaf47793be3ce5097",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasScreen"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "_:Nc0103a76aa8f4ef88f2a056b5275057b"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nc0103a76aa8f4ef88f2a056b5275057b",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#intersectionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://kpi.ua/ontologies/devices.owl#Screen"
+          },
+          {
+            "@id": "_:N5cb7024e3d9d472a87f0ee6db1619cf0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:N5cb7024e3d9d472a87f0ee6db1619cf0",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#screenSizeInches"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "_:Nedaacddb8b924857bca2d9c1c527dfc4"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nedaacddb8b924857bca2d9c1c527dfc4",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Datatype"
+    ],
+    "http://www.w3.org/2002/07/owl#onDatatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#withRestrictions": [
+      {
+        "@list": [
+          {
+            "@id": "_:N3048515523344ba5930ae0df12a70b4d"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:N3048515523344ba5930ae0df12a70b4d",
+    "http://www.w3.org/2001/XMLSchema#minInclusive": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "10.0"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#hasProcessor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "має процесор"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Processor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasComponent"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#OperatingSystem",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Операційна система"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#Snapdragon8Gen2",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Processor"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#clockSpeedGHz": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.36"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#coreCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 8
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#Memory",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Оперативна пам'ять"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Component"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyS24_SSD",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Storage"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#sizeGB": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 128
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#screenSizeInches",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Screen"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "розмір екрана, дюймів"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#hasBattery",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "має акумулятор"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Battery"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasComponent"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#Manufacturer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Виробник"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#A16Bionic",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Processor"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#clockSpeedGHz": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.46"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#coreCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 6
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#coreCount",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Processor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "кількість ядер"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#CameraDevice",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Визначений клас: пристрій, що має хоча б одну камеру"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Пристрій з камерою"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Device"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "_:Nafa92eee27594652a69af0d440750d9a"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nafa92eee27594652a69af0d440750d9a",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#intersectionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://kpi.ua/ontologies/devices.owl#Device"
+          },
+          {
+            "@id": "_:Nf3925e64d246428fbe5c9901b288f2b6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:Nf3925e64d246428fbe5c9901b288f2b6",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasCamera"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Camera"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyTabS9_Screen",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Screen"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#resolution": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "2560x1600"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#screenSizeInches": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "11.0"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#hasComponent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Device"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "має компонент"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Component"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#isComponentOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#Processor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Процесор"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Component"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#iOS",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#OperatingSystem"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#developedBy": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Apple"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#Smartphone",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Смартфон"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#PortableDevice"
+      },
+      {
+        "@id": "_:N23232cfd2079416b86e2a0734503febc"
+      },
+      {
+        "@id": "_:N8c1e4428428e494b8978fdea40a8ea4f"
+      },
+      {
+        "@id": "_:N511972d021b0408594e09544f3f28c55"
+      },
+      {
+        "@id": "_:Nc2b49f72e3be456986917681b9bcb5d2"
+      },
+      {
+        "@id": "_:Nc61fe0963be84db3b43fa4eb10ecc236"
+      }
+    ]
+  },
+  {
+    "@id": "_:N23232cfd2079416b86e2a0734503febc",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Battery"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasBattery"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#qualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ]
+  },
+  {
+    "@id": "_:N8c1e4428428e494b8978fdea40a8ea4f",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Screen"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasScreen"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#qualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ]
+  },
+  {
+    "@id": "_:N511972d021b0408594e09544f3f28c55",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasProcessor"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Processor"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nc2b49f72e3be456986917681b9bcb5d2",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#runsOn"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#OperatingSystem"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nc61fe0963be84db3b43fa4eb10ecc236",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasCamera"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Camera"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#macOS",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#OperatingSystem"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#developedBy": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Apple"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#Device",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Електронний пристрій, яким користується людина"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Технічний пристрій"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#Tablet",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Планшет"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#PortableDevice"
+      },
+      {
+        "@id": "_:Nf7d52f288f4f48ce9edaf6379a03bc1b"
+      },
+      {
+        "@id": "_:N8a7ac23fcb9d47a8a64956a7adae27ab"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nf7d52f288f4f48ce9edaf6379a03bc1b",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Screen"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasScreen"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#qualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ]
+  },
+  {
+    "@id": "_:N8a7ac23fcb9d47a8a64956a7adae27ab",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasProcessor"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Processor"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#developedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#OperatingSystem"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "розроблена"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Manufacturer"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#isComponentOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "є компонентом"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasComponent"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#AppleM3",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Processor"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#clockSpeedGHz": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4.05"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#coreCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 8
+      }
+    ]
+  },
+  {
+    "@id": "_:N18c7ac9a21794dd7b13ced3866c41f6a",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "http://kpi.ua/ontologies/devices.owl#Screen"
+          },
+          {
+            "@id": "http://kpi.ua/ontologies/devices.owl#Processor"
+          },
+          {
+            "@id": "http://kpi.ua/ontologies/devices.owl#Battery"
+          },
+          {
+            "@id": "http://kpi.ua/ontologies/devices.owl#Camera"
+          },
+          {
+            "@id": "http://kpi.ua/ontologies/devices.owl#Memory"
+          },
+          {
+            "@id": "http://kpi.ua/ontologies/devices.owl#Storage"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#Apple",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Manufacturer"
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#manufacturedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Device"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "виготовлений"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Manufacturer"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#manufactures"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyS24_Camera",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Camera"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#megapixels": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "50.0"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyTabS9",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Tablet"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasBattery": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyTabS9_Battery"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasCamera": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyTabS9_Camera"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasMemory": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyTabS9_RAM"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasProcessor": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Snapdragon8Gen2"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasScreen": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyTabS9_Screen"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasStorage": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyTabS9_SSD"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#manufacturedBy": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Samsung"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#modelName": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "Galaxy Tab S9"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#releaseYear": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 2023
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#runsOn": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Android"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#Smartwatch",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Смарт-годинник"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#PortableDevice"
+      },
+      {
+        "@id": "_:N85f6fa73fd4a441693fc78911c369cfd"
+      },
+      {
+        "@id": "_:N666a217040d34761841337c642670548"
+      }
+    ]
+  },
+  {
+    "@id": "_:N85f6fa73fd4a441693fc78911c369cfd",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Screen"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasScreen"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#qualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ]
+  },
+  {
+    "@id": "_:N666a217040d34761841337c642670548",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#maxQualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "0"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Camera"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasCamera"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#Google",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Manufacturer"
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#MacBookAirM3_Battery",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Battery"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#capacityMAh": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 4614
+      }
+    ]
+  },
+  {
+    "@id": "_:N6c5c4feb51cf48b2bfbd4fbb726b0a5f",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "http://kpi.ua/ontologies/devices.owl#Smartphone"
+          },
+          {
+            "@id": "http://kpi.ua/ontologies/devices.owl#Tablet"
+          },
+          {
+            "@id": "http://kpi.ua/ontologies/devices.owl#Laptop"
+          },
+          {
+            "@id": "http://kpi.ua/ontologies/devices.owl#Smartwatch"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:N2ad9d25b4ac94941865c18405a385e2c",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "http://kpi.ua/ontologies/devices.owl#Device"
+          },
+          {
+            "@id": "http://kpi.ua/ontologies/devices.owl#Component"
+          },
+          {
+            "@id": "http://kpi.ua/ontologies/devices.owl#Manufacturer"
+          },
+          {
+            "@id": "http://kpi.ua/ontologies/devices.owl#OperatingSystem"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#iPhone15_RAM",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Memory"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#sizeGB": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 6
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#MacBookAirM3_RAM",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Memory"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#sizeGB": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 8
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#Storage",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Накопичувач"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Component"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#Laptop",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Ноутбук"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#PortableDevice"
+      },
+      {
+        "@id": "_:N31231d5aaef044c1a9646366ffa18306"
+      },
+      {
+        "@id": "_:Ncc8d7b434c8b4e6d9212504b771c9e56"
+      },
+      {
+        "@id": "_:N4b58b11c70aa46fc9b9d9fc31dc43272"
+      },
+      {
+        "@id": "_:Nc4ad670efa4d471dae7477686976b852"
+      }
+    ]
+  },
+  {
+    "@id": "_:N31231d5aaef044c1a9646366ffa18306",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Screen"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasScreen"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#qualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ]
+  },
+  {
+    "@id": "_:Ncc8d7b434c8b4e6d9212504b771c9e56",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasProcessor"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Processor"
+      }
+    ]
+  },
+  {
+    "@id": "_:N4b58b11c70aa46fc9b9d9fc31dc43272",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasMemory"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Memory"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nc4ad670efa4d471dae7477686976b852",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasStorage"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Storage"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyS24_Battery",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Battery"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#capacityMAh": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 4000
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#hasCamera",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "має камеру"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Camera"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#hasComponent"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#manufactures",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "виготовляє"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#manufacturedBy"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#MacBookAirM3_Camera",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Camera"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#megapixels": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2.1"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#capacityMAh",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Battery"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "ємність акумулятора, мА·год"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#iPhone15_Battery",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Battery"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#capacityMAh": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 3349
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#MacBookAirM3_Screen",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Screen"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#resolution": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "2560x1664"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#screenSizeInches": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "13.6"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#iPhone15_Screen",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Screen"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#resolution": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "2556x1179"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#screenSizeInches": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "6.1"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#Exynos2400",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Processor"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#clockSpeedGHz": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.2"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#coreCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 10
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyS24_Screen",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Screen"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#resolution": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "2340x1080"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#screenSizeInches": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "6.2"
+      }
+    ]
+  },
+  {
+    "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyS24",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://kpi.ua/ontologies/devices.owl#Smartphone"
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasBattery": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyS24_Battery"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasCamera": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyS24_Camera"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasMemory": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyS24_RAM"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasProcessor": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Exynos2400"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasScreen": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyS24_Screen"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#hasStorage": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#GalaxyS24_SSD"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#manufacturedBy": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Samsung"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#modelName": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "Galaxy S24"
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#releaseYear": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 2024
+      }
+    ],
+    "http://kpi.ua/ontologies/devices.owl#runsOn": [
+      {
+        "@id": "http://kpi.ua/ontologies/devices.owl#Android"
+      }
+    ]
+  }
+]

@@ -1,0 +1,35 @@
+Spark 4.2.0, master local[*], 12 cores
+== Mapper output ==
+A.txt: <this, 1> <is, 1> <the, 1> <a, 1> <file, 1> <it, 1> <has, 1> <words, 1> <in, 1> <it, 1>
+B.txt: <welcome, 1> <to, 1> <the, 1> <b, 1> <file, 1> <it, 1> <has, 1> <words, 1> <too, 1>
+
+== Reducer input for "it" ==
+key="it"; values=iterator[1, 1, 1]
+
+== Word count, A.txt + B.txt ==
+<it, 3>
+<file, 2>
+<has, 2>
+<the, 2>
+<words, 2>
+<a, 1>
+<b, 1>
+<in, 1>
+<is, 1>
+<this, 1>
+<to, 1>
+<too, 1>
+<welcome, 1>
+
+== Shakespeare: 6 files, 6 partitions ==
+words: 132331, distinct: 12173, 0.5 s
+top 15: the 4179, and 3859, to 2947, i 2626, of 2485, a 2131, in 1908, that 1872, my 1867, you 1687, is 1435, with 1278, not 1249, it 1204, his 1098
+saved to results/wordcount: part-00000, part-00001, part-00002, part-00003, part-00004, part-00005
+
+== Words per document ==
+asyoulikeit.txt    22591
+hamlet.txt         32142
+lucrece.txt        15148
+macbeth.txt        18566
+romeo.txt          26122
+sonnets.txt        17762

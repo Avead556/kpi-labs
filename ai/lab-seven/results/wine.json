@@ -1,0 +1,875 @@
+{
+ "dataset": "sklearn.datasets.load_wine",
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "train_size": 124,
+ "test_size": 54,
+ "feature_names": [
+  "alcohol",
+  "malic_acid",
+  "ash",
+  "alcalinity_of_ash",
+  "magnesium",
+  "total_phenols",
+  "flavanoids",
+  "nonflavanoid_phenols",
+  "proanthocyanins",
+  "color_intensity",
+  "hue",
+  "od280/od315_of_diluted_wines",
+  "proline"
+ ],
+ "class_names": [
+  "class_0",
+  "class_1",
+  "class_2"
+ ],
+ "best_2d": "c_adamw",
+ "best_all": "g_all_std",
+ "experiments": [
+  {
+   "key": "base",
+   "item": "—",
+   "label": "базова (посібник)",
+   "description": "ознак: 2; шари 5×5, sigmoid; adam lr=0.001, batch=10",
+   "config": {
+    "features": 2,
+    "standardize": false,
+    "hidden": [
+     5,
+     5
+    ],
+    "activation": "sigmoid",
+    "optimizer": "adam",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.8518518805503845,
+    0.8148148059844971,
+    0.8888888955116272
+   ],
+   "test_mean": 0.8518518606821696,
+   "test_std": 0.030240620417121274,
+   "train_mean": 0.8145161271095276,
+   "seconds": 15.104634555658171
+  },
+  {
+   "key": "a_w10",
+   "item": "a",
+   "label": "2×10 нейронів",
+   "description": "ознак: 2; шари 10×10, sigmoid; adam lr=0.001, batch=10",
+   "config": {
+    "features": 2,
+    "standardize": false,
+    "hidden": [
+     10,
+     10
+    ],
+    "activation": "sigmoid",
+    "optimizer": "adam",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.8148148059844971,
+    0.8148148059844971,
+    0.8148148059844971
+   ],
+   "test_mean": 0.8148148059844971,
+   "test_std": 0.0,
+   "train_mean": 0.8360214829444885,
+   "seconds": 16.184038652669795
+  },
+  {
+   "key": "a_w20",
+   "item": "a",
+   "label": "2×20 нейронів",
+   "description": "ознак: 2; шари 20×20, sigmoid; adam lr=0.001, batch=10",
+   "config": {
+    "features": 2,
+    "standardize": false,
+    "hidden": [
+     20,
+     20
+    ],
+    "activation": "sigmoid",
+    "optimizer": "adam",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.8148148059844971,
+    0.8148148059844971,
+    0.7962962985038757
+   ],
+   "test_mean": 0.8086419701576233,
+   "test_std": 0.008729708144667437,
+   "train_mean": 0.8306451439857483,
+   "seconds": 16.78819904164023
+  },
+  {
+   "key": "a_w50",
+   "item": "a",
+   "label": "2×50 нейронів",
+   "description": "ознак: 2; шари 50×50, sigmoid; adam lr=0.001, batch=10",
+   "config": {
+    "features": 2,
+    "standardize": false,
+    "hidden": [
+     50,
+     50
+    ],
+    "activation": "sigmoid",
+    "optimizer": "adam",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.8148148059844971,
+    0.7962962985038757,
+    0.7962962985038757
+   ],
+   "test_mean": 0.8024691343307495,
+   "test_std": 0.008729708144667437,
+   "train_mean": 0.8467742204666138,
+   "seconds": 17.49183801365628
+  },
+  {
+   "key": "b_d1",
+   "item": "b",
+   "label": "1 прихований шар",
+   "description": "ознак: 2; шари 5, sigmoid; adam lr=0.001, batch=10",
+   "config": {
+    "features": 2,
+    "standardize": false,
+    "hidden": [
+     5
+    ],
+    "activation": "sigmoid",
+    "optimizer": "adam",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.8333333134651184,
+    0.8333333134651184,
+    0.8518518805503845
+   ],
+   "test_mean": 0.8395061691602071,
+   "test_std": 0.008729736242566444,
+   "train_mean": 0.8172042965888977,
+   "seconds": 12.527749583668387
+  },
+  {
+   "key": "b_d3",
+   "item": "b",
+   "label": "3 приховані шари",
+   "description": "ознак: 2; шари 5×5×5, sigmoid; adam lr=0.001, batch=10",
+   "config": {
+    "features": 2,
+    "standardize": false,
+    "hidden": [
+     5,
+     5,
+     5
+    ],
+    "activation": "sigmoid",
+    "optimizer": "adam",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.7037037014961243,
+    0.8333333134651184,
+    0.7592592835426331
+   ],
+   "test_mean": 0.7654320995012919,
+   "test_std": 0.053100764699155395,
+   "train_mean": 0.7419354915618896,
+   "seconds": 19.420980388686683
+  },
+  {
+   "key": "b_d4",
+   "item": "b",
+   "label": "4 приховані шари",
+   "description": "ознак: 2; шари 5×5×5×5, sigmoid; adam lr=0.001, batch=10",
+   "config": {
+    "features": 2,
+    "standardize": false,
+    "hidden": [
+     5,
+     5,
+     5,
+     5
+    ],
+    "activation": "sigmoid",
+    "optimizer": "adam",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.7962962985038757,
+    0.7222222089767456,
+    0.5555555820465088
+   ],
+   "test_mean": 0.6913580298423767,
+   "test_std": 0.10067595312132352,
+   "train_mean": 0.7016129096349081,
+   "seconds": 26.165793083336514
+  },
+  {
+   "key": "c_sgd",
+   "item": "c",
+   "label": "SGD",
+   "description": "ознак: 2; шари 5×5, sigmoid; sgd lr=0.001, batch=10",
+   "config": {
+    "features": 2,
+    "standardize": false,
+    "hidden": [
+     5,
+     5
+    ],
+    "activation": "sigmoid",
+    "optimizer": "sgd",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.3888888955116272,
+    0.3888888955116272,
+    0.3888888955116272
+   ],
+   "test_mean": 0.3888888955116272,
+   "test_std": 0.0,
+   "train_mean": 0.4032258093357086,
+   "seconds": 12.833651041340394
+  },
+  {
+   "key": "c_mom",
+   "item": "c",
+   "label": "SGD + momentum 0.9",
+   "description": "ознак: 2; шари 5×5, sigmoid; sgd_momentum lr=0.001, batch=10",
+   "config": {
+    "features": 2,
+    "standardize": false,
+    "hidden": [
+     5,
+     5
+    ],
+    "activation": "sigmoid",
+    "optimizer": "sgd_momentum",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.5740740895271301,
+    0.6111111044883728,
+    0.5925925970077515
+   ],
+   "test_mean": 0.5925925970077515,
+   "test_std": 0.01512029804181184,
+   "train_mean": 0.551075279712677,
+   "seconds": 16.119881235974997
+  },
+  {
+   "key": "c_rms",
+   "item": "c",
+   "label": "RMSprop",
+   "description": "ознак: 2; шари 5×5, sigmoid; rmsprop lr=0.001, batch=10",
+   "config": {
+    "features": 2,
+    "standardize": false,
+    "hidden": [
+     5,
+     5
+    ],
+    "activation": "sigmoid",
+    "optimizer": "rmsprop",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.8148148059844971,
+    0.8148148059844971,
+    0.8518518805503845
+   ],
+   "test_mean": 0.8271604975064596,
+   "test_std": 0.01745944438723388,
+   "train_mean": 0.8064516186714172,
+   "seconds": 21.887214777680736
+  },
+  {
+   "key": "c_adamw",
+   "item": "c",
+   "label": "AdamW",
+   "description": "ознак: 2; шари 5×5, sigmoid; adamw lr=0.001, batch=10, wd=0.01",
+   "config": {
+    "features": 2,
+    "standardize": false,
+    "hidden": [
+     5,
+     5
+    ],
+    "activation": "sigmoid",
+    "optimizer": "adamw",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.01,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.8518518805503845,
+    0.8333333134651184,
+    0.8703703880310059
+   ],
+   "test_mean": 0.8518518606821696,
+   "test_std": 0.015120322375312701,
+   "train_mean": 0.8145161271095276,
+   "seconds": 32.72086368064629
+  },
+  {
+   "key": "d_lr4",
+   "item": "d",
+   "label": "lr = 1e-4",
+   "description": "ознак: 2; шари 5×5, sigmoid; adam lr=0.0001, batch=10",
+   "config": {
+    "features": 2,
+    "standardize": false,
+    "hidden": [
+     5,
+     5
+    ],
+    "activation": "sigmoid",
+    "optimizer": "adam",
+    "lr": 0.0001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.5,
+    0.5370370149612427,
+    0.48148149251937866
+   ],
+   "test_mean": 0.5061728358268738,
+   "test_std": 0.023096636768965107,
+   "train_mean": 0.4973118305206299,
+   "seconds": 27.2599190690089
+  },
+  {
+   "key": "d_lr2",
+   "item": "d",
+   "label": "lr = 1e-2",
+   "description": "ознак: 2; шари 5×5, sigmoid; adam lr=0.01, batch=10",
+   "config": {
+    "features": 2,
+    "standardize": false,
+    "hidden": [
+     5,
+     5
+    ],
+    "activation": "sigmoid",
+    "optimizer": "adam",
+    "lr": 0.01,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.7592592835426331,
+    0.7962962985038757,
+    0.7592592835426331
+   ],
+   "test_mean": 0.7716049551963806,
+   "test_std": 0.017459416289334874,
+   "train_mean": 0.8602150678634644,
+   "seconds": 24.013030041668873
+  },
+  {
+   "key": "d_lr1",
+   "item": "d",
+   "label": "lr = 1e-1",
+   "description": "ознак: 2; шари 5×5, sigmoid; adam lr=0.1, batch=10",
+   "config": {
+    "features": 2,
+    "standardize": false,
+    "hidden": [
+     5,
+     5
+    ],
+    "activation": "sigmoid",
+    "optimizer": "adam",
+    "lr": 0.1,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.3888888955116272,
+    0.3888888955116272,
+    0.5555555820465088
+   ],
+   "test_mean": 0.4444444576899211,
+   "test_std": 0.07856742949780494,
+   "train_mean": 0.45430107911427814,
+   "seconds": 25.744252347348567
+  },
+  {
+   "key": "e_tanh",
+   "item": "e",
+   "label": "Tanh",
+   "description": "ознак: 2; шари 5×5, tanh; adam lr=0.001, batch=10",
+   "config": {
+    "features": 2,
+    "standardize": false,
+    "hidden": [
+     5,
+     5
+    ],
+    "activation": "tanh",
+    "optimizer": "adam",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.8333333134651184,
+    0.7962962985038757,
+    0.8148148059844971
+   ],
+   "test_mean": 0.8148148059844971,
+   "test_std": 0.01512029804181184,
+   "train_mean": 0.852150559425354,
+   "seconds": 23.98313745833002
+  },
+  {
+   "key": "e_relu",
+   "item": "e",
+   "label": "ReLU",
+   "description": "ознак: 2; шари 5×5, relu; adam lr=0.001, batch=10",
+   "config": {
+    "features": 2,
+    "standardize": false,
+    "hidden": [
+     5,
+     5
+    ],
+    "activation": "relu",
+    "optimizer": "adam",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.8148148059844971,
+    0.8148148059844971,
+    0.8148148059844971
+   ],
+   "test_mean": 0.8148148059844971,
+   "test_std": 0.0,
+   "train_mean": 0.8225806355476379,
+   "seconds": 28.33347245833526
+  },
+  {
+   "key": "e_elu",
+   "item": "e",
+   "label": "ELU",
+   "description": "ознак: 2; шари 5×5, elu; adam lr=0.001, batch=10",
+   "config": {
+    "features": 2,
+    "standardize": false,
+    "hidden": [
+     5,
+     5
+    ],
+    "activation": "elu",
+    "optimizer": "adam",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.8148148059844971,
+    0.7962962985038757,
+    0.8148148059844971
+   ],
+   "test_mean": 0.8086419701576233,
+   "test_std": 0.008729708144667437,
+   "train_mean": 0.8279569745063782,
+   "seconds": 29.89301716701205
+  },
+  {
+   "key": "e_leaky",
+   "item": "e",
+   "label": "LeakyReLU",
+   "description": "ознак: 2; шари 5×5, leaky_relu; adam lr=0.001, batch=10",
+   "config": {
+    "features": 2,
+    "standardize": false,
+    "hidden": [
+     5,
+     5
+    ],
+    "activation": "leaky_relu",
+    "optimizer": "adam",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.8333333134651184,
+    0.8148148059844971,
+    0.8703703880310059
+   ],
+   "test_mean": 0.8395061691602071,
+   "test_std": 0.023096663318985914,
+   "train_mean": 0.8279569943745931,
+   "seconds": 29.094651555332046
+  },
+  {
+   "key": "f_all",
+   "item": "f",
+   "label": "усі 13 ознак",
+   "description": "ознак: усі; шари 5×5, sigmoid; adam lr=0.001, batch=10",
+   "config": {
+    "features": null,
+    "standardize": false,
+    "hidden": [
+     5,
+     5
+    ],
+    "activation": "sigmoid",
+    "optimizer": "adam",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.3888888955116272,
+    0.9444444179534912,
+    0.9259259104728699
+   ],
+   "test_mean": 0.7530864079793295,
+   "test_std": 0.2576374776639636,
+   "train_mean": 0.7930107613404592,
+   "seconds": 21.970767485986773
+  },
+  {
+   "key": "g_std",
+   "item": "g",
+   "label": "z-нормалізація",
+   "description": "ознак: 2, z-норм.; шари 5×5, sigmoid; adam lr=0.001, batch=10",
+   "config": {
+    "features": 2,
+    "standardize": true,
+    "hidden": [
+     5,
+     5
+    ],
+    "activation": "sigmoid",
+    "optimizer": "adam",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.7407407164573669,
+    0.7592592835426331,
+    0.7777777910232544
+   ],
+   "test_mean": 0.7592592636744181,
+   "test_std": 0.015120322375312701,
+   "train_mean": 0.8440860311190287,
+   "seconds": 26.741444222338032
+  },
+  {
+   "key": "g_all_std",
+   "item": "g",
+   "label": "13 ознак + z-норм.",
+   "description": "ознак: усі, z-норм.; шари 5×5, sigmoid; adam lr=0.001, batch=10",
+   "config": {
+    "features": null,
+    "standardize": true,
+    "hidden": [
+     5,
+     5
+    ],
+    "activation": "sigmoid",
+    "optimizer": "adam",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "test_mean": 1.0,
+   "test_std": 0.0,
+   "train_mean": 1.0,
+   "seconds": 32.66242737468565
+  },
+  {
+   "key": "g_batch32",
+   "item": "g",
+   "label": "batch = 32",
+   "description": "ознак: 2; шари 5×5, sigmoid; adam lr=0.001, batch=32",
+   "config": {
+    "features": 2,
+    "standardize": false,
+    "hidden": [
+     5,
+     5
+    ],
+    "activation": "sigmoid",
+    "optimizer": "adam",
+    "lr": 0.001,
+    "batch_size": 32,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.7777777910232544,
+    0.8333333134651184,
+    0.7962962985038757
+   ],
+   "test_mean": 0.8024691343307495,
+   "test_std": 0.023096636768965107,
+   "train_mean": 0.7876344124476115,
+   "seconds": 7.409690639004111
+  },
+  {
+   "key": "g_dropout",
+   "item": "g",
+   "label": "dropout 0.2, 2×20",
+   "description": "ознак: 2; шари 20×20, sigmoid; adam lr=0.001, batch=10, dropout=0.2",
+   "config": {
+    "features": 2,
+    "standardize": false,
+    "hidden": [
+     20,
+     20
+    ],
+    "activation": "sigmoid",
+    "optimizer": "adam",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.2
+   },
+   "test_acc": [
+    0.8333333134651184,
+    0.8518518805503845,
+    0.8518518805503845
+   ],
+   "test_mean": 0.8456790248552958,
+   "test_std": 0.008729736242566444,
+   "train_mean": 0.8118279576301575,
+   "seconds": 41.08111697233593
+  },
+  {
+   "key": "h_2d_tanh",
+   "item": "h",
+   "label": "2 ознаки: z-норм., 2×20 tanh, lr 1e-2",
+   "description": "ознак: 2, z-норм.; шари 20×20, tanh; adam lr=0.01, batch=10",
+   "config": {
+    "features": 2,
+    "standardize": true,
+    "hidden": [
+     20,
+     20
+    ],
+    "activation": "tanh",
+    "optimizer": "adam",
+    "lr": 0.01,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.7407407164573669,
+    0.7592592835426331,
+    0.7407407164573669
+   ],
+   "test_mean": 0.7469135721524557,
+   "test_std": 0.008729736242566444,
+   "train_mean": 0.975806454817454,
+   "seconds": 62.09309184733623
+  },
+  {
+   "key": "h_2d_relu",
+   "item": "h",
+   "label": "2 ознаки: z-норм., 2×20 ReLU",
+   "description": "ознак: 2, z-норм.; шари 20×20, relu; adam lr=0.001, batch=10",
+   "config": {
+    "features": 2,
+    "standardize": true,
+    "hidden": [
+     20,
+     20
+    ],
+    "activation": "relu",
+    "optimizer": "adam",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.7037037014961243,
+    0.7222222089767456,
+    0.7222222089767456
+   ],
+   "test_mean": 0.7160493731498718,
+   "test_std": 0.008729708144667437,
+   "train_mean": 0.9704300959904989,
+   "seconds": 86.69421711100343
+  },
+  {
+   "key": "h_2d_elu_wd",
+   "item": "h",
+   "label": "2 ознаки: z-норм., 2×10 ELU, AdamW",
+   "description": "ознак: 2, z-норм.; шари 10×10, elu; adamw lr=0.001, batch=10, wd=0.01",
+   "config": {
+    "features": 2,
+    "standardize": true,
+    "hidden": [
+     10,
+     10
+    ],
+    "activation": "elu",
+    "optimizer": "adamw",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.01,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.7407407164573669,
+    0.7222222089767456,
+    0.7777777910232544
+   ],
+   "test_mean": 0.7469135721524557,
+   "test_std": 0.023096663318985914,
+   "train_mean": 0.8870967626571655,
+   "seconds": 106.73994380565516
+  },
+  {
+   "key": "h_all_relu",
+   "item": "h",
+   "label": "13 ознак: z-норм., 2×20 ReLU",
+   "description": "ознак: усі, z-норм.; шари 20×20, relu; adam lr=0.001, batch=10",
+   "config": {
+    "features": null,
+    "standardize": true,
+    "hidden": [
+     20,
+     20
+    ],
+    "activation": "relu",
+    "optimizer": "adam",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.0,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "test_mean": 1.0,
+   "test_std": 0.0,
+   "train_mean": 1.0,
+   "seconds": 118.34794134699041
+  },
+  {
+   "key": "h_all_1x10",
+   "item": "h",
+   "label": "13 ознак: z-норм., 1×10 ReLU, AdamW",
+   "description": "ознак: усі, z-норм.; шари 10, relu; adamw lr=0.001, batch=10, wd=0.01",
+   "config": {
+    "features": null,
+    "standardize": true,
+    "hidden": [
+     10
+    ],
+    "activation": "relu",
+    "optimizer": "adamw",
+    "lr": 0.001,
+    "batch_size": 10,
+    "epochs": 5000,
+    "weight_decay": 0.01,
+    "dropout": 0.0
+   },
+   "test_acc": [
+    0.9814814925193787,
+    0.9814814925193787,
+    1.0
+   ],
+   "test_mean": 0.9876543283462524,
+   "test_std": 0.008729708144667437,
+   "train_mean": 1.0,
+   "seconds": 72.79888849965452
+  }
+ ]
+}

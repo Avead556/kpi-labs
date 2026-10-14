@@ -1,0 +1,30 @@
+subscribed to telecom-client-service-time as group service-time-metrics
+p0 offset  100: C-000101 call-center   170.2 s | average over 1 clients  170.2 s
+p0 offset  101: C-000102 chat          431.0 s | average over 2 clients  300.6 s
+p0 offset  102: C-000103 self-service   91.8 s | average over 3 clients  231.0 s
+p0 offset  103: C-000104 call-center   208.5 s | average over 4 clients  225.4 s
+p0 offset  104: C-000105 self-service   70.4 s | average over 5 clients  194.4 s
+p0 offset  105: C-000106 call-center   102.1 s | average over 6 clients  179.0 s
+p0 offset  106: C-000107 store         457.2 s | average over 7 clients  218.7 s
+p0 offset  107: C-000108 self-service   36.6 s | average over 8 clients  196.0 s
+p0 offset  108: C-000109 call-center   180.1 s | average over 9 clients  194.2 s
+p0 offset  109: C-000110 self-service   75.7 s | average over 10 clients  182.4 s
+  -- 10 clients: average 182.4 s (3.04 min), std 148.3 s, min 36.6 s, max 457.2 s
+p0 offset  110: C-000111 call-center   244.9 s | average over 11 clients  188.0 s
+p0 offset  111: C-000112 store         289.5 s | average over 12 clients  196.5 s
+p0 offset  112: C-000113 call-center   188.8 s | average over 13 clients  195.9 s
+p0 offset  113: C-000114 store         529.3 s | average over 14 clients  219.7 s
+p0 offset  114: C-000115 chat          205.2 s | average over 15 clients  218.8 s
+p0 offset  115: C-000116 call-center   228.1 s | average over 16 clients  219.3 s
+p0 offset  116: C-000117 store         606.8 s | average over 17 clients  242.1 s
+p0 offset  117: C-000118 call-center   335.3 s | average over 18 clients  247.3 s
+p0 offset  118: C-000119 chat          584.2 s | average over 19 clients  265.0 s
+p0 offset  119: C-000120 chat          568.1 s | average over 20 clients  280.2 s
+  -- 20 clients: average 280.2 s (4.67 min), std 186.2 s, min 36.6 s, max 606.8 s
+
+== Summary: 20 clients in 6.2 s ==
+average service time 280.2 s (4.67 min), std 186.2 s, min 36.6 s, max 606.8 s
+  store           4 clients, average  470.7 s
+  chat            4 clients, average  447.1 s
+  call-center     8 clients, average  207.2 s
+  self-service    4 clients, average   68.6 s

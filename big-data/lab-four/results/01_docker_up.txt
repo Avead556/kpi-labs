@@ -1,0 +1,7 @@
+$ docker --version
+Docker version 27.4.0, build bde2b89
+$ docker ps --filter name=kafka
+CONTAINER ID   IMAGE                COMMAND                  CREATED          STATUS          PORTS                    NAMES
+8ae316d5b733   apache/kafka:4.1.0   "/__cacert_entrypoin…"   13 seconds ago   Up 12 seconds   0.0.0.0:9092->9092/tcp   kafka
+$ docker exec kafka /opt/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server localhost:9092 | head -1
+localhost:9092 (id: 1 rack: null isFenced: false) -> (

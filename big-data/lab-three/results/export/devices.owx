@@ -1,0 +1,1434 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://kpi.ua/ontologies/devices.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://kpi.ua/ontologies/devices.owl">
+    <Prefix name="" IRI="http://kpi.ua/ontologies/devices.owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="uk">Технічні пристрої (смартфон, планшет, ноутбук, смарт-годинник, настільний комп&apos;ютер), їхні компоненти, виробники й операційні системи. Варіант 5 лабораторної роботи №3 з дисципліни «Обробка надвеликих масивів даних»</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal xml:lang="uk">Онтологія технічних пристроїв</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal>1.0</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Battery"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Camera"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CameraDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Component"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DesktopComputer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Device"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Laptop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LargeScreenDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Manufacturer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Memory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OperatingSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PortableDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Processor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Screen"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Smartphone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Smartwatch"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StationaryDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Storage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tablet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#developedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBattery"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCamera"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasComponent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMemory"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProcessor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasScreen"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasStorage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isComponentOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#manufacturedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#manufactures"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#runsOn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#capacityMAh"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#clockSpeedGHz"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#coreCount"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#megapixels"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#modelName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#releaseYear"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#resolution"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#screenSizeInches"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#sizeGB"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#A16Bionic"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Android"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Apple"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AppleM3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Exynos2400"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GalaxyS24"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GalaxyS24_Battery"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GalaxyS24_Camera"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GalaxyS24_RAM"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GalaxyS24_SSD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GalaxyS24_Screen"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GalaxyTabS9"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GalaxyTabS9_Battery"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GalaxyTabS9_Camera"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GalaxyTabS9_RAM"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GalaxyTabS9_SSD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GalaxyTabS9_Screen"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Google"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MacBookAirM3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MacBookAirM3_Battery"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MacBookAirM3_Camera"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MacBookAirM3_RAM"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MacBookAirM3_SSD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MacBookAirM3_Screen"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Samsung"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Snapdragon8Gen2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#iOS"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#iPhone15"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#iPhone15_Battery"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#iPhone15_Camera"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#iPhone15_RAM"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#iPhone15_SSD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#iPhone15_Screen"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#macOS"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#CameraDevice"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Device"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasCamera"/>
+                <Class IRI="#Camera"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LargeScreenDevice"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Device"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasScreen"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#Screen"/>
+                    <DataSomeValuesFrom>
+                        <DataProperty IRI="#screenSizeInches"/>
+                        <DatatypeRestriction>
+                            <Datatype abbreviatedIRI="xsd:decimal"/>
+                            <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">10.0</Literal>
+                            </FacetRestriction>
+                        </DatatypeRestriction>
+                    </DataSomeValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Battery"/>
+        <Class IRI="#Component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Camera"/>
+        <Class IRI="#Component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CameraDevice"/>
+        <Class IRI="#Device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Component"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DesktopComputer"/>
+        <Class IRI="#StationaryDevice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DesktopComputer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasProcessor"/>
+            <Class IRI="#Processor"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DesktopComputer"/>
+        <ObjectMaxCardinality cardinality="0">
+            <ObjectProperty IRI="#hasScreen"/>
+            <Class IRI="#Screen"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Device"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Laptop"/>
+        <Class IRI="#PortableDevice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Laptop"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasMemory"/>
+            <Class IRI="#Memory"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Laptop"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasProcessor"/>
+            <Class IRI="#Processor"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Laptop"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasStorage"/>
+            <Class IRI="#Storage"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Laptop"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasScreen"/>
+            <Class IRI="#Screen"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LargeScreenDevice"/>
+        <Class IRI="#Device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Manufacturer"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Memory"/>
+        <Class IRI="#Component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OperatingSystem"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PortableDevice"/>
+        <Class IRI="#Device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PortableDevice"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasBattery"/>
+            <Class IRI="#Battery"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Processor"/>
+        <Class IRI="#Component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Screen"/>
+        <Class IRI="#Component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Smartphone"/>
+        <Class IRI="#PortableDevice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Smartphone"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCamera"/>
+            <Class IRI="#Camera"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Smartphone"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasProcessor"/>
+            <Class IRI="#Processor"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Smartphone"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#runsOn"/>
+            <Class IRI="#OperatingSystem"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Smartphone"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasBattery"/>
+            <Class IRI="#Battery"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Smartphone"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasScreen"/>
+            <Class IRI="#Screen"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Smartwatch"/>
+        <Class IRI="#PortableDevice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Smartwatch"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasScreen"/>
+            <Class IRI="#Screen"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Smartwatch"/>
+        <ObjectMaxCardinality cardinality="0">
+            <ObjectProperty IRI="#hasCamera"/>
+            <Class IRI="#Camera"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StationaryDevice"/>
+        <Class IRI="#Device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Storage"/>
+        <Class IRI="#Component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tablet"/>
+        <Class IRI="#PortableDevice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tablet"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasProcessor"/>
+            <Class IRI="#Processor"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tablet"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasScreen"/>
+            <Class IRI="#Screen"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Battery"/>
+        <Class IRI="#Camera"/>
+        <Class IRI="#Memory"/>
+        <Class IRI="#Processor"/>
+        <Class IRI="#Screen"/>
+        <Class IRI="#Storage"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Component"/>
+        <Class IRI="#Device"/>
+        <Class IRI="#Manufacturer"/>
+        <Class IRI="#OperatingSystem"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Laptop"/>
+        <Class IRI="#Smartphone"/>
+        <Class IRI="#Smartwatch"/>
+        <Class IRI="#Tablet"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#PortableDevice"/>
+        <Class IRI="#StationaryDevice"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Processor"/>
+        <NamedIndividual IRI="#A16Bionic"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#OperatingSystem"/>
+        <NamedIndividual IRI="#Android"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Manufacturer"/>
+        <NamedIndividual IRI="#Apple"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Processor"/>
+        <NamedIndividual IRI="#AppleM3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Processor"/>
+        <NamedIndividual IRI="#Exynos2400"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Smartphone"/>
+        <NamedIndividual IRI="#GalaxyS24"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Battery"/>
+        <NamedIndividual IRI="#GalaxyS24_Battery"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Camera"/>
+        <NamedIndividual IRI="#GalaxyS24_Camera"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Memory"/>
+        <NamedIndividual IRI="#GalaxyS24_RAM"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Storage"/>
+        <NamedIndividual IRI="#GalaxyS24_SSD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Screen"/>
+        <NamedIndividual IRI="#GalaxyS24_Screen"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Tablet"/>
+        <NamedIndividual IRI="#GalaxyTabS9"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Battery"/>
+        <NamedIndividual IRI="#GalaxyTabS9_Battery"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Camera"/>
+        <NamedIndividual IRI="#GalaxyTabS9_Camera"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Memory"/>
+        <NamedIndividual IRI="#GalaxyTabS9_RAM"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Storage"/>
+        <NamedIndividual IRI="#GalaxyTabS9_SSD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Screen"/>
+        <NamedIndividual IRI="#GalaxyTabS9_Screen"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Manufacturer"/>
+        <NamedIndividual IRI="#Google"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Laptop"/>
+        <NamedIndividual IRI="#MacBookAirM3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Battery"/>
+        <NamedIndividual IRI="#MacBookAirM3_Battery"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Camera"/>
+        <NamedIndividual IRI="#MacBookAirM3_Camera"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Memory"/>
+        <NamedIndividual IRI="#MacBookAirM3_RAM"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Storage"/>
+        <NamedIndividual IRI="#MacBookAirM3_SSD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Screen"/>
+        <NamedIndividual IRI="#MacBookAirM3_Screen"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Manufacturer"/>
+        <NamedIndividual IRI="#Samsung"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Processor"/>
+        <NamedIndividual IRI="#Snapdragon8Gen2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#OperatingSystem"/>
+        <NamedIndividual IRI="#iOS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Smartphone"/>
+        <NamedIndividual IRI="#iPhone15"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Battery"/>
+        <NamedIndividual IRI="#iPhone15_Battery"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Camera"/>
+        <NamedIndividual IRI="#iPhone15_Camera"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Memory"/>
+        <NamedIndividual IRI="#iPhone15_RAM"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Storage"/>
+        <NamedIndividual IRI="#iPhone15_SSD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Screen"/>
+        <NamedIndividual IRI="#iPhone15_Screen"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#OperatingSystem"/>
+        <NamedIndividual IRI="#macOS"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#developedBy"/>
+        <NamedIndividual IRI="#Android"/>
+        <NamedIndividual IRI="#Google"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBattery"/>
+        <NamedIndividual IRI="#GalaxyS24"/>
+        <NamedIndividual IRI="#GalaxyS24_Battery"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCamera"/>
+        <NamedIndividual IRI="#GalaxyS24"/>
+        <NamedIndividual IRI="#GalaxyS24_Camera"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMemory"/>
+        <NamedIndividual IRI="#GalaxyS24"/>
+        <NamedIndividual IRI="#GalaxyS24_RAM"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProcessor"/>
+        <NamedIndividual IRI="#GalaxyS24"/>
+        <NamedIndividual IRI="#Exynos2400"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasScreen"/>
+        <NamedIndividual IRI="#GalaxyS24"/>
+        <NamedIndividual IRI="#GalaxyS24_Screen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasStorage"/>
+        <NamedIndividual IRI="#GalaxyS24"/>
+        <NamedIndividual IRI="#GalaxyS24_SSD"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#manufacturedBy"/>
+        <NamedIndividual IRI="#GalaxyS24"/>
+        <NamedIndividual IRI="#Samsung"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#GalaxyS24"/>
+        <NamedIndividual IRI="#Android"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBattery"/>
+        <NamedIndividual IRI="#GalaxyTabS9"/>
+        <NamedIndividual IRI="#GalaxyTabS9_Battery"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCamera"/>
+        <NamedIndividual IRI="#GalaxyTabS9"/>
+        <NamedIndividual IRI="#GalaxyTabS9_Camera"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMemory"/>
+        <NamedIndividual IRI="#GalaxyTabS9"/>
+        <NamedIndividual IRI="#GalaxyTabS9_RAM"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProcessor"/>
+        <NamedIndividual IRI="#GalaxyTabS9"/>
+        <NamedIndividual IRI="#Snapdragon8Gen2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasScreen"/>
+        <NamedIndividual IRI="#GalaxyTabS9"/>
+        <NamedIndividual IRI="#GalaxyTabS9_Screen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasStorage"/>
+        <NamedIndividual IRI="#GalaxyTabS9"/>
+        <NamedIndividual IRI="#GalaxyTabS9_SSD"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#manufacturedBy"/>
+        <NamedIndividual IRI="#GalaxyTabS9"/>
+        <NamedIndividual IRI="#Samsung"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#GalaxyTabS9"/>
+        <NamedIndividual IRI="#Android"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBattery"/>
+        <NamedIndividual IRI="#MacBookAirM3"/>
+        <NamedIndividual IRI="#MacBookAirM3_Battery"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCamera"/>
+        <NamedIndividual IRI="#MacBookAirM3"/>
+        <NamedIndividual IRI="#MacBookAirM3_Camera"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMemory"/>
+        <NamedIndividual IRI="#MacBookAirM3"/>
+        <NamedIndividual IRI="#MacBookAirM3_RAM"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProcessor"/>
+        <NamedIndividual IRI="#MacBookAirM3"/>
+        <NamedIndividual IRI="#AppleM3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasScreen"/>
+        <NamedIndividual IRI="#MacBookAirM3"/>
+        <NamedIndividual IRI="#MacBookAirM3_Screen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasStorage"/>
+        <NamedIndividual IRI="#MacBookAirM3"/>
+        <NamedIndividual IRI="#MacBookAirM3_SSD"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#manufacturedBy"/>
+        <NamedIndividual IRI="#MacBookAirM3"/>
+        <NamedIndividual IRI="#Apple"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#MacBookAirM3"/>
+        <NamedIndividual IRI="#macOS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#developedBy"/>
+        <NamedIndividual IRI="#iOS"/>
+        <NamedIndividual IRI="#Apple"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBattery"/>
+        <NamedIndividual IRI="#iPhone15"/>
+        <NamedIndividual IRI="#iPhone15_Battery"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCamera"/>
+        <NamedIndividual IRI="#iPhone15"/>
+        <NamedIndividual IRI="#iPhone15_Camera"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMemory"/>
+        <NamedIndividual IRI="#iPhone15"/>
+        <NamedIndividual IRI="#iPhone15_RAM"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProcessor"/>
+        <NamedIndividual IRI="#iPhone15"/>
+        <NamedIndividual IRI="#A16Bionic"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasScreen"/>
+        <NamedIndividual IRI="#iPhone15"/>
+        <NamedIndividual IRI="#iPhone15_Screen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasStorage"/>
+        <NamedIndividual IRI="#iPhone15"/>
+        <NamedIndividual IRI="#iPhone15_SSD"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#manufacturedBy"/>
+        <NamedIndividual IRI="#iPhone15"/>
+        <NamedIndividual IRI="#Apple"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#iPhone15"/>
+        <NamedIndividual IRI="#iOS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#developedBy"/>
+        <NamedIndividual IRI="#macOS"/>
+        <NamedIndividual IRI="#Apple"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#clockSpeedGHz"/>
+        <NamedIndividual IRI="#A16Bionic"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">3.46</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#coreCount"/>
+        <NamedIndividual IRI="#A16Bionic"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#clockSpeedGHz"/>
+        <NamedIndividual IRI="#AppleM3"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">4.05</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#coreCount"/>
+        <NamedIndividual IRI="#AppleM3"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#clockSpeedGHz"/>
+        <NamedIndividual IRI="#Exynos2400"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">3.2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#coreCount"/>
+        <NamedIndividual IRI="#Exynos2400"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">10</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#modelName"/>
+        <NamedIndividual IRI="#GalaxyS24"/>
+        <Literal>Galaxy S24</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#releaseYear"/>
+        <NamedIndividual IRI="#GalaxyS24"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2024</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#capacityMAh"/>
+        <NamedIndividual IRI="#GalaxyS24_Battery"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#megapixels"/>
+        <NamedIndividual IRI="#GalaxyS24_Camera"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">50.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#sizeGB"/>
+        <NamedIndividual IRI="#GalaxyS24_RAM"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#sizeGB"/>
+        <NamedIndividual IRI="#GalaxyS24_SSD"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">128</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#resolution"/>
+        <NamedIndividual IRI="#GalaxyS24_Screen"/>
+        <Literal>2340x1080</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#screenSizeInches"/>
+        <NamedIndividual IRI="#GalaxyS24_Screen"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">6.2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#modelName"/>
+        <NamedIndividual IRI="#GalaxyTabS9"/>
+        <Literal>Galaxy Tab S9</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#releaseYear"/>
+        <NamedIndividual IRI="#GalaxyTabS9"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2023</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#capacityMAh"/>
+        <NamedIndividual IRI="#GalaxyTabS9_Battery"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">8400</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#megapixels"/>
+        <NamedIndividual IRI="#GalaxyTabS9_Camera"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">13.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#sizeGB"/>
+        <NamedIndividual IRI="#GalaxyTabS9_RAM"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#sizeGB"/>
+        <NamedIndividual IRI="#GalaxyTabS9_SSD"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">128</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#resolution"/>
+        <NamedIndividual IRI="#GalaxyTabS9_Screen"/>
+        <Literal>2560x1600</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#screenSizeInches"/>
+        <NamedIndividual IRI="#GalaxyTabS9_Screen"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">11.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#modelName"/>
+        <NamedIndividual IRI="#MacBookAirM3"/>
+        <Literal>MacBook Air 13 M3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#releaseYear"/>
+        <NamedIndividual IRI="#MacBookAirM3"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2024</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#capacityMAh"/>
+        <NamedIndividual IRI="#MacBookAirM3_Battery"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4614</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#megapixels"/>
+        <NamedIndividual IRI="#MacBookAirM3_Camera"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2.1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#sizeGB"/>
+        <NamedIndividual IRI="#MacBookAirM3_RAM"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#sizeGB"/>
+        <NamedIndividual IRI="#MacBookAirM3_SSD"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">256</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#resolution"/>
+        <NamedIndividual IRI="#MacBookAirM3_Screen"/>
+        <Literal>2560x1664</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#screenSizeInches"/>
+        <NamedIndividual IRI="#MacBookAirM3_Screen"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">13.6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#clockSpeedGHz"/>
+        <NamedIndividual IRI="#Snapdragon8Gen2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">3.36</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#coreCount"/>
+        <NamedIndividual IRI="#Snapdragon8Gen2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#modelName"/>
+        <NamedIndividual IRI="#iPhone15"/>
+        <Literal>iPhone 15</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#releaseYear"/>
+        <NamedIndividual IRI="#iPhone15"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2023</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#capacityMAh"/>
+        <NamedIndividual IRI="#iPhone15_Battery"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3349</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#megapixels"/>
+        <NamedIndividual IRI="#iPhone15_Camera"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">48.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#sizeGB"/>
+        <NamedIndividual IRI="#iPhone15_RAM"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#sizeGB"/>
+        <NamedIndividual IRI="#iPhone15_SSD"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">128</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#resolution"/>
+        <NamedIndividual IRI="#iPhone15_Screen"/>
+        <Literal>2556x1179</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#screenSizeInches"/>
+        <NamedIndividual IRI="#iPhone15_Screen"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">6.1</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasBattery"/>
+        <ObjectProperty IRI="#hasComponent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCamera"/>
+        <ObjectProperty IRI="#hasComponent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMemory"/>
+        <ObjectProperty IRI="#hasComponent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasProcessor"/>
+        <ObjectProperty IRI="#hasComponent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasScreen"/>
+        <ObjectProperty IRI="#hasComponent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasStorage"/>
+        <ObjectProperty IRI="#hasComponent"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasComponent"/>
+        <ObjectProperty IRI="#isComponentOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#manufacturedBy"/>
+        <ObjectProperty IRI="#manufactures"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#developedBy"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#manufacturedBy"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#developedBy"/>
+        <Class IRI="#OperatingSystem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasComponent"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#manufacturedBy"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#runsOn"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#developedBy"/>
+        <Class IRI="#Manufacturer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBattery"/>
+        <Class IRI="#Battery"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCamera"/>
+        <Class IRI="#Camera"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasComponent"/>
+        <Class IRI="#Component"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMemory"/>
+        <Class IRI="#Memory"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasProcessor"/>
+        <Class IRI="#Processor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasScreen"/>
+        <Class IRI="#Screen"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasStorage"/>
+        <Class IRI="#Storage"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#manufacturedBy"/>
+        <Class IRI="#Manufacturer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#runsOn"/>
+        <Class IRI="#OperatingSystem"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#capacityMAh"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#clockSpeedGHz"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#coreCount"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#megapixels"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#modelName"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#releaseYear"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#resolution"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#screenSizeInches"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#sizeGB"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#capacityMAh"/>
+        <Class IRI="#Battery"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#clockSpeedGHz"/>
+        <Class IRI="#Processor"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#coreCount"/>
+        <Class IRI="#Processor"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#megapixels"/>
+        <Class IRI="#Camera"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#modelName"/>
+        <Class IRI="#Device"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#releaseYear"/>
+        <Class IRI="#Device"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#resolution"/>
+        <Class IRI="#Screen"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#screenSizeInches"/>
+        <Class IRI="#Screen"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#sizeGB"/>
+        <ObjectUnionOf>
+            <Class IRI="#Memory"/>
+            <Class IRI="#Storage"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#capacityMAh"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#clockSpeedGHz"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#coreCount"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#megapixels"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#modelName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#releaseYear"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#resolution"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#screenSizeInches"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#sizeGB"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Battery</IRI>
+        <Literal xml:lang="uk">Акумулятор</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Camera</IRI>
+        <Literal xml:lang="uk">Камера</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CameraDevice</IRI>
+        <Literal xml:lang="uk">Визначений клас: пристрій, що має хоча б одну камеру</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CameraDevice</IRI>
+        <Literal xml:lang="uk">Пристрій з камерою</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Component</IRI>
+        <Literal xml:lang="uk">Складова частина пристрою</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Component</IRI>
+        <Literal xml:lang="uk">Компонент</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#DesktopComputer</IRI>
+        <Literal xml:lang="uk">Настільний комп&apos;ютер</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Device</IRI>
+        <Literal xml:lang="uk">Електронний пристрій, яким користується людина</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Device</IRI>
+        <Literal xml:lang="uk">Технічний пристрій</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Laptop</IRI>
+        <Literal xml:lang="uk">Ноутбук</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LargeScreenDevice</IRI>
+        <Literal xml:lang="uk">Визначений клас: екран від 10 дюймів</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LargeScreenDevice</IRI>
+        <Literal xml:lang="uk">Пристрій з великим екраном</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Manufacturer</IRI>
+        <Literal xml:lang="uk">Виробник</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Memory</IRI>
+        <Literal xml:lang="uk">Оперативна пам&apos;ять</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OperatingSystem</IRI>
+        <Literal xml:lang="uk">Операційна система</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PortableDevice</IRI>
+        <Literal xml:lang="uk">Пристрій з власним акумулятором, який носять із собою</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PortableDevice</IRI>
+        <Literal xml:lang="uk">Портативний пристрій</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Processor</IRI>
+        <Literal xml:lang="uk">Процесор</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Screen</IRI>
+        <Literal xml:lang="uk">Екран</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Smartphone</IRI>
+        <Literal xml:lang="uk">Смартфон</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Smartwatch</IRI>
+        <Literal xml:lang="uk">Смарт-годинник</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StationaryDevice</IRI>
+        <Literal xml:lang="uk">Пристрій, що працює від мережі на одному місці</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#StationaryDevice</IRI>
+        <Literal xml:lang="uk">Стаціонарний пристрій</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Storage</IRI>
+        <Literal xml:lang="uk">Накопичувач</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Tablet</IRI>
+        <Literal xml:lang="uk">Планшет</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#capacityMAh</IRI>
+        <Literal xml:lang="uk">ємність акумулятора, мА·год</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#clockSpeedGHz</IRI>
+        <Literal xml:lang="uk">частота процесора, ГГц</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#coreCount</IRI>
+        <Literal xml:lang="uk">кількість ядер</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#developedBy</IRI>
+        <Literal xml:lang="uk">розроблена</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasBattery</IRI>
+        <Literal xml:lang="uk">має акумулятор</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasCamera</IRI>
+        <Literal xml:lang="uk">має камеру</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasComponent</IRI>
+        <Literal xml:lang="uk">має компонент</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasMemory</IRI>
+        <Literal xml:lang="uk">має оперативну пам&apos;ять</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasProcessor</IRI>
+        <Literal xml:lang="uk">має процесор</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasScreen</IRI>
+        <Literal xml:lang="uk">має екран</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasStorage</IRI>
+        <Literal xml:lang="uk">має накопичувач</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isComponentOf</IRI>
+        <Literal xml:lang="uk">є компонентом</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#manufacturedBy</IRI>
+        <Literal xml:lang="uk">виготовлений</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#manufactures</IRI>
+        <Literal xml:lang="uk">виготовляє</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#megapixels</IRI>
+        <Literal xml:lang="uk">роздільність камери, Мп</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#modelName</IRI>
+        <Literal xml:lang="uk">модель</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#releaseYear</IRI>
+        <Literal xml:lang="uk">рік випуску</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#resolution</IRI>
+        <Literal xml:lang="uk">роздільна здатність</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#runsOn</IRI>
+        <Literal xml:lang="uk">працює під</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#screenSizeInches</IRI>
+        <Literal xml:lang="uk">розмір екрана, дюймів</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#sizeGB</IRI>
+        <Literal xml:lang="uk">обсяг, ГБ</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

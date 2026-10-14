@@ -1,0 +1,9 @@
+saved results/devices.owl
+classes 19, object properties 12, data properties 9, individuals 34
+HermiT: ontology is consistent
+CameraDevice: ['GalaxyS24', 'GalaxyTabS9', 'MacBookAirM3', 'iPhone15']
+LargeScreenDevice: ['GalaxyTabS9', 'MacBookAirM3']
+Apple manufactures: ['MacBookAirM3', 'iPhone15']
+AppleM3 isComponentOf: ['MacBookAirM3']
+negative test: Smartwatch with hasCamera -> HermiT: inconsistent
+negative test: DesktopComputer with hasScreen -> HermiT: inconsistent

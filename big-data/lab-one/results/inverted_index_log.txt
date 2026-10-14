@@ -1,0 +1,28 @@
+Spark 4.2.0: 8 files, 24518 lines, 12173 distinct words, 2.1 s
+saved to results/inverted_index_documents and results/inverted_index_positions
+
+== cipher ==
+documents: cipher	asyoulikeit.txt,lucrece.txt
+positions: cipher	asyoulikeit.txt@63279,lucrece.txt@12406,lucrece.txt@39972
+  asyoulikeit.txt, offset 63279: Orl. Which I take to be either a foole, or a Cipher
+  lucrece.txt, offset 12406: To cipher me how fondly I did dote,
+  lucrece.txt, offset 39972: To cipher what is writ in learned books,
+
+== words ==
+documents: words	A.txt,B.txt,asyoulikeit.txt,hamlet.txt,lucrece.txt,macbeth.txt,romeo.txt,sonnets.txt
+positions: words	A.txt@0,B.txt@0,asyoulikeit.txt@20630,asyoulikeit.txt@22745,asyoulikeit.txt@75569,asyoulikeit.txt@79646,... (72 in total)
+  A.txt, offset 0: This is the A file, it has words in it
+  B.txt, offset 0: Welcome to the B file, it has words too
+  asyoulikeit.txt, offset 20630: Cel. No, thy words are too precious to be cast away
+  asyoulikeit.txt, offset 22745: If their purgation did consist in words,
+  asyoulikeit.txt, offset 75569: speakes braue words, sweares braue oathes, and breakes
+  asyoulikeit.txt, offset 79646: Her with bitter words: why looke you so vpon me?
+
+== file ==
+documents: file	A.txt,B.txt,macbeth.txt
+positions: file	A.txt@0,B.txt@0,macbeth.txt@47000,macbeth.txt@47298,macbeth.txt@92017
+  A.txt, offset 0: This is the A file, it has words in it
+  B.txt, offset 0: Welcome to the B file, it has words too
+  macbeth.txt, offset 47000: All by the name of dogs: the valu’d file
+  macbeth.txt, offset 47298: Now, if you have a station in the file,
+  macbeth.txt, offset 92017: For certain, sir, he is not. I have a file

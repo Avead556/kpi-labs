@@ -1,0 +1,579 @@
+Prefix(:=<http://kpi.ua/ontologies/devices.owl#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://kpi.ua/ontologies/devices.owl>
+Annotation(rdfs:comment "Технічні пристрої (смартфон, планшет, ноутбук, смарт-годинник, настільний комп'ютер), їхні компоненти, виробники й операційні системи. Варіант 5 лабораторної роботи №3 з дисципліни «Обробка надвеликих масивів даних»"@uk)
+Annotation(rdfs:label "Онтологія технічних пристроїв"@uk)
+Annotation(owl:versionInfo "1.0")
+
+Declaration(Class(:Battery))
+Declaration(Class(:Camera))
+Declaration(Class(:CameraDevice))
+Declaration(Class(:Component))
+Declaration(Class(:DesktopComputer))
+Declaration(Class(:Device))
+Declaration(Class(:Laptop))
+Declaration(Class(:LargeScreenDevice))
+Declaration(Class(:Manufacturer))
+Declaration(Class(:Memory))
+Declaration(Class(:OperatingSystem))
+Declaration(Class(:PortableDevice))
+Declaration(Class(:Processor))
+Declaration(Class(:Screen))
+Declaration(Class(:Smartphone))
+Declaration(Class(:Smartwatch))
+Declaration(Class(:StationaryDevice))
+Declaration(Class(:Storage))
+Declaration(Class(:Tablet))
+Declaration(ObjectProperty(:developedBy))
+Declaration(ObjectProperty(:hasBattery))
+Declaration(ObjectProperty(:hasCamera))
+Declaration(ObjectProperty(:hasComponent))
+Declaration(ObjectProperty(:hasMemory))
+Declaration(ObjectProperty(:hasProcessor))
+Declaration(ObjectProperty(:hasScreen))
+Declaration(ObjectProperty(:hasStorage))
+Declaration(ObjectProperty(:isComponentOf))
+Declaration(ObjectProperty(:manufacturedBy))
+Declaration(ObjectProperty(:manufactures))
+Declaration(ObjectProperty(:runsOn))
+Declaration(DataProperty(:capacityMAh))
+Declaration(DataProperty(:clockSpeedGHz))
+Declaration(DataProperty(:coreCount))
+Declaration(DataProperty(:megapixels))
+Declaration(DataProperty(:modelName))
+Declaration(DataProperty(:releaseYear))
+Declaration(DataProperty(:resolution))
+Declaration(DataProperty(:screenSizeInches))
+Declaration(DataProperty(:sizeGB))
+Declaration(NamedIndividual(:A16Bionic))
+Declaration(NamedIndividual(:Android))
+Declaration(NamedIndividual(:Apple))
+Declaration(NamedIndividual(:AppleM3))
+Declaration(NamedIndividual(:Exynos2400))
+Declaration(NamedIndividual(:GalaxyS24))
+Declaration(NamedIndividual(:GalaxyS24_Battery))
+Declaration(NamedIndividual(:GalaxyS24_Camera))
+Declaration(NamedIndividual(:GalaxyS24_RAM))
+Declaration(NamedIndividual(:GalaxyS24_SSD))
+Declaration(NamedIndividual(:GalaxyS24_Screen))
+Declaration(NamedIndividual(:GalaxyTabS9))
+Declaration(NamedIndividual(:GalaxyTabS9_Battery))
+Declaration(NamedIndividual(:GalaxyTabS9_Camera))
+Declaration(NamedIndividual(:GalaxyTabS9_RAM))
+Declaration(NamedIndividual(:GalaxyTabS9_SSD))
+Declaration(NamedIndividual(:GalaxyTabS9_Screen))
+Declaration(NamedIndividual(:Google))
+Declaration(NamedIndividual(:MacBookAirM3))
+Declaration(NamedIndividual(:MacBookAirM3_Battery))
+Declaration(NamedIndividual(:MacBookAirM3_Camera))
+Declaration(NamedIndividual(:MacBookAirM3_RAM))
+Declaration(NamedIndividual(:MacBookAirM3_SSD))
+Declaration(NamedIndividual(:MacBookAirM3_Screen))
+Declaration(NamedIndividual(:Samsung))
+Declaration(NamedIndividual(:Snapdragon8Gen2))
+Declaration(NamedIndividual(:iOS))
+Declaration(NamedIndividual(:iPhone15))
+Declaration(NamedIndividual(:iPhone15_Battery))
+Declaration(NamedIndividual(:iPhone15_Camera))
+Declaration(NamedIndividual(:iPhone15_RAM))
+Declaration(NamedIndividual(:iPhone15_SSD))
+Declaration(NamedIndividual(:iPhone15_Screen))
+Declaration(NamedIndividual(:macOS))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: :developedBy (розроблена)
+
+AnnotationAssertion(rdfs:label :developedBy "розроблена"@uk)
+FunctionalObjectProperty(:developedBy)
+ObjectPropertyDomain(:developedBy :OperatingSystem)
+ObjectPropertyRange(:developedBy :Manufacturer)
+
+# Object Property: :hasBattery (має акумулятор)
+
+AnnotationAssertion(rdfs:label :hasBattery "має акумулятор"@uk)
+SubObjectPropertyOf(:hasBattery :hasComponent)
+ObjectPropertyRange(:hasBattery :Battery)
+
+# Object Property: :hasCamera (має камеру)
+
+AnnotationAssertion(rdfs:label :hasCamera "має камеру"@uk)
+SubObjectPropertyOf(:hasCamera :hasComponent)
+ObjectPropertyRange(:hasCamera :Camera)
+
+# Object Property: :hasComponent (має компонент)
+
+AnnotationAssertion(rdfs:label :hasComponent "має компонент"@uk)
+InverseObjectProperties(:hasComponent :isComponentOf)
+ObjectPropertyDomain(:hasComponent :Device)
+ObjectPropertyRange(:hasComponent :Component)
+
+# Object Property: :hasMemory (має оперативну пам'ять)
+
+AnnotationAssertion(rdfs:label :hasMemory "має оперативну пам'ять"@uk)
+SubObjectPropertyOf(:hasMemory :hasComponent)
+ObjectPropertyRange(:hasMemory :Memory)
+
+# Object Property: :hasProcessor (має процесор)
+
+AnnotationAssertion(rdfs:label :hasProcessor "має процесор"@uk)
+SubObjectPropertyOf(:hasProcessor :hasComponent)
+ObjectPropertyRange(:hasProcessor :Processor)
+
+# Object Property: :hasScreen (має екран)
+
+AnnotationAssertion(rdfs:label :hasScreen "має екран"@uk)
+SubObjectPropertyOf(:hasScreen :hasComponent)
+ObjectPropertyRange(:hasScreen :Screen)
+
+# Object Property: :hasStorage (має накопичувач)
+
+AnnotationAssertion(rdfs:label :hasStorage "має накопичувач"@uk)
+SubObjectPropertyOf(:hasStorage :hasComponent)
+ObjectPropertyRange(:hasStorage :Storage)
+
+# Object Property: :isComponentOf (є компонентом)
+
+AnnotationAssertion(rdfs:label :isComponentOf "є компонентом"@uk)
+
+# Object Property: :manufacturedBy (виготовлений)
+
+AnnotationAssertion(rdfs:label :manufacturedBy "виготовлений"@uk)
+InverseObjectProperties(:manufacturedBy :manufactures)
+FunctionalObjectProperty(:manufacturedBy)
+ObjectPropertyDomain(:manufacturedBy :Device)
+ObjectPropertyRange(:manufacturedBy :Manufacturer)
+
+# Object Property: :manufactures (виготовляє)
+
+AnnotationAssertion(rdfs:label :manufactures "виготовляє"@uk)
+
+# Object Property: :runsOn (працює під)
+
+AnnotationAssertion(rdfs:label :runsOn "працює під"@uk)
+ObjectPropertyDomain(:runsOn :Device)
+ObjectPropertyRange(:runsOn :OperatingSystem)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: :capacityMAh (ємність акумулятора, мА·год)
+
+AnnotationAssertion(rdfs:label :capacityMAh "ємність акумулятора, мА·год"@uk)
+FunctionalDataProperty(:capacityMAh)
+DataPropertyDomain(:capacityMAh :Battery)
+DataPropertyRange(:capacityMAh xsd:integer)
+
+# Data Property: :clockSpeedGHz (частота процесора, ГГц)
+
+AnnotationAssertion(rdfs:label :clockSpeedGHz "частота процесора, ГГц"@uk)
+FunctionalDataProperty(:clockSpeedGHz)
+DataPropertyDomain(:clockSpeedGHz :Processor)
+DataPropertyRange(:clockSpeedGHz xsd:decimal)
+
+# Data Property: :coreCount (кількість ядер)
+
+AnnotationAssertion(rdfs:label :coreCount "кількість ядер"@uk)
+FunctionalDataProperty(:coreCount)
+DataPropertyDomain(:coreCount :Processor)
+DataPropertyRange(:coreCount xsd:integer)
+
+# Data Property: :megapixels (роздільність камери, Мп)
+
+AnnotationAssertion(rdfs:label :megapixels "роздільність камери, Мп"@uk)
+FunctionalDataProperty(:megapixels)
+DataPropertyDomain(:megapixels :Camera)
+DataPropertyRange(:megapixels xsd:decimal)
+
+# Data Property: :modelName (модель)
+
+AnnotationAssertion(rdfs:label :modelName "модель"@uk)
+FunctionalDataProperty(:modelName)
+DataPropertyDomain(:modelName :Device)
+DataPropertyRange(:modelName xsd:string)
+
+# Data Property: :releaseYear (рік випуску)
+
+AnnotationAssertion(rdfs:label :releaseYear "рік випуску"@uk)
+FunctionalDataProperty(:releaseYear)
+DataPropertyDomain(:releaseYear :Device)
+DataPropertyRange(:releaseYear xsd:integer)
+
+# Data Property: :resolution (роздільна здатність)
+
+AnnotationAssertion(rdfs:label :resolution "роздільна здатність"@uk)
+FunctionalDataProperty(:resolution)
+DataPropertyDomain(:resolution :Screen)
+DataPropertyRange(:resolution xsd:string)
+
+# Data Property: :screenSizeInches (розмір екрана, дюймів)
+
+AnnotationAssertion(rdfs:label :screenSizeInches "розмір екрана, дюймів"@uk)
+FunctionalDataProperty(:screenSizeInches)
+DataPropertyDomain(:screenSizeInches :Screen)
+DataPropertyRange(:screenSizeInches xsd:decimal)
+
+# Data Property: :sizeGB (обсяг, ГБ)
+
+AnnotationAssertion(rdfs:label :sizeGB "обсяг, ГБ"@uk)
+FunctionalDataProperty(:sizeGB)
+DataPropertyDomain(:sizeGB ObjectUnionOf(:Memory :Storage))
+DataPropertyRange(:sizeGB xsd:integer)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: :Battery (Акумулятор)
+
+AnnotationAssertion(rdfs:label :Battery "Акумулятор"@uk)
+SubClassOf(:Battery :Component)
+
+# Class: :Camera (Камера)
+
+AnnotationAssertion(rdfs:label :Camera "Камера"@uk)
+SubClassOf(:Camera :Component)
+
+# Class: :CameraDevice (Пристрій з камерою)
+
+AnnotationAssertion(rdfs:comment :CameraDevice "Визначений клас: пристрій, що має хоча б одну камеру"@uk)
+AnnotationAssertion(rdfs:label :CameraDevice "Пристрій з камерою"@uk)
+EquivalentClasses(:CameraDevice ObjectIntersectionOf(:Device ObjectSomeValuesFrom(:hasCamera :Camera)))
+SubClassOf(:CameraDevice :Device)
+
+# Class: :Component (Компонент)
+
+AnnotationAssertion(rdfs:comment :Component "Складова частина пристрою"@uk)
+AnnotationAssertion(rdfs:label :Component "Компонент"@uk)
+SubClassOf(:Component owl:Thing)
+
+# Class: :DesktopComputer (Настільний комп'ютер)
+
+AnnotationAssertion(rdfs:label :DesktopComputer "Настільний комп'ютер"@uk)
+SubClassOf(:DesktopComputer :StationaryDevice)
+SubClassOf(:DesktopComputer ObjectSomeValuesFrom(:hasProcessor :Processor))
+SubClassOf(:DesktopComputer ObjectMaxCardinality(0 :hasScreen :Screen))
+
+# Class: :Device (Технічний пристрій)
+
+AnnotationAssertion(rdfs:comment :Device "Електронний пристрій, яким користується людина"@uk)
+AnnotationAssertion(rdfs:label :Device "Технічний пристрій"@uk)
+SubClassOf(:Device owl:Thing)
+
+# Class: :Laptop (Ноутбук)
+
+AnnotationAssertion(rdfs:label :Laptop "Ноутбук"@uk)
+SubClassOf(:Laptop :PortableDevice)
+SubClassOf(:Laptop ObjectSomeValuesFrom(:hasMemory :Memory))
+SubClassOf(:Laptop ObjectSomeValuesFrom(:hasProcessor :Processor))
+SubClassOf(:Laptop ObjectSomeValuesFrom(:hasStorage :Storage))
+SubClassOf(:Laptop ObjectExactCardinality(1 :hasScreen :Screen))
+
+# Class: :LargeScreenDevice (Пристрій з великим екраном)
+
+AnnotationAssertion(rdfs:comment :LargeScreenDevice "Визначений клас: екран від 10 дюймів"@uk)
+AnnotationAssertion(rdfs:label :LargeScreenDevice "Пристрій з великим екраном"@uk)
+EquivalentClasses(:LargeScreenDevice ObjectIntersectionOf(:Device ObjectSomeValuesFrom(:hasScreen ObjectIntersectionOf(:Screen DataSomeValuesFrom(:screenSizeInches DatatypeRestriction(xsd:decimal xsd:minInclusive "10.0"^^xsd:decimal))))))
+SubClassOf(:LargeScreenDevice :Device)
+
+# Class: :Manufacturer (Виробник)
+
+AnnotationAssertion(rdfs:label :Manufacturer "Виробник"@uk)
+SubClassOf(:Manufacturer owl:Thing)
+
+# Class: :Memory (Оперативна пам'ять)
+
+AnnotationAssertion(rdfs:label :Memory "Оперативна пам'ять"@uk)
+SubClassOf(:Memory :Component)
+
+# Class: :OperatingSystem (Операційна система)
+
+AnnotationAssertion(rdfs:label :OperatingSystem "Операційна система"@uk)
+SubClassOf(:OperatingSystem owl:Thing)
+
+# Class: :PortableDevice (Портативний пристрій)
+
+AnnotationAssertion(rdfs:comment :PortableDevice "Пристрій з власним акумулятором, який носять із собою"@uk)
+AnnotationAssertion(rdfs:label :PortableDevice "Портативний пристрій"@uk)
+SubClassOf(:PortableDevice :Device)
+SubClassOf(:PortableDevice ObjectSomeValuesFrom(:hasBattery :Battery))
+DisjointClasses(:PortableDevice :StationaryDevice)
+
+# Class: :Processor (Процесор)
+
+AnnotationAssertion(rdfs:label :Processor "Процесор"@uk)
+SubClassOf(:Processor :Component)
+
+# Class: :Screen (Екран)
+
+AnnotationAssertion(rdfs:label :Screen "Екран"@uk)
+SubClassOf(:Screen :Component)
+
+# Class: :Smartphone (Смартфон)
+
+AnnotationAssertion(rdfs:label :Smartphone "Смартфон"@uk)
+SubClassOf(:Smartphone :PortableDevice)
+SubClassOf(:Smartphone ObjectSomeValuesFrom(:hasCamera :Camera))
+SubClassOf(:Smartphone ObjectSomeValuesFrom(:hasProcessor :Processor))
+SubClassOf(:Smartphone ObjectSomeValuesFrom(:runsOn :OperatingSystem))
+SubClassOf(:Smartphone ObjectExactCardinality(1 :hasBattery :Battery))
+SubClassOf(:Smartphone ObjectExactCardinality(1 :hasScreen :Screen))
+
+# Class: :Smartwatch (Смарт-годинник)
+
+AnnotationAssertion(rdfs:label :Smartwatch "Смарт-годинник"@uk)
+SubClassOf(:Smartwatch :PortableDevice)
+SubClassOf(:Smartwatch ObjectExactCardinality(1 :hasScreen :Screen))
+SubClassOf(:Smartwatch ObjectMaxCardinality(0 :hasCamera :Camera))
+
+# Class: :StationaryDevice (Стаціонарний пристрій)
+
+AnnotationAssertion(rdfs:comment :StationaryDevice "Пристрій, що працює від мережі на одному місці"@uk)
+AnnotationAssertion(rdfs:label :StationaryDevice "Стаціонарний пристрій"@uk)
+SubClassOf(:StationaryDevice :Device)
+
+# Class: :Storage (Накопичувач)
+
+AnnotationAssertion(rdfs:label :Storage "Накопичувач"@uk)
+SubClassOf(:Storage :Component)
+
+# Class: :Tablet (Планшет)
+
+AnnotationAssertion(rdfs:label :Tablet "Планшет"@uk)
+SubClassOf(:Tablet :PortableDevice)
+SubClassOf(:Tablet ObjectSomeValuesFrom(:hasProcessor :Processor))
+SubClassOf(:Tablet ObjectExactCardinality(1 :hasScreen :Screen))
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: :A16Bionic (:A16Bionic)
+
+ClassAssertion(:Processor :A16Bionic)
+DataPropertyAssertion(:clockSpeedGHz :A16Bionic "3.46"^^xsd:decimal)
+DataPropertyAssertion(:coreCount :A16Bionic "6"^^xsd:integer)
+
+# Individual: :Android (:Android)
+
+ClassAssertion(:OperatingSystem :Android)
+ObjectPropertyAssertion(:developedBy :Android :Google)
+
+# Individual: :Apple (:Apple)
+
+ClassAssertion(:Manufacturer :Apple)
+
+# Individual: :AppleM3 (:AppleM3)
+
+ClassAssertion(:Processor :AppleM3)
+DataPropertyAssertion(:clockSpeedGHz :AppleM3 "4.05"^^xsd:decimal)
+DataPropertyAssertion(:coreCount :AppleM3 "8"^^xsd:integer)
+
+# Individual: :Exynos2400 (:Exynos2400)
+
+ClassAssertion(:Processor :Exynos2400)
+DataPropertyAssertion(:clockSpeedGHz :Exynos2400 "3.2"^^xsd:decimal)
+DataPropertyAssertion(:coreCount :Exynos2400 "10"^^xsd:integer)
+
+# Individual: :GalaxyS24 (:GalaxyS24)
+
+ClassAssertion(:Smartphone :GalaxyS24)
+ObjectPropertyAssertion(:hasBattery :GalaxyS24 :GalaxyS24_Battery)
+ObjectPropertyAssertion(:hasCamera :GalaxyS24 :GalaxyS24_Camera)
+ObjectPropertyAssertion(:hasMemory :GalaxyS24 :GalaxyS24_RAM)
+ObjectPropertyAssertion(:hasProcessor :GalaxyS24 :Exynos2400)
+ObjectPropertyAssertion(:hasScreen :GalaxyS24 :GalaxyS24_Screen)
+ObjectPropertyAssertion(:hasStorage :GalaxyS24 :GalaxyS24_SSD)
+ObjectPropertyAssertion(:manufacturedBy :GalaxyS24 :Samsung)
+ObjectPropertyAssertion(:runsOn :GalaxyS24 :Android)
+DataPropertyAssertion(:modelName :GalaxyS24 "Galaxy S24")
+DataPropertyAssertion(:releaseYear :GalaxyS24 "2024"^^xsd:integer)
+
+# Individual: :GalaxyS24_Battery (:GalaxyS24_Battery)
+
+ClassAssertion(:Battery :GalaxyS24_Battery)
+DataPropertyAssertion(:capacityMAh :GalaxyS24_Battery "4000"^^xsd:integer)
+
+# Individual: :GalaxyS24_Camera (:GalaxyS24_Camera)
+
+ClassAssertion(:Camera :GalaxyS24_Camera)
+DataPropertyAssertion(:megapixels :GalaxyS24_Camera "50.0"^^xsd:decimal)
+
+# Individual: :GalaxyS24_RAM (:GalaxyS24_RAM)
+
+ClassAssertion(:Memory :GalaxyS24_RAM)
+DataPropertyAssertion(:sizeGB :GalaxyS24_RAM "8"^^xsd:integer)
+
+# Individual: :GalaxyS24_SSD (:GalaxyS24_SSD)
+
+ClassAssertion(:Storage :GalaxyS24_SSD)
+DataPropertyAssertion(:sizeGB :GalaxyS24_SSD "128"^^xsd:integer)
+
+# Individual: :GalaxyS24_Screen (:GalaxyS24_Screen)
+
+ClassAssertion(:Screen :GalaxyS24_Screen)
+DataPropertyAssertion(:resolution :GalaxyS24_Screen "2340x1080")
+DataPropertyAssertion(:screenSizeInches :GalaxyS24_Screen "6.2"^^xsd:decimal)
+
+# Individual: :GalaxyTabS9 (:GalaxyTabS9)
+
+ClassAssertion(:Tablet :GalaxyTabS9)
+ObjectPropertyAssertion(:hasBattery :GalaxyTabS9 :GalaxyTabS9_Battery)
+ObjectPropertyAssertion(:hasCamera :GalaxyTabS9 :GalaxyTabS9_Camera)
+ObjectPropertyAssertion(:hasMemory :GalaxyTabS9 :GalaxyTabS9_RAM)
+ObjectPropertyAssertion(:hasProcessor :GalaxyTabS9 :Snapdragon8Gen2)
+ObjectPropertyAssertion(:hasScreen :GalaxyTabS9 :GalaxyTabS9_Screen)
+ObjectPropertyAssertion(:hasStorage :GalaxyTabS9 :GalaxyTabS9_SSD)
+ObjectPropertyAssertion(:manufacturedBy :GalaxyTabS9 :Samsung)
+ObjectPropertyAssertion(:runsOn :GalaxyTabS9 :Android)
+DataPropertyAssertion(:modelName :GalaxyTabS9 "Galaxy Tab S9")
+DataPropertyAssertion(:releaseYear :GalaxyTabS9 "2023"^^xsd:integer)
+
+# Individual: :GalaxyTabS9_Battery (:GalaxyTabS9_Battery)
+
+ClassAssertion(:Battery :GalaxyTabS9_Battery)
+DataPropertyAssertion(:capacityMAh :GalaxyTabS9_Battery "8400"^^xsd:integer)
+
+# Individual: :GalaxyTabS9_Camera (:GalaxyTabS9_Camera)
+
+ClassAssertion(:Camera :GalaxyTabS9_Camera)
+DataPropertyAssertion(:megapixels :GalaxyTabS9_Camera "13.0"^^xsd:decimal)
+
+# Individual: :GalaxyTabS9_RAM (:GalaxyTabS9_RAM)
+
+ClassAssertion(:Memory :GalaxyTabS9_RAM)
+DataPropertyAssertion(:sizeGB :GalaxyTabS9_RAM "8"^^xsd:integer)
+
+# Individual: :GalaxyTabS9_SSD (:GalaxyTabS9_SSD)
+
+ClassAssertion(:Storage :GalaxyTabS9_SSD)
+DataPropertyAssertion(:sizeGB :GalaxyTabS9_SSD "128"^^xsd:integer)
+
+# Individual: :GalaxyTabS9_Screen (:GalaxyTabS9_Screen)
+
+ClassAssertion(:Screen :GalaxyTabS9_Screen)
+DataPropertyAssertion(:resolution :GalaxyTabS9_Screen "2560x1600")
+DataPropertyAssertion(:screenSizeInches :GalaxyTabS9_Screen "11.0"^^xsd:decimal)
+
+# Individual: :Google (:Google)
+
+ClassAssertion(:Manufacturer :Google)
+
+# Individual: :MacBookAirM3 (:MacBookAirM3)
+
+ClassAssertion(:Laptop :MacBookAirM3)
+ObjectPropertyAssertion(:hasBattery :MacBookAirM3 :MacBookAirM3_Battery)
+ObjectPropertyAssertion(:hasCamera :MacBookAirM3 :MacBookAirM3_Camera)
+ObjectPropertyAssertion(:hasMemory :MacBookAirM3 :MacBookAirM3_RAM)
+ObjectPropertyAssertion(:hasProcessor :MacBookAirM3 :AppleM3)
+ObjectPropertyAssertion(:hasScreen :MacBookAirM3 :MacBookAirM3_Screen)
+ObjectPropertyAssertion(:hasStorage :MacBookAirM3 :MacBookAirM3_SSD)
+ObjectPropertyAssertion(:manufacturedBy :MacBookAirM3 :Apple)
+ObjectPropertyAssertion(:runsOn :MacBookAirM3 :macOS)
+DataPropertyAssertion(:modelName :MacBookAirM3 "MacBook Air 13 M3")
+DataPropertyAssertion(:releaseYear :MacBookAirM3 "2024"^^xsd:integer)
+
+# Individual: :MacBookAirM3_Battery (:MacBookAirM3_Battery)
+
+ClassAssertion(:Battery :MacBookAirM3_Battery)
+DataPropertyAssertion(:capacityMAh :MacBookAirM3_Battery "4614"^^xsd:integer)
+
+# Individual: :MacBookAirM3_Camera (:MacBookAirM3_Camera)
+
+ClassAssertion(:Camera :MacBookAirM3_Camera)
+DataPropertyAssertion(:megapixels :MacBookAirM3_Camera "2.1"^^xsd:decimal)
+
+# Individual: :MacBookAirM3_RAM (:MacBookAirM3_RAM)
+
+ClassAssertion(:Memory :MacBookAirM3_RAM)
+DataPropertyAssertion(:sizeGB :MacBookAirM3_RAM "8"^^xsd:integer)
+
+# Individual: :MacBookAirM3_SSD (:MacBookAirM3_SSD)
+
+ClassAssertion(:Storage :MacBookAirM3_SSD)
+DataPropertyAssertion(:sizeGB :MacBookAirM3_SSD "256"^^xsd:integer)
+
+# Individual: :MacBookAirM3_Screen (:MacBookAirM3_Screen)
+
+ClassAssertion(:Screen :MacBookAirM3_Screen)
+DataPropertyAssertion(:resolution :MacBookAirM3_Screen "2560x1664")
+DataPropertyAssertion(:screenSizeInches :MacBookAirM3_Screen "13.6"^^xsd:decimal)
+
+# Individual: :Samsung (:Samsung)
+
+ClassAssertion(:Manufacturer :Samsung)
+
+# Individual: :Snapdragon8Gen2 (:Snapdragon8Gen2)
+
+ClassAssertion(:Processor :Snapdragon8Gen2)
+DataPropertyAssertion(:clockSpeedGHz :Snapdragon8Gen2 "3.36"^^xsd:decimal)
+DataPropertyAssertion(:coreCount :Snapdragon8Gen2 "8"^^xsd:integer)
+
+# Individual: :iOS (:iOS)
+
+ClassAssertion(:OperatingSystem :iOS)
+ObjectPropertyAssertion(:developedBy :iOS :Apple)
+
+# Individual: :iPhone15 (:iPhone15)
+
+ClassAssertion(:Smartphone :iPhone15)
+ObjectPropertyAssertion(:hasBattery :iPhone15 :iPhone15_Battery)
+ObjectPropertyAssertion(:hasCamera :iPhone15 :iPhone15_Camera)
+ObjectPropertyAssertion(:hasMemory :iPhone15 :iPhone15_RAM)
+ObjectPropertyAssertion(:hasProcessor :iPhone15 :A16Bionic)
+ObjectPropertyAssertion(:hasScreen :iPhone15 :iPhone15_Screen)
+ObjectPropertyAssertion(:hasStorage :iPhone15 :iPhone15_SSD)
+ObjectPropertyAssertion(:manufacturedBy :iPhone15 :Apple)
+ObjectPropertyAssertion(:runsOn :iPhone15 :iOS)
+DataPropertyAssertion(:modelName :iPhone15 "iPhone 15")
+DataPropertyAssertion(:releaseYear :iPhone15 "2023"^^xsd:integer)
+
+# Individual: :iPhone15_Battery (:iPhone15_Battery)
+
+ClassAssertion(:Battery :iPhone15_Battery)
+DataPropertyAssertion(:capacityMAh :iPhone15_Battery "3349"^^xsd:integer)
+
+# Individual: :iPhone15_Camera (:iPhone15_Camera)
+
+ClassAssertion(:Camera :iPhone15_Camera)
+DataPropertyAssertion(:megapixels :iPhone15_Camera "48.0"^^xsd:decimal)
+
+# Individual: :iPhone15_RAM (:iPhone15_RAM)
+
+ClassAssertion(:Memory :iPhone15_RAM)
+DataPropertyAssertion(:sizeGB :iPhone15_RAM "6"^^xsd:integer)
+
+# Individual: :iPhone15_SSD (:iPhone15_SSD)
+
+ClassAssertion(:Storage :iPhone15_SSD)
+DataPropertyAssertion(:sizeGB :iPhone15_SSD "128"^^xsd:integer)
+
+# Individual: :iPhone15_Screen (:iPhone15_Screen)
+
+ClassAssertion(:Screen :iPhone15_Screen)
+DataPropertyAssertion(:resolution :iPhone15_Screen "2556x1179")
+DataPropertyAssertion(:screenSizeInches :iPhone15_Screen "6.1"^^xsd:decimal)
+
+# Individual: :macOS (:macOS)
+
+ClassAssertion(:OperatingSystem :macOS)
+ObjectPropertyAssertion(:developedBy :macOS :Apple)
+
+
+DisjointClasses(:Battery :Camera :Memory :Processor :Screen :Storage)
+DisjointClasses(:Component :Device :Manufacturer :OperatingSystem)
+DisjointClasses(:Laptop :Smartphone :Smartwatch :Tablet)
+)

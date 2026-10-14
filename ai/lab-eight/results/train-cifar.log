@@ -1,0 +1,191 @@
+torch 2.14.0, cuda False, mps True, threads 4
+
+######## cifar
+CIFAR-10: train (40000, 3072), val (10000, 3072), test (10000, 3072), loaded in 1.9 s
+classes: ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+
+== CIFAR-10 manual: сигмоїда, 100, Adam, 40 epochs
+  epoch   1  train 1.8098  val 1.8292  val acc 0.3512  test acc 0.3565
+  epoch   2  train 1.7290  val 1.7618  val acc 0.3743  test acc 0.3795
+  epoch   3  train 1.6498  val 1.6903  val acc 0.3985  test acc 0.4040
+  epoch   4  train 1.6034  val 1.6508  val acc 0.4139  test acc 0.4221
+  epoch   5  train 1.5699  val 1.6257  val acc 0.4276  test acc 0.4345
+  epoch   6  train 1.5651  val 1.6363  val acc 0.4210  test acc 0.4296
+  epoch   7  train 1.5381  val 1.6162  val acc 0.4304  test acc 0.4350
+  epoch   8  train 1.5037  val 1.5891  val acc 0.4371  test acc 0.4431
+  epoch   9  train 1.4796  val 1.5604  val acc 0.4440  test acc 0.4447
+  epoch  10  train 1.4795  val 1.5709  val acc 0.4472  test acc 0.4438
+  epoch  11  train 1.4332  val 1.5349  val acc 0.4609  test acc 0.4586
+  epoch  12  train 1.4334  val 1.5365  val acc 0.4549  test acc 0.4611
+  epoch  13  train 1.4208  val 1.5337  val acc 0.4541  test acc 0.4541
+  epoch  14  train 1.3977  val 1.5155  val acc 0.4634  test acc 0.4668
+  epoch  15  train 1.3803  val 1.5112  val acc 0.4654  test acc 0.4660
+  epoch  16  train 1.3924  val 1.5190  val acc 0.4642  test acc 0.4634
+  epoch  17  train 1.3726  val 1.5063  val acc 0.4626  test acc 0.4600
+  epoch  18  train 1.3598  val 1.5106  val acc 0.4678  test acc 0.4679
+  epoch  19  train 1.3439  val 1.5027  val acc 0.4695  test acc 0.4661
+  epoch  20  train 1.3421  val 1.5004  val acc 0.4739  test acc 0.4658
+  epoch  21  train 1.3291  val 1.4951  val acc 0.4739  test acc 0.4692
+  epoch  22  train 1.3229  val 1.5029  val acc 0.4773  test acc 0.4683
+  epoch  23  train 1.2971  val 1.4871  val acc 0.4728  test acc 0.4743
+  epoch  24  train 1.3037  val 1.4929  val acc 0.4765  test acc 0.4747
+  epoch  25  train 1.2967  val 1.4919  val acc 0.4764  test acc 0.4708
+  epoch  26  train 1.2788  val 1.4880  val acc 0.4769  test acc 0.4756
+  epoch  27  train 1.2777  val 1.4907  val acc 0.4792  test acc 0.4740
+  epoch  28  train 1.2628  val 1.4902  val acc 0.4823  test acc 0.4711
+  epoch  29  train 1.2441  val 1.4821  val acc 0.4834  test acc 0.4753
+  epoch  30  train 1.2414  val 1.4789  val acc 0.4845  test acc 0.4773
+  epoch  31  train 1.2332  val 1.4800  val acc 0.4841  test acc 0.4749
+  epoch  32  train 1.2134  val 1.4681  val acc 0.4891  test acc 0.4839
+  epoch  33  train 1.2102  val 1.4678  val acc 0.4885  test acc 0.4797
+  epoch  34  train 1.2101  val 1.4864  val acc 0.4847  test acc 0.4818
+  epoch  35  train 1.2097  val 1.4833  val acc 0.4826  test acc 0.4831
+  epoch  36  train 1.1933  val 1.4898  val acc 0.4851  test acc 0.4749
+  epoch  37  train 1.1822  val 1.4761  val acc 0.4834  test acc 0.4877
+  epoch  38  train 1.2068  val 1.5047  val acc 0.4798  test acc 0.4741
+  epoch  39  train 1.1901  val 1.4852  val acc 0.4837  test acc 0.4781
+  epoch  40  train 1.1647  val 1.4778  val acc 0.4916  test acc 0.4816
+best validation loss at epoch 33 (1.4678); test accuracy there 0.4797
+
+== CIFAR-10 relu_adam: ReLU, 512-256, Adam, 40 epochs
+  epoch   1  train 1.7172  val 1.7545  val acc 0.3623  test acc 0.3683
+  epoch   2  train 1.6319  val 1.6830  val acc 0.3967  test acc 0.4101
+  epoch   3  train 1.5553  val 1.6204  val acc 0.4187  test acc 0.4293
+  epoch   4  train 1.4989  val 1.5758  val acc 0.4395  test acc 0.4442
+  epoch   5  train 1.4809  val 1.5580  val acc 0.4516  test acc 0.4570
+  epoch   6  train 1.4799  val 1.5793  val acc 0.4477  test acc 0.4527
+  epoch   7  train 1.3988  val 1.5104  val acc 0.4711  test acc 0.4732
+  epoch   8  train 1.3799  val 1.5073  val acc 0.4701  test acc 0.4709
+  epoch   9  train 1.3432  val 1.4754  val acc 0.4820  test acc 0.4923
+  epoch  10  train 1.3301  val 1.4826  val acc 0.4840  test acc 0.4836
+  epoch  11  train 1.3044  val 1.4675  val acc 0.4871  test acc 0.4895
+  epoch  12  train 1.2444  val 1.4235  val acc 0.5055  test acc 0.4979
+  epoch  13  train 1.2679  val 1.4584  val acc 0.4920  test acc 0.4888
+  epoch  14  train 1.2043  val 1.4180  val acc 0.5093  test acc 0.5095
+  epoch  15  train 1.2408  val 1.4603  val acc 0.4918  test acc 0.4918
+  epoch  16  train 1.1928  val 1.4436  val acc 0.4966  test acc 0.5003
+  epoch  17  train 1.1771  val 1.4394  val acc 0.5032  test acc 0.5032
+  epoch  18  train 1.1439  val 1.4218  val acc 0.5102  test acc 0.5098
+  epoch  19  train 1.1287  val 1.4225  val acc 0.5097  test acc 0.5133
+  epoch  20  train 1.1137  val 1.4239  val acc 0.5137  test acc 0.5078
+  epoch  21  train 1.1024  val 1.4504  val acc 0.5120  test acc 0.5158
+  epoch  22  train 1.1024  val 1.4554  val acc 0.4996  test acc 0.5089
+  epoch  23  train 1.0378  val 1.4205  val acc 0.5205  test acc 0.5153
+  epoch  24  train 1.0312  val 1.4309  val acc 0.5145  test acc 0.5126
+  epoch  25  train 1.0392  val 1.4539  val acc 0.5117  test acc 0.5050
+  epoch  26  train 1.0344  val 1.4650  val acc 0.5096  test acc 0.5038
+  epoch  27  train 1.0444  val 1.5082  val acc 0.5028  test acc 0.4992
+  epoch  28  train 0.9640  val 1.4567  val acc 0.5146  test acc 0.5164
+  epoch  29  train 0.9440  val 1.4633  val acc 0.5154  test acc 0.5101
+  epoch  30  train 0.9744  val 1.5259  val acc 0.5036  test acc 0.5075
+  epoch  31  train 0.9812  val 1.5317  val acc 0.5091  test acc 0.5002
+  epoch  32  train 0.9725  val 1.5642  val acc 0.4962  test acc 0.4986
+  epoch  33  train 0.9103  val 1.5302  val acc 0.5129  test acc 0.5043
+  epoch  34  train 0.8709  val 1.5390  val acc 0.5144  test acc 0.5134
+  epoch  35  train 0.8816  val 1.5476  val acc 0.5123  test acc 0.5061
+  epoch  36  train 0.8519  val 1.5410  val acc 0.5145  test acc 0.5091
+  epoch  37  train 0.8703  val 1.5858  val acc 0.5058  test acc 0.5040
+  epoch  38  train 0.8397  val 1.5895  val acc 0.5109  test acc 0.5072
+  epoch  39  train 0.8167  val 1.5740  val acc 0.5075  test acc 0.5099
+  epoch  40  train 0.8249  val 1.6198  val acc 0.5109  test acc 0.5019
+best validation loss at epoch 14 (1.4180); test accuracy there 0.5095
+
+== CIFAR-10 relu_momentum: ReLU, 512-256, SGD+momentum, 40 epochs
+  epoch   1  train 1.7609  val 1.7838  val acc 0.3571  test acc 0.3618
+  epoch   2  train 1.6171  val 1.6581  val acc 0.4103  test acc 0.4251
+  epoch   3  train 1.5461  val 1.5977  val acc 0.4372  test acc 0.4483
+  epoch   4  train 1.5213  val 1.5850  val acc 0.4343  test acc 0.4415
+  epoch   5  train 1.5116  val 1.5780  val acc 0.4450  test acc 0.4547
+  epoch   6  train 1.4894  val 1.5880  val acc 0.4450  test acc 0.4527
+  epoch   7  train 1.4127  val 1.5166  val acc 0.4691  test acc 0.4797
+  epoch   8  train 1.3678  val 1.4814  val acc 0.4760  test acc 0.4821
+  epoch   9  train 1.3526  val 1.4721  val acc 0.4815  test acc 0.4868
+  epoch  10  train 1.3459  val 1.4856  val acc 0.4702  test acc 0.4860
+  epoch  11  train 1.3380  val 1.4895  val acc 0.4768  test acc 0.4879
+  epoch  12  train 1.2618  val 1.4269  val acc 0.4985  test acc 0.5057
+  epoch  13  train 1.2507  val 1.4384  val acc 0.4956  test acc 0.4939
+  epoch  14  train 1.1863  val 1.3958  val acc 0.5133  test acc 0.5175
+  epoch  15  train 1.2631  val 1.4692  val acc 0.4842  test acc 0.4855
+  epoch  16  train 1.1958  val 1.4090  val acc 0.5044  test acc 0.5112
+  epoch  17  train 1.1462  val 1.3962  val acc 0.5127  test acc 0.5160
+  epoch  18  train 1.1093  val 1.3860  val acc 0.5166  test acc 0.5150
+  epoch  19  train 1.1119  val 1.4224  val acc 0.5123  test acc 0.5152
+  epoch  20  train 1.0787  val 1.4039  val acc 0.5128  test acc 0.5155
+  epoch  21  train 1.0602  val 1.3952  val acc 0.5218  test acc 0.5223
+  epoch  22  train 1.0337  val 1.3881  val acc 0.5256  test acc 0.5254
+  epoch  23  train 0.9879  val 1.3661  val acc 0.5322  test acc 0.5333
+  epoch  24  train 0.9579  val 1.3743  val acc 0.5364  test acc 0.5357
+  epoch  25  train 0.9804  val 1.4177  val acc 0.5226  test acc 0.5273
+  epoch  26  train 0.9619  val 1.4406  val acc 0.5234  test acc 0.5241
+  epoch  27  train 0.9470  val 1.4616  val acc 0.5149  test acc 0.5230
+  epoch  28  train 0.8775  val 1.4070  val acc 0.5347  test acc 0.5362
+  epoch  29  train 0.8970  val 1.4478  val acc 0.5228  test acc 0.5261
+  epoch  30  train 0.8268  val 1.4456  val acc 0.5357  test acc 0.5403
+  epoch  31  train 0.9070  val 1.5211  val acc 0.5175  test acc 0.5115
+  epoch  32  train 0.8676  val 1.5050  val acc 0.5186  test acc 0.5147
+  epoch  33  train 0.7941  val 1.4878  val acc 0.5323  test acc 0.5323
+  epoch  34  train 0.7480  val 1.4720  val acc 0.5360  test acc 0.5266
+  epoch  35  train 0.7774  val 1.5165  val acc 0.5358  test acc 0.5256
+  epoch  36  train 0.7175  val 1.5002  val acc 0.5305  test acc 0.5256
+  epoch  37  train 0.7392  val 1.5813  val acc 0.5204  test acc 0.5226
+  epoch  38  train 0.6480  val 1.5426  val acc 0.5407  test acc 0.5316
+  epoch  39  train 0.7042  val 1.5703  val acc 0.5258  test acc 0.5232
+  epoch  40  train 0.7271  val 1.6981  val acc 0.5197  test acc 0.5309
+best validation loss at epoch 23 (1.3661); test accuracy there 0.5333
+
+== CIFAR-10 relu_rmsprop: ReLU, 512-256, RMSprop, 40 epochs
+  epoch   1  train 1.8039  val 1.8334  val acc 0.3386  test acc 0.3463
+  epoch   2  train 1.7055  val 1.7475  val acc 0.3734  test acc 0.3825
+  epoch   3  train 1.5714  val 1.6265  val acc 0.4208  test acc 0.4337
+  epoch   4  train 1.5508  val 1.6102  val acc 0.4342  test acc 0.4384
+  epoch   5  train 1.4884  val 1.5684  val acc 0.4402  test acc 0.4466
+  epoch   6  train 1.4515  val 1.5417  val acc 0.4531  test acc 0.4647
+  epoch   7  train 1.4608  val 1.5670  val acc 0.4493  test acc 0.4520
+  epoch   8  train 1.3959  val 1.5139  val acc 0.4601  test acc 0.4689
+  epoch   9  train 1.3913  val 1.5152  val acc 0.4619  test acc 0.4646
+  epoch  10  train 1.3332  val 1.4759  val acc 0.4768  test acc 0.4891
+  epoch  11  train 1.3317  val 1.4839  val acc 0.4757  test acc 0.4826
+  epoch  12  train 1.2930  val 1.4650  val acc 0.4878  test acc 0.4979
+  epoch  13  train 1.2637  val 1.4541  val acc 0.4871  test acc 0.4978
+  epoch  14  train 1.3388  val 1.5473  val acc 0.4626  test acc 0.4640
+  epoch  15  train 1.2558  val 1.4768  val acc 0.4830  test acc 0.4875
+  epoch  16  train 1.2543  val 1.5028  val acc 0.4787  test acc 0.4887
+  epoch  17  train 1.3316  val 1.5832  val acc 0.4621  test acc 0.4646
+  epoch  18  train 1.2628  val 1.5328  val acc 0.4748  test acc 0.4746
+  epoch  19  train 1.1833  val 1.4762  val acc 0.4912  test acc 0.5025
+  epoch  20  train 1.1678  val 1.4950  val acc 0.4834  test acc 0.4928
+  epoch  21  train 1.1389  val 1.4700  val acc 0.4978  test acc 0.5044
+  epoch  22  train 1.1511  val 1.4881  val acc 0.4896  test acc 0.4995
+  epoch  23  train 1.1251  val 1.4889  val acc 0.4916  test acc 0.5016
+  epoch  24  train 1.1094  val 1.4909  val acc 0.4938  test acc 0.4993
+  epoch  25  train 1.1090  val 1.5107  val acc 0.4885  test acc 0.4922
+  epoch  26  train 1.1007  val 1.5283  val acc 0.4890  test acc 0.4946
+  epoch  27  train 1.0739  val 1.5041  val acc 0.4978  test acc 0.5001
+  epoch  28  train 1.0497  val 1.5120  val acc 0.4937  test acc 0.5049
+  epoch  29  train 1.0474  val 1.5265  val acc 0.4894  test acc 0.5003
+  epoch  30  train 1.0806  val 1.5812  val acc 0.4854  test acc 0.4894
+  epoch  31  train 1.0751  val 1.6066  val acc 0.4845  test acc 0.4887
+  epoch  32  train 1.0769  val 1.6027  val acc 0.4763  test acc 0.4859
+  epoch  33  train 1.0552  val 1.5763  val acc 0.4904  test acc 0.4896
+  epoch  34  train 1.0036  val 1.5725  val acc 0.4888  test acc 0.5002
+  epoch  35  train 1.0378  val 1.6222  val acc 0.4788  test acc 0.4912
+  epoch  36  train 0.9814  val 1.5888  val acc 0.4900  test acc 0.5030
+  epoch  37  train 0.9949  val 1.6157  val acc 0.4916  test acc 0.4920
+  epoch  38  train 0.9693  val 1.6154  val acc 0.4877  test acc 0.4973
+  epoch  39  train 0.9759  val 1.6462  val acc 0.4862  test acc 0.4972
+  epoch  40  train 1.0070  val 1.6339  val acc 0.4817  test acc 0.4855
+best validation loss at epoch 13 (1.4541); test accuracy there 0.4978
+
+per-class test accuracy of relu_momentum:
+   airplane    0.563
+   automobile  0.580
+   bird        0.410
+   cat         0.293
+   deer        0.385
+   dog         0.381
+   frog        0.743
+   horse       0.658
+   ship        0.678
+   truck       0.642
+-> results/cifar.json
+######## cifar done in 201 s

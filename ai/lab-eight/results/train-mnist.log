@@ -1,0 +1,411 @@
+torch 2.14.0, cuda False, mps True, threads 4
+
+######## linear
+== 1g: fully connected layer 2 -> 3 by matrix multiplication
+fc_out:              [[381.0, 682.0, 983.0]]
+fc_out_alternative:  [[381.0, 682.0, 983.0]]
+fc_out == alternative: [[True, True, True]]
+fc_weight_grad:   [[10.0, 20.0], [10.0, 20.0], [10.0, 20.0]]
+our_weight_grad:  [[10.0, 20.0], [10.0, 20.0], [10.0, 20.0]]
+fc_bias_grad:     [[1.0, 1.0, 1.0]]
+our_bias_grad:    [[1.0, 1.0, 1.0]]
+
+== 1e: ScratchLinear against torch.nn.Linear
+same seed, max |W - W'| after init:  0.000e+00  (bias 0.000e+00)
+max |y - y'| on a batch of 64:       1.192e-06
+max |dL/dW - dL/dW'|:                 1.630e-09
+max |dL/db - dL/db'|:                 6.985e-10
+
+   whole MNIST training, 5 epochs, nn.Linear vs ScratchLinear:
+   nn.Linear      test acc by epoch [0.9417, 0.9608, 0.9667, 0.9717, 0.9745]  (6.7 s)
+   ScratchLinear  test acc by epoch [0.9417, 0.9608, 0.9664, 0.9711, 0.975]  (10.2 s)
+-> results/linear.json
+######## linear done in 18 s
+
+######## mnist
+MNIST: train (50000, 784), val (10000, 784), test (10000, 784), dtype torch.float32
+
+== MNIST manual: як у посібнику: 0..255, сигмоїда, 100, 40 epochs
+  epoch   1  train 0.3700  val 0.3381  val acc 0.9111  test acc 0.9067
+  epoch   2  train 0.3249  val 0.3021  val acc 0.9181  test acc 0.9152
+  epoch   3  train 0.2875  val 0.2639  val acc 0.9257  test acc 0.9243
+  epoch   4  train 0.2665  val 0.2533  val acc 0.9277  test acc 0.9248
+  epoch   5  train 0.2585  val 0.2438  val acc 0.9282  test acc 0.9258
+  epoch   6  train 0.2445  val 0.2306  val acc 0.9328  test acc 0.9308
+  epoch   7  train 0.2338  val 0.2224  val acc 0.9365  test acc 0.9315
+  epoch   8  train 0.2392  val 0.2260  val acc 0.9327  test acc 0.9276
+  epoch   9  train 0.2382  val 0.2267  val acc 0.9362  test acc 0.9251
+  epoch  10  train 0.2189  val 0.2131  val acc 0.9374  test acc 0.9356
+  epoch  11  train 0.2233  val 0.2124  val acc 0.9375  test acc 0.9299
+  epoch  12  train 0.2231  val 0.2208  val acc 0.9352  test acc 0.9314
+  epoch  13  train 0.2135  val 0.2101  val acc 0.9373  test acc 0.9375
+  epoch  14  train 0.2245  val 0.2151  val acc 0.9361  test acc 0.9341
+  epoch  15  train 0.2073  val 0.1937  val acc 0.9413  test acc 0.9372
+  epoch  16  train 0.1991  val 0.1896  val acc 0.9431  test acc 0.9396
+  epoch  17  train 0.2088  val 0.2030  val acc 0.9384  test acc 0.9358
+  epoch  18  train 0.2024  val 0.1984  val acc 0.9413  test acc 0.9387
+  epoch  19  train 0.2068  val 0.1970  val acc 0.9415  test acc 0.9372
+  epoch  20  train 0.1970  val 0.1844  val acc 0.9445  test acc 0.9393
+  epoch  21  train 0.1845  val 0.1763  val acc 0.9477  test acc 0.9467
+  epoch  22  train 0.1854  val 0.1773  val acc 0.9459  test acc 0.9412
+  epoch  23  train 0.1937  val 0.1824  val acc 0.9466  test acc 0.9402
+  epoch  24  train 0.1854  val 0.1806  val acc 0.9480  test acc 0.9403
+  epoch  25  train 0.1831  val 0.1766  val acc 0.9506  test acc 0.9438
+  epoch  26  train 0.1845  val 0.1815  val acc 0.9468  test acc 0.9419
+  epoch  27  train 0.1857  val 0.1806  val acc 0.9472  test acc 0.9412
+  epoch  28  train 0.1804  val 0.1781  val acc 0.9491  test acc 0.9459
+  epoch  29  train 0.1823  val 0.1876  val acc 0.9435  test acc 0.9403
+  epoch  30  train 0.1875  val 0.1856  val acc 0.9435  test acc 0.9416
+  epoch  31  train 0.1864  val 0.1868  val acc 0.9451  test acc 0.9387
+  epoch  32  train 0.1875  val 0.1882  val acc 0.9431  test acc 0.9380
+  epoch  33  train 0.1775  val 0.1822  val acc 0.9462  test acc 0.9422
+  epoch  34  train 0.1768  val 0.1821  val acc 0.9452  test acc 0.9387
+  epoch  35  train 0.1746  val 0.1782  val acc 0.9478  test acc 0.9446
+  epoch  36  train 0.1702  val 0.1760  val acc 0.9502  test acc 0.9423
+  epoch  37  train 0.1775  val 0.1834  val acc 0.9456  test acc 0.9416
+  epoch  38  train 0.1678  val 0.1655  val acc 0.9505  test acc 0.9468
+  epoch  39  train 0.1630  val 0.1614  val acc 0.9538  test acc 0.9462
+  epoch  40  train 0.1717  val 0.1748  val acc 0.9499  test acc 0.9442
+
+== MNIST normalized: + нормування /255, 40 epochs
+  epoch   1  train 0.3400  val 0.3125  val acc 0.9176  test acc 0.9130
+  epoch   2  train 0.2484  val 0.2340  val acc 0.9327  test acc 0.9290
+  epoch   3  train 0.2060  val 0.1984  val acc 0.9466  test acc 0.9386
+  epoch   4  train 0.1758  val 0.1756  val acc 0.9513  test acc 0.9457
+  epoch   5  train 0.1519  val 0.1573  val acc 0.9557  test acc 0.9508
+  epoch   6  train 0.1343  val 0.1442  val acc 0.9580  test acc 0.9541
+  epoch   7  train 0.1199  val 0.1344  val acc 0.9604  test acc 0.9577
+  epoch   8  train 0.1059  val 0.1238  val acc 0.9645  test acc 0.9601
+  epoch   9  train 0.0952  val 0.1161  val acc 0.9665  test acc 0.9634
+  epoch  10  train 0.0857  val 0.1106  val acc 0.9673  test acc 0.9654
+  epoch  11  train 0.0780  val 0.1062  val acc 0.9680  test acc 0.9673
+  epoch  12  train 0.0703  val 0.1013  val acc 0.9714  test acc 0.9683
+  epoch  13  train 0.0641  val 0.1001  val acc 0.9705  test acc 0.9693
+  epoch  14  train 0.0577  val 0.0962  val acc 0.9715  test acc 0.9702
+  epoch  15  train 0.0520  val 0.0926  val acc 0.9724  test acc 0.9731
+  epoch  16  train 0.0483  val 0.0924  val acc 0.9720  test acc 0.9719
+  epoch  17  train 0.0434  val 0.0886  val acc 0.9736  test acc 0.9728
+  epoch  18  train 0.0404  val 0.0879  val acc 0.9728  test acc 0.9727
+  epoch  19  train 0.0384  val 0.0891  val acc 0.9732  test acc 0.9730
+  epoch  20  train 0.0336  val 0.0871  val acc 0.9747  test acc 0.9745
+  epoch  21  train 0.0327  val 0.0872  val acc 0.9744  test acc 0.9734
+  epoch  22  train 0.0279  val 0.0845  val acc 0.9742  test acc 0.9742
+  epoch  23  train 0.0252  val 0.0862  val acc 0.9745  test acc 0.9753
+  epoch  24  train 0.0226  val 0.0836  val acc 0.9749  test acc 0.9758
+  epoch  25  train 0.0210  val 0.0852  val acc 0.9753  test acc 0.9748
+  epoch  26  train 0.0193  val 0.0844  val acc 0.9747  test acc 0.9761
+  epoch  27  train 0.0185  val 0.0857  val acc 0.9752  test acc 0.9759
+  epoch  28  train 0.0163  val 0.0835  val acc 0.9754  test acc 0.9755
+  epoch  29  train 0.0145  val 0.0857  val acc 0.9754  test acc 0.9757
+  epoch  30  train 0.0133  val 0.0855  val acc 0.9751  test acc 0.9759
+  epoch  31  train 0.0125  val 0.0871  val acc 0.9747  test acc 0.9751
+  epoch  32  train 0.0107  val 0.0866  val acc 0.9764  test acc 0.9756
+  epoch  33  train 0.0098  val 0.0889  val acc 0.9753  test acc 0.9756
+  epoch  34  train 0.0085  val 0.0860  val acc 0.9757  test acc 0.9756
+  epoch  35  train 0.0077  val 0.0862  val acc 0.9760  test acc 0.9759
+  epoch  36  train 0.0076  val 0.0880  val acc 0.9761  test acc 0.9754
+  epoch  37  train 0.0062  val 0.0873  val acc 0.9770  test acc 0.9754
+  epoch  38  train 0.0057  val 0.0898  val acc 0.9773  test acc 0.9759
+  epoch  39  train 0.0051  val 0.0909  val acc 0.9754  test acc 0.9753
+  epoch  40  train 0.0047  val 0.0932  val acc 0.9755  test acc 0.9746
+
+== MNIST relu: + ReLU замість сигмоїди, 40 epochs
+  epoch   1  train 0.2519  val 0.2358  val acc 0.9344  test acc 0.9290
+  epoch   2  train 0.1711  val 0.1715  val acc 0.9514  test acc 0.9513
+  epoch   3  train 0.1322  val 0.1417  val acc 0.9613  test acc 0.9583
+  epoch   4  train 0.1027  val 0.1196  val acc 0.9666  test acc 0.9648
+  epoch   5  train 0.0845  val 0.1103  val acc 0.9686  test acc 0.9670
+  epoch   6  train 0.0719  val 0.1027  val acc 0.9710  test acc 0.9720
+  epoch   7  train 0.0615  val 0.0968  val acc 0.9715  test acc 0.9714
+  epoch   8  train 0.0526  val 0.0903  val acc 0.9751  test acc 0.9726
+  epoch   9  train 0.0429  val 0.0862  val acc 0.9747  test acc 0.9754
+  epoch  10  train 0.0407  val 0.0936  val acc 0.9747  test acc 0.9746
+  epoch  11  train 0.0313  val 0.0870  val acc 0.9761  test acc 0.9766
+  epoch  12  train 0.0252  val 0.0824  val acc 0.9756  test acc 0.9762
+  epoch  13  train 0.0229  val 0.0867  val acc 0.9759  test acc 0.9770
+  epoch  14  train 0.0206  val 0.0886  val acc 0.9769  test acc 0.9758
+  epoch  15  train 0.0161  val 0.0823  val acc 0.9773  test acc 0.9771
+  epoch  16  train 0.0141  val 0.0851  val acc 0.9769  test acc 0.9766
+  epoch  17  train 0.0126  val 0.0873  val acc 0.9771  test acc 0.9763
+  epoch  18  train 0.0109  val 0.0855  val acc 0.9788  test acc 0.9780
+  epoch  19  train 0.0106  val 0.0935  val acc 0.9767  test acc 0.9756
+  epoch  20  train 0.0106  val 0.0956  val acc 0.9762  test acc 0.9763
+  epoch  21  train 0.0065  val 0.0910  val acc 0.9774  test acc 0.9766
+  epoch  22  train 0.0058  val 0.0923  val acc 0.9776  test acc 0.9765
+  epoch  23  train 0.0057  val 0.0992  val acc 0.9773  test acc 0.9771
+  epoch  24  train 0.0069  val 0.1011  val acc 0.9762  test acc 0.9755
+  epoch  25  train 0.0060  val 0.1049  val acc 0.9762  test acc 0.9755
+  epoch  26  train 0.0031  val 0.1009  val acc 0.9775  test acc 0.9780
+  epoch  27  train 0.0072  val 0.1138  val acc 0.9759  test acc 0.9760
+  epoch  28  train 0.0028  val 0.1050  val acc 0.9775  test acc 0.9779
+  epoch  29  train 0.0027  val 0.1103  val acc 0.9767  test acc 0.9755
+  epoch  30  train 0.0045  val 0.1186  val acc 0.9763  test acc 0.9763
+  epoch  31  train 0.0015  val 0.1110  val acc 0.9790  test acc 0.9783
+  epoch  32  train 0.0016  val 0.1173  val acc 0.9774  test acc 0.9769
+  epoch  33  train 0.0141  val 0.1412  val acc 0.9725  test acc 0.9720
+  epoch  34  train 0.0015  val 0.1135  val acc 0.9789  test acc 0.9786
+  epoch  35  train 0.0008  val 0.1121  val acc 0.9793  test acc 0.9800
+  epoch  36  train 0.0007  val 0.1152  val acc 0.9784  test acc 0.9791
+  epoch  37  train 0.0005  val 0.1151  val acc 0.9787  test acc 0.9781
+  epoch  38  train 0.0007  val 0.1210  val acc 0.9787  test acc 0.9778
+  epoch  39  train 0.0098  val 0.1360  val acc 0.9736  test acc 0.9727
+  epoch  40  train 0.0033  val 0.1342  val acc 0.9761  test acc 0.9749
+
+== MNIST improved: ReLU, 256 hidden, 200 epochs
+  epoch   1  train 0.1974  val 0.1903  val acc 0.9485  test acc 0.9417
+  epoch   2  train 0.1192  val 0.1300  val acc 0.9640  test acc 0.9608
+  epoch   3  train 0.0863  val 0.1120  val acc 0.9687  test acc 0.9667
+  epoch   4  train 0.0619  val 0.0913  val acc 0.9732  test acc 0.9717
+  epoch   5  train 0.0457  val 0.0838  val acc 0.9746  test acc 0.9745
+  epoch   6  train 0.0380  val 0.0823  val acc 0.9749  test acc 0.9761
+  epoch   7  train 0.0286  val 0.0775  val acc 0.9768  test acc 0.9777
+  epoch   8  train 0.0300  val 0.0828  val acc 0.9746  test acc 0.9735
+  epoch   9  train 0.0201  val 0.0764  val acc 0.9774  test acc 0.9786
+  epoch  10  train 0.0183  val 0.0837  val acc 0.9759  test acc 0.9758
+  epoch  11  train 0.0148  val 0.0800  val acc 0.9781  test acc 0.9782
+  epoch  12  train 0.0092  val 0.0778  val acc 0.9787  test acc 0.9786
+  epoch  13  train 0.0069  val 0.0808  val acc 0.9788  test acc 0.9790
+  epoch  14  train 0.0057  val 0.0828  val acc 0.9790  test acc 0.9788
+  epoch  15  train 0.0053  val 0.0786  val acc 0.9789  test acc 0.9805
+  epoch  16  train 0.0060  val 0.0837  val acc 0.9793  test acc 0.9777
+  epoch  17  train 0.0107  val 0.1062  val acc 0.9759  test acc 0.9735
+  epoch  18  train 0.0045  val 0.0845  val acc 0.9801  test acc 0.9803
+  epoch  19  train 0.0029  val 0.0919  val acc 0.9794  test acc 0.9788
+  epoch  20  train 0.0017  val 0.0825  val acc 0.9805  test acc 0.9796
+  epoch  21  train 0.0007  val 0.0840  val acc 0.9818  test acc 0.9804
+  epoch  22  train 0.0084  val 0.1000  val acc 0.9774  test acc 0.9768
+  epoch  23  train 0.0015  val 0.0905  val acc 0.9805  test acc 0.9793
+  epoch  24  train 0.0006  val 0.0872  val acc 0.9814  test acc 0.9811
+  epoch  25  train 0.0004  val 0.0878  val acc 0.9808  test acc 0.9802
+  epoch  26  train 0.0004  val 0.0896  val acc 0.9809  test acc 0.9808
+  epoch  27  train 0.0003  val 0.0909  val acc 0.9811  test acc 0.9807
+  epoch  28  train 0.0080  val 0.0997  val acc 0.9787  test acc 0.9754
+  epoch  29  train 0.0012  val 0.0966  val acc 0.9810  test acc 0.9797
+  epoch  30  train 0.0003  val 0.0970  val acc 0.9809  test acc 0.9801
+  epoch  31  train 0.0002  val 0.0960  val acc 0.9812  test acc 0.9798
+  epoch  32  train 0.0002  val 0.0980  val acc 0.9810  test acc 0.9798
+  epoch  33  train 0.0002  val 0.0989  val acc 0.9809  test acc 0.9799
+  epoch  34  train 0.0001  val 0.0997  val acc 0.9816  test acc 0.9802
+  epoch  35  train 0.0001  val 0.0996  val acc 0.9817  test acc 0.9800
+  epoch  36  train 0.0001  val 0.1010  val acc 0.9819  test acc 0.9803
+  epoch  37  train 0.0001  val 0.1023  val acc 0.9824  test acc 0.9804
+  epoch  38  train 0.0001  val 0.1027  val acc 0.9822  test acc 0.9799
+  epoch  39  train 0.0001  val 0.1035  val acc 0.9817  test acc 0.9803
+  epoch  40  train 0.1351  val 0.2793  val acc 0.9544  test acc 0.9530
+  epoch  41  train 0.0023  val 0.1170  val acc 0.9792  test acc 0.9811
+  epoch  42  train 0.0003  val 0.1086  val acc 0.9811  test acc 0.9811
+  epoch  43  train 0.0001  val 0.1060  val acc 0.9816  test acc 0.9816
+  epoch  44  train 0.0001  val 0.1060  val acc 0.9820  test acc 0.9814
+  epoch  45  train 0.0001  val 0.1071  val acc 0.9816  test acc 0.9812
+  epoch  46  train 0.0001  val 0.1074  val acc 0.9819  test acc 0.9814
+  epoch  47  train 0.0001  val 0.1074  val acc 0.9819  test acc 0.9817
+  epoch  48  train 0.0001  val 0.1082  val acc 0.9822  test acc 0.9817
+  epoch  49  train 0.0001  val 0.1088  val acc 0.9819  test acc 0.9813
+  epoch  50  train 0.0000  val 0.1096  val acc 0.9823  test acc 0.9811
+  epoch  51  train 0.0000  val 0.1101  val acc 0.9823  test acc 0.9816
+  epoch  52  train 0.0000  val 0.1116  val acc 0.9823  test acc 0.9810
+  epoch  53  train 0.0000  val 0.1101  val acc 0.9825  test acc 0.9812
+  epoch  54  train 0.0000  val 0.1134  val acc 0.9820  test acc 0.9811
+  epoch  55  train 0.0000  val 0.1144  val acc 0.9822  test acc 0.9814
+  epoch  56  train 0.0000  val 0.1154  val acc 0.9819  test acc 0.9808
+  epoch  57  train 0.0000  val 0.1182  val acc 0.9816  test acc 0.9803
+  epoch  58  train 0.0086  val 0.1406  val acc 0.9763  test acc 0.9760
+  epoch  59  train 0.0031  val 0.1369  val acc 0.9786  test acc 0.9785
+  epoch  60  train 0.0002  val 0.1187  val acc 0.9805  test acc 0.9801
+  epoch  61  train 0.0001  val 0.1219  val acc 0.9812  test acc 0.9795
+  epoch  62  train 0.0001  val 0.1177  val acc 0.9820  test acc 0.9801
+  epoch  63  train 0.0000  val 0.1189  val acc 0.9820  test acc 0.9805
+  epoch  64  train 0.0000  val 0.1185  val acc 0.9824  test acc 0.9802
+  epoch  65  train 0.0000  val 0.1192  val acc 0.9820  test acc 0.9803
+  epoch  66  train 0.0000  val 0.1190  val acc 0.9826  test acc 0.9805
+  epoch  67  train 0.0000  val 0.1199  val acc 0.9826  test acc 0.9801
+  epoch  68  train 0.0000  val 0.1200  val acc 0.9825  test acc 0.9803
+  epoch  69  train 0.0000  val 0.1206  val acc 0.9822  test acc 0.9804
+  epoch  70  train 0.0000  val 0.1210  val acc 0.9824  test acc 0.9806
+  epoch  71  train 0.0000  val 0.1213  val acc 0.9822  test acc 0.9807
+  epoch  72  train 0.0000  val 0.1215  val acc 0.9824  test acc 0.9804
+  epoch  73  train 0.0000  val 0.1228  val acc 0.9825  test acc 0.9803
+  epoch  74  train 0.0000  val 0.1244  val acc 0.9825  test acc 0.9807
+  epoch  75  train 0.0000  val 0.1241  val acc 0.9827  test acc 0.9811
+  epoch  76  train 0.0000  val 0.1259  val acc 0.9824  test acc 0.9807
+  epoch  77  train 0.0000  val 0.1267  val acc 0.9828  test acc 0.9808
+  epoch  78  train 0.0000  val 0.1268  val acc 0.9828  test acc 0.9807
+  epoch  79  train 0.0000  val 0.1301  val acc 0.9824  test acc 0.9802
+  epoch  80  train 0.0000  val 0.1306  val acc 0.9830  test acc 0.9808
+  epoch  81  train 0.0034  val 0.1415  val acc 0.9805  test acc 0.9785
+  epoch  82  train 0.0017  val 0.1435  val acc 0.9790  test acc 0.9785
+  epoch  83  train 0.0008  val 0.1438  val acc 0.9799  test acc 0.9796
+  epoch  84  train 0.0000  val 0.1329  val acc 0.9820  test acc 0.9804
+  epoch  85  train 0.0000  val 0.1319  val acc 0.9820  test acc 0.9804
+  epoch  86  train 0.0000  val 0.1320  val acc 0.9824  test acc 0.9804
+  epoch  87  train 0.0000  val 0.1323  val acc 0.9821  test acc 0.9804
+  epoch  88  train 0.0000  val 0.1324  val acc 0.9822  test acc 0.9805
+  epoch  89  train 0.0000  val 0.1323  val acc 0.9822  test acc 0.9805
+  epoch  90  train 0.0000  val 0.1333  val acc 0.9824  test acc 0.9801
+  epoch  91  train 0.0000  val 0.1333  val acc 0.9824  test acc 0.9804
+  epoch  92  train 0.0000  val 0.1342  val acc 0.9824  test acc 0.9803
+  epoch  93  train 0.0000  val 0.1344  val acc 0.9825  test acc 0.9801
+  epoch  94  train 0.0000  val 0.1350  val acc 0.9824  test acc 0.9803
+  epoch  95  train 0.0000  val 0.1353  val acc 0.9826  test acc 0.9803
+  epoch  96  train 0.0000  val 0.1360  val acc 0.9823  test acc 0.9803
+  epoch  97  train 0.0000  val 0.1372  val acc 0.9824  test acc 0.9806
+  epoch  98  train 0.0000  val 0.1372  val acc 0.9823  test acc 0.9807
+  epoch  99  train 0.0000  val 0.1372  val acc 0.9822  test acc 0.9807
+  epoch 100  train 0.0000  val 0.1388  val acc 0.9827  test acc 0.9804
+  epoch 101  train 0.0000  val 0.1403  val acc 0.9825  test acc 0.9805
+  epoch 102  train 0.0000  val 0.1413  val acc 0.9825  test acc 0.9805
+  epoch 103  train 0.0000  val 0.1411  val acc 0.9823  test acc 0.9807
+  epoch 104  train 0.0000  val 0.1423  val acc 0.9825  test acc 0.9805
+  epoch 105  train 0.0000  val 0.1454  val acc 0.9821  test acc 0.9804
+  epoch 106  train 0.0000  val 0.1443  val acc 0.9825  test acc 0.9806
+  epoch 107  train 0.0000  val 0.1465  val acc 0.9825  test acc 0.9800
+  epoch 108  train 0.0000  val 0.1480  val acc 0.9826  test acc 0.9804
+  epoch 109  train 0.0000  val 0.1493  val acc 0.9825  test acc 0.9811
+  epoch 110  train 0.0024  val 0.1502  val acc 0.9799  test acc 0.9775
+  epoch 111  train 0.0002  val 0.1489  val acc 0.9812  test acc 0.9796
+  epoch 112  train 0.0000  val 0.1445  val acc 0.9814  test acc 0.9794
+  epoch 113  train 0.0000  val 0.1426  val acc 0.9819  test acc 0.9797
+  epoch 114  train 0.0000  val 0.1422  val acc 0.9817  test acc 0.9795
+  epoch 115  train 0.0000  val 0.1424  val acc 0.9819  test acc 0.9799
+  epoch 116  train 0.0000  val 0.1425  val acc 0.9821  test acc 0.9800
+  epoch 117  train 0.0000  val 0.1429  val acc 0.9824  test acc 0.9801
+  epoch 118  train 0.0000  val 0.1431  val acc 0.9823  test acc 0.9800
+  epoch 119  train 0.0000  val 0.1433  val acc 0.9824  test acc 0.9801
+  epoch 120  train 0.0000  val 0.1437  val acc 0.9824  test acc 0.9799
+  epoch 121  train 0.0000  val 0.1444  val acc 0.9825  test acc 0.9803
+  epoch 122  train 0.0000  val 0.1449  val acc 0.9829  test acc 0.9799
+  epoch 123  train 0.0000  val 0.1450  val acc 0.9829  test acc 0.9798
+  epoch 124  train 0.0000  val 0.1463  val acc 0.9829  test acc 0.9797
+  epoch 125  train 0.0000  val 0.1467  val acc 0.9825  test acc 0.9803
+  epoch 126  train 0.0000  val 0.1473  val acc 0.9826  test acc 0.9803
+  epoch 127  train 0.0000  val 0.1478  val acc 0.9826  test acc 0.9799
+  epoch 128  train 0.0000  val 0.1498  val acc 0.9827  test acc 0.9806
+  epoch 129  train 0.0000  val 0.1493  val acc 0.9823  test acc 0.9801
+  epoch 130  train 0.0000  val 0.1510  val acc 0.9822  test acc 0.9802
+  epoch 131  train 0.0000  val 0.1525  val acc 0.9827  test acc 0.9801
+  epoch 132  train 0.0000  val 0.1534  val acc 0.9828  test acc 0.9803
+  epoch 133  train 0.0000  val 0.1550  val acc 0.9825  test acc 0.9808
+  epoch 134  train 0.0000  val 0.1557  val acc 0.9826  test acc 0.9806
+  epoch 135  train 0.0000  val 0.1560  val acc 0.9828  test acc 0.9803
+  epoch 136  train 0.0000  val 0.1568  val acc 0.9827  test acc 0.9804
+  epoch 137  train 0.0000  val 0.1587  val acc 0.9831  test acc 0.9803
+  epoch 138  train 0.0000  val 0.1597  val acc 0.9830  test acc 0.9805
+  epoch 139  train 0.0000  val 0.1607  val acc 0.9828  test acc 0.9806
+  epoch 140  train 0.0000  val 0.1609  val acc 0.9827  test acc 0.9805
+  epoch 141  train 0.0000  val 0.1625  val acc 0.9830  test acc 0.9809
+  epoch 142  train 0.0344  val 0.2546  val acc 0.9707  test acc 0.9700
+  epoch 143  train 0.0006  val 0.1656  val acc 0.9810  test acc 0.9796
+  epoch 144  train 0.0009  val 0.1706  val acc 0.9797  test acc 0.9794
+  epoch 145  train 0.0020  val 0.1798  val acc 0.9786  test acc 0.9781
+  epoch 146  train 0.0006  val 0.1653  val acc 0.9804  test acc 0.9795
+  epoch 147  train 0.0000  val 0.1584  val acc 0.9820  test acc 0.9805
+  epoch 148  train 0.0000  val 0.1576  val acc 0.9819  test acc 0.9804
+  epoch 149  train 0.0000  val 0.1577  val acc 0.9825  test acc 0.9804
+  epoch 150  train 0.0000  val 0.1577  val acc 0.9829  test acc 0.9802
+  epoch 151  train 0.0000  val 0.1577  val acc 0.9830  test acc 0.9803
+  epoch 152  train 0.0000  val 0.1579  val acc 0.9829  test acc 0.9804
+  epoch 153  train 0.0000  val 0.1582  val acc 0.9828  test acc 0.9805
+  epoch 154  train 0.0000  val 0.1584  val acc 0.9828  test acc 0.9804
+  epoch 155  train 0.0000  val 0.1583  val acc 0.9828  test acc 0.9803
+  epoch 156  train 0.0000  val 0.1588  val acc 0.9826  test acc 0.9803
+  epoch 157  train 0.0000  val 0.1589  val acc 0.9826  test acc 0.9801
+  epoch 158  train 0.0000  val 0.1593  val acc 0.9827  test acc 0.9802
+  epoch 159  train 0.0000  val 0.1593  val acc 0.9829  test acc 0.9806
+  epoch 160  train 0.0000  val 0.1598  val acc 0.9824  test acc 0.9805
+  epoch 161  train 0.0000  val 0.1598  val acc 0.9826  test acc 0.9806
+  epoch 162  train 0.0000  val 0.1600  val acc 0.9824  test acc 0.9803
+  epoch 163  train 0.0000  val 0.1610  val acc 0.9825  test acc 0.9804
+  epoch 164  train 0.0000  val 0.1611  val acc 0.9825  test acc 0.9801
+  epoch 165  train 0.0000  val 0.1614  val acc 0.9826  test acc 0.9803
+  epoch 166  train 0.0000  val 0.1624  val acc 0.9823  test acc 0.9803
+  epoch 167  train 0.0000  val 0.1628  val acc 0.9825  test acc 0.9803
+  epoch 168  train 0.0000  val 0.1644  val acc 0.9823  test acc 0.9805
+  epoch 169  train 0.0000  val 0.1648  val acc 0.9826  test acc 0.9805
+  epoch 170  train 0.0000  val 0.1655  val acc 0.9826  test acc 0.9807
+  epoch 171  train 0.0000  val 0.1673  val acc 0.9829  test acc 0.9803
+  epoch 172  train 0.0000  val 0.1682  val acc 0.9828  test acc 0.9809
+  epoch 173  train 0.0000  val 0.1683  val acc 0.9832  test acc 0.9808
+  epoch 174  train 0.0000  val 0.1701  val acc 0.9829  test acc 0.9810
+  epoch 175  train 0.0000  val 0.1705  val acc 0.9826  test acc 0.9810
+  epoch 176  train 0.0000  val 0.1724  val acc 0.9827  test acc 0.9806
+  epoch 177  train 0.0000  val 0.1724  val acc 0.9830  test acc 0.9809
+  epoch 178  train 0.0000  val 0.1740  val acc 0.9830  test acc 0.9809
+  epoch 179  train 0.0000  val 0.1752  val acc 0.9827  test acc 0.9810
+  epoch 180  train 0.0000  val 0.1776  val acc 0.9831  test acc 0.9811
+  epoch 181  train 0.0000  val 0.1784  val acc 0.9827  test acc 0.9810
+  epoch 182  train 0.0000  val 0.1795  val acc 0.9825  test acc 0.9809
+  epoch 183  train 0.0000  val 0.1829  val acc 0.9825  test acc 0.9808
+  epoch 184  train 0.0000  val 0.1829  val acc 0.9827  test acc 0.9805
+  epoch 185  train 0.0000  val 0.1851  val acc 0.9820  test acc 0.9810
+  epoch 186  train 0.0000  val 0.1859  val acc 0.9822  test acc 0.9806
+  epoch 187  train 0.0000  val 0.1876  val acc 0.9825  test acc 0.9802
+  epoch 188  train 0.0000  val 0.1889  val acc 0.9825  test acc 0.9807
+  epoch 189  train 0.0000  val 0.1888  val acc 0.9826  test acc 0.9806
+  epoch 190  train 0.0000  val 0.1914  val acc 0.9824  test acc 0.9805
+  epoch 191  train 0.0000  val 0.1918  val acc 0.9824  test acc 0.9807
+  epoch 192  train 0.0000  val 0.1922  val acc 0.9827  test acc 0.9804
+  epoch 193  train 0.0000  val 0.1939  val acc 0.9824  test acc 0.9806
+  epoch 194  train 0.0000  val 0.1958  val acc 0.9825  test acc 0.9808
+  epoch 195  train 0.0000  val 0.1966  val acc 0.9826  test acc 0.9805
+  epoch 196  train 0.0000  val 0.1979  val acc 0.9823  test acc 0.9809
+  epoch 197  train 0.0000  val 0.1998  val acc 0.9822  test acc 0.9804
+  epoch 198  train 0.0000  val 0.2005  val acc 0.9825  test acc 0.9802
+  epoch 199  train 0.0000  val 0.2026  val acc 0.9827  test acc 0.9802
+  epoch 200  train 0.0000  val 0.2036  val acc 0.9825  test acc 0.9805
+
+best validation loss at epoch 9 (0.0764); test accuracy there 0.9786, test loss 0.0741
+test accuracy after 40 epochs 0.9530, after 200 0.9805
+-> results/mnist_mlp.npz
+-> results/mnist.json
+######## mnist done in 585 s
+
+######## determinism
+cpu  deterministic=True  repeat 0: 1.09 s for 3 epochs, test acc 0.9667
+cpu  deterministic=False repeat 0: 1.11 s for 3 epochs, test acc 0.9667
+cpu  deterministic=True  repeat 1: 1.13 s for 3 epochs, test acc 0.9667
+cpu  deterministic=False repeat 1: 1.13 s for 3 epochs, test acc 0.9667
+mps  deterministic=True  repeat 0: 3.19 s for 3 epochs, test acc 0.9663
+mps  deterministic=False repeat 0: 2.80 s for 3 epochs, test acc 0.9663
+mps  deterministic=True  repeat 1: 2.62 s for 3 epochs, test acc 0.9663
+mps  deterministic=False repeat 1: 2.62 s for 3 epochs, test acc 0.9663
+-> results/determinism.json
+######## determinism done in 18 s
+
+######## optimizers
+SGD       lr=0.1    seed 0: val acc 0.9776  best val loss 0.0793 @ 20  test acc 0.9762  (3.8 s)
+SGD       lr=0.1    seed 1: val acc 0.9765  best val loss 0.0775 @ 20  test acc 0.9750  (9.4 s)
+SGD       lr=0.1    seed 2: val acc 0.9775  best val loss 0.0763 @ 20  test acc 0.9773  (10.0 s)
+SGD       lr=0.1    seed 3: val acc 0.9776  best val loss 0.0773 @ 20  test acc 0.9794  (11.4 s)
+SGD       lr=0.1    seed 4: val acc 0.9762  best val loss 0.0784 @ 20  test acc 0.9781  (10.1 s)
+   SGD: test acc after 20 epochs 0.9772 ± 0.0017 (min 0.9750, max 0.9794)
+
+Momentum  lr=0.01   seed 0: val acc 0.9773  best val loss 0.0784 @ 20  test acc 0.9758  (14.2 s)
+Momentum  lr=0.01   seed 1: val acc 0.9774  best val loss 0.0790 @ 20  test acc 0.9753  (12.1 s)
+Momentum  lr=0.01   seed 2: val acc 0.9761  best val loss 0.0790 @ 19  test acc 0.9766  (13.5 s)
+Momentum  lr=0.01   seed 3: val acc 0.9773  best val loss 0.0776 @ 20  test acc 0.9780  (23.6 s)
+Momentum  lr=0.01   seed 4: val acc 0.9767  best val loss 0.0791 @ 20  test acc 0.9787  (28.3 s)
+   Momentum: test acc after 20 epochs 0.9769 ± 0.0014 (min 0.9753, max 0.9787)
+
+Nesterov  lr=0.01   seed 0: val acc 0.9777  best val loss 0.0789 @ 20  test acc 0.9759  (35.1 s)
+Nesterov  lr=0.01   seed 1: val acc 0.9774  best val loss 0.0788 @ 20  test acc 0.9756  (31.3 s)
+Nesterov  lr=0.01   seed 2: val acc 0.9765  best val loss 0.0791 @ 19  test acc 0.9761  (31.6 s)
+Nesterov  lr=0.01   seed 3: val acc 0.9772  best val loss 0.0775 @ 20  test acc 0.9778  (36.5 s)
+Nesterov  lr=0.01   seed 4: val acc 0.9769  best val loss 0.0790 @ 20  test acc 0.9782  (27.2 s)
+   Nesterov: test acc after 20 epochs 0.9767 ± 0.0012 (min 0.9756, max 0.9782)
+
+Adagrad   lr=0.01   seed 0: val acc 0.9758  best val loss 0.0816 @ 20  test acc 0.9744  (35.8 s)
+Adagrad   lr=0.01   seed 1: val acc 0.9771  best val loss 0.0796 @ 20  test acc 0.9769  (33.3 s)
+Adagrad   lr=0.01   seed 2: val acc 0.9756  best val loss 0.0802 @ 20  test acc 0.9762  (108.2 s)
+Adagrad   lr=0.01   seed 3: val acc 0.9760  best val loss 0.0781 @ 20  test acc 0.9783  (152.5 s)
+Adagrad   lr=0.01   seed 4: val acc 0.9772  best val loss 0.0816 @ 20  test acc 0.9760  (99.0 s)
+   Adagrad: test acc after 20 epochs 0.9764 ± 0.0014 (min 0.9744, max 0.9783)
+
+RMSprop   lr=0.001  seed 0: val acc 0.9792  best val loss 0.0676 @ 9  test acc 0.9799  (66.0 s)
+RMSprop   lr=0.001  seed 1: val acc 0.9780  best val loss 0.0701 @ 7  test acc 0.9777  (70.6 s)
+RMSprop   lr=0.001  seed 2: val acc 0.9804  best val loss 0.0715 @ 7  test acc 0.9804  (61.6 s)
+RMSprop   lr=0.001  seed 3: val acc 0.9822  best val loss 0.0724 @ 10  test acc 0.9812  (58.6 s)
+RMSprop   lr=0.001  seed 4: val acc 0.9815  best val loss 0.0714 @ 9  test acc 0.9786  (56.1 s)
+   RMSprop: test acc after 20 epochs 0.9796 ± 0.0014 (min 0.9777, max 0.9812)
+
+Adam      lr=0.001  seed 0: val acc 0.9805  best val loss 0.0764 @ 9  test acc 0.9796  (61.7 s)
+Adam      lr=0.001  seed 1: val acc 0.9807  best val loss 0.0708 @ 8  test acc 0.9799  (60.4 s)

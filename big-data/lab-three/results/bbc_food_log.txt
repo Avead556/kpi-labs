@@ -1,0 +1,50 @@
+food.ttl: 279 triples, ontology http://purl.org/ontology/fo/
+title: Food Ontology
+
+== 17 classes ==
+fo:Collection          < dctypes:Collection         Collection
+fo:Course                                           Course
+fo:Cuisine                                          Cuisine
+fo:Diet                                             Diet
+fo:Food                                             Food
+fo:Ingredient                                       Ingredient
+fo:IngredientList      < rdf:Seq                    IngredientList
+fo:Menu                < fo:Collection              Menu
+fo:Method              < rdf:Seq                    Method
+fo:Occasion                                         Occasion
+fo:Recipe                                           Recipe
+fo:Season                                           Season
+fo:ShoppingCategory                                 ShoppingCategory
+fo:Stage                                            Stage
+fo:StageSequence       < rdf:Seq                    StageSequence
+fo:Step                                             Step
+fo:Technique                                        Technique
+
+== 17 object properties (domain -> range) ==
+fo:at_its_best         fo:Food                                -> fo:Season
+fo:canape              fo:Menu                                -> fo:Recipe
+fo:cuisine             fo:Recipe                              -> fo:Cuisine
+fo:dessert             fo:Menu                                -> fo:Recipe
+fo:diet                fo:Recipe                              -> fo:Diet
+fo:food                fo:Ingredient                          -> fo:Food
+fo:ingredients         -                                      -> fo:IngredientList
+fo:main_course         fo:Menu                                -> fo:Recipe
+fo:method              -                                      -> fo:Method
+fo:occasion            fo:Recipe                              -> fo:Occasion
+fo:produces            fo:Recipe                              -> fo:Food
+fo:required_technique  -                                      -> fo:Technique
+fo:serve_as            fo:Recipe                              -> fo:Course
+fo:shopping_category   fo:Food                                -> fo:ShoppingCategory
+fo:side_dish           fo:Menu                                -> fo:Recipe
+fo:stages              fo:Recipe                              -> fo:StageSequence
+fo:starter             fo:Menu                                -> fo:Recipe
+
+== 5 datatype properties ==
+fo:imperial_quantity   fo:Ingredient                          -> xsd:string
+fo:instruction         fo:Step                                -> xsd:string
+fo:metric_quantity     fo:Ingredient                          -> xsd:string
+fo:quantity            fo:Ingredient                          -> xsd:nonNegativeInteger
+fo:serves              fo:Recipe                              -> xsd:string
+
+== vocabularies used (terms per prefix) ==
+fo 347, rdfs 165, owl 50, rdf 49, vs 40, foaf 16, fo-authors 15, provenance 7, xsd 5, dcterms 4, v 2, dc 2, cc-license 1, dctypes 1

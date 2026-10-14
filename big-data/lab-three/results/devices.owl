@@ -1,0 +1,651 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://kpi.ua/ontologies/devices.owl"
+         xmlns="http://kpi.ua/ontologies/devices.owl#">
+
+<owl:Ontology rdf:about="http://kpi.ua/ontologies/devices.owl">
+  <rdfs:label xml:lang="uk">Онтологія технічних пристроїв</rdfs:label>
+  <rdfs:comment xml:lang="uk">Технічні пристрої (смартфон, планшет, ноутбук, смарт-годинник, настільний комп'ютер), їхні компоненти, виробники й операційні системи. Варіант 5 лабораторної роботи №3 з дисципліни «Обробка надвеликих масивів даних»</rdfs:comment>
+  <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
+</owl:Ontology>
+
+<owl:ObjectProperty rdf:about="#hasComponent">
+  <rdfs:domain rdf:resource="#Device"/>
+  <rdfs:range rdf:resource="#Component"/>
+  <owl:inverseOf rdf:resource="#isComponentOf"/>
+  <rdfs:label xml:lang="uk">має компонент</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isComponentOf">
+  <owl:inverseOf rdf:resource="#hasComponent"/>
+  <rdfs:label xml:lang="uk">є компонентом</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasScreen">
+  <rdfs:subPropertyOf rdf:resource="#hasComponent"/>
+  <rdfs:range rdf:resource="#Screen"/>
+  <rdfs:label xml:lang="uk">має екран</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasProcessor">
+  <rdfs:subPropertyOf rdf:resource="#hasComponent"/>
+  <rdfs:range rdf:resource="#Processor"/>
+  <rdfs:label xml:lang="uk">має процесор</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasBattery">
+  <rdfs:subPropertyOf rdf:resource="#hasComponent"/>
+  <rdfs:range rdf:resource="#Battery"/>
+  <rdfs:label xml:lang="uk">має акумулятор</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCamera">
+  <rdfs:subPropertyOf rdf:resource="#hasComponent"/>
+  <rdfs:range rdf:resource="#Camera"/>
+  <rdfs:label xml:lang="uk">має камеру</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasMemory">
+  <rdfs:subPropertyOf rdf:resource="#hasComponent"/>
+  <rdfs:range rdf:resource="#Memory"/>
+  <rdfs:label xml:lang="uk">має оперативну пам'ять</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasStorage">
+  <rdfs:subPropertyOf rdf:resource="#hasComponent"/>
+  <rdfs:range rdf:resource="#Storage"/>
+  <rdfs:label xml:lang="uk">має накопичувач</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#manufacturedBy">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Device"/>
+  <rdfs:range rdf:resource="#Manufacturer"/>
+  <owl:inverseOf rdf:resource="#manufactures"/>
+  <rdfs:label xml:lang="uk">виготовлений</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#manufactures">
+  <owl:inverseOf rdf:resource="#manufacturedBy"/>
+  <rdfs:label xml:lang="uk">виготовляє</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#runsOn">
+  <rdfs:domain rdf:resource="#Device"/>
+  <rdfs:range rdf:resource="#OperatingSystem"/>
+  <rdfs:label xml:lang="uk">працює під</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#developedBy">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#OperatingSystem"/>
+  <rdfs:range rdf:resource="#Manufacturer"/>
+  <rdfs:label xml:lang="uk">розроблена</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#modelName">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Device"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:label xml:lang="uk">модель</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#releaseYear">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Device"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdfs:label xml:lang="uk">рік випуску</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#screenSizeInches">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Screen"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <rdfs:label xml:lang="uk">розмір екрана, дюймів</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#resolution">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Screen"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:label xml:lang="uk">роздільна здатність</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#clockSpeedGHz">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Processor"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <rdfs:label xml:lang="uk">частота процесора, ГГц</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#coreCount">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Processor"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdfs:label xml:lang="uk">кількість ядер</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#capacityMAh">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Battery"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdfs:label xml:lang="uk">ємність акумулятора, мА·год</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#megapixels">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Camera"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <rdfs:label xml:lang="uk">роздільність камери, Мп</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#sizeGB">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Memory"/>
+        <rdf:Description rdf:about="#Storage"/>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdfs:label xml:lang="uk">обсяг, ГБ</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Device">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label xml:lang="uk">Технічний пристрій</rdfs:label>
+  <rdfs:comment xml:lang="uk">Електронний пристрій, яким користується людина</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#PortableDevice">
+  <rdfs:subClassOf rdf:resource="#Device"/>
+  <owl:disjointWith rdf:resource="#StationaryDevice"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasBattery"/>
+      <owl:someValuesFrom rdf:resource="#Battery"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="uk">Портативний пристрій</rdfs:label>
+  <rdfs:comment xml:lang="uk">Пристрій з власним акумулятором, який носять із собою</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#StationaryDevice">
+  <rdfs:subClassOf rdf:resource="#Device"/>
+  <rdfs:label xml:lang="uk">Стаціонарний пристрій</rdfs:label>
+  <rdfs:comment xml:lang="uk">Пристрій, що працює від мережі на одному місці</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Smartphone">
+  <rdfs:subClassOf rdf:resource="#PortableDevice"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasBattery"/>
+      <owl:onClass rdf:resource="#Battery"/>
+      <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasScreen"/>
+      <owl:onClass rdf:resource="#Screen"/>
+      <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasProcessor"/>
+      <owl:someValuesFrom rdf:resource="#Processor"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#runsOn"/>
+      <owl:someValuesFrom rdf:resource="#OperatingSystem"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasCamera"/>
+      <owl:someValuesFrom rdf:resource="#Camera"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="uk">Смартфон</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Tablet">
+  <rdfs:subClassOf rdf:resource="#PortableDevice"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasScreen"/>
+      <owl:onClass rdf:resource="#Screen"/>
+      <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasProcessor"/>
+      <owl:someValuesFrom rdf:resource="#Processor"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="uk">Планшет</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Laptop">
+  <rdfs:subClassOf rdf:resource="#PortableDevice"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasScreen"/>
+      <owl:onClass rdf:resource="#Screen"/>
+      <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasProcessor"/>
+      <owl:someValuesFrom rdf:resource="#Processor"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasMemory"/>
+      <owl:someValuesFrom rdf:resource="#Memory"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasStorage"/>
+      <owl:someValuesFrom rdf:resource="#Storage"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="uk">Ноутбук</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Smartwatch">
+  <rdfs:subClassOf rdf:resource="#PortableDevice"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasScreen"/>
+      <owl:onClass rdf:resource="#Screen"/>
+      <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasCamera"/>
+      <owl:onClass rdf:resource="#Camera"/>
+      <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxQualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="uk">Смарт-годинник</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#DesktopComputer">
+  <rdfs:subClassOf rdf:resource="#StationaryDevice"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasScreen"/>
+      <owl:onClass rdf:resource="#Screen"/>
+      <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxQualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasProcessor"/>
+      <owl:someValuesFrom rdf:resource="#Processor"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="uk">Настільний комп'ютер</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Component">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label xml:lang="uk">Компонент</rdfs:label>
+  <rdfs:comment xml:lang="uk">Складова частина пристрою</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Screen">
+  <rdfs:subClassOf rdf:resource="#Component"/>
+  <rdfs:label xml:lang="uk">Екран</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Processor">
+  <rdfs:subClassOf rdf:resource="#Component"/>
+  <rdfs:label xml:lang="uk">Процесор</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Battery">
+  <rdfs:subClassOf rdf:resource="#Component"/>
+  <rdfs:label xml:lang="uk">Акумулятор</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Camera">
+  <rdfs:subClassOf rdf:resource="#Component"/>
+  <rdfs:label xml:lang="uk">Камера</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Memory">
+  <rdfs:subClassOf rdf:resource="#Component"/>
+  <rdfs:label xml:lang="uk">Оперативна пам'ять</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Storage">
+  <rdfs:subClassOf rdf:resource="#Component"/>
+  <rdfs:label xml:lang="uk">Накопичувач</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Manufacturer">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label xml:lang="uk">Виробник</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#OperatingSystem">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label xml:lang="uk">Операційна система</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#CameraDevice">
+  <rdfs:subClassOf rdf:resource="#Device"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Device"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasCamera"/>
+          <owl:someValuesFrom rdf:resource="#Camera"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:label xml:lang="uk">Пристрій з камерою</rdfs:label>
+  <rdfs:comment xml:lang="uk">Визначений клас: пристрій, що має хоча б одну камеру</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#LargeScreenDevice">
+  <rdfs:subClassOf rdf:resource="#Device"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Device"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasScreen"/>
+          <owl:someValuesFrom>
+            <owl:Class>
+              <owl:intersectionOf rdf:parseType="Collection">
+                <rdf:Description rdf:about="#Screen"/>
+                <owl:Restriction>
+                  <owl:onProperty rdf:resource="#screenSizeInches"/>
+                  <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                      <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                      <owl:withRestrictions>
+                        <rdf:Description>
+                          <rdf:first>
+                            <rdf:Description>
+                              <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.0</xsd:minInclusive>
+                            </rdf:Description>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </owl:withRestrictions>
+                    </rdfs:Datatype>
+                  </owl:someValuesFrom>
+                </owl:Restriction>
+              </owl:intersectionOf>
+            </owl:Class>
+          </owl:someValuesFrom>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:label xml:lang="uk">Пристрій з великим екраном</rdfs:label>
+  <rdfs:comment xml:lang="uk">Визначений клас: екран від 10 дюймів</rdfs:comment>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#Apple">
+  <rdf:type rdf:resource="#Manufacturer"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Samsung">
+  <rdf:type rdf:resource="#Manufacturer"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Google">
+  <rdf:type rdf:resource="#Manufacturer"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#iOS">
+  <rdf:type rdf:resource="#OperatingSystem"/>
+  <developedBy rdf:resource="#Apple"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#macOS">
+  <rdf:type rdf:resource="#OperatingSystem"/>
+  <developedBy rdf:resource="#Apple"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Android">
+  <rdf:type rdf:resource="#OperatingSystem"/>
+  <developedBy rdf:resource="#Google"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#iPhone15">
+  <rdf:type rdf:resource="#Smartphone"/>
+  <manufacturedBy rdf:resource="#Apple"/>
+  <runsOn rdf:resource="#iOS"/>
+  <hasScreen rdf:resource="#iPhone15_Screen"/>
+  <hasProcessor rdf:resource="#A16Bionic"/>
+  <hasBattery rdf:resource="#iPhone15_Battery"/>
+  <hasCamera rdf:resource="#iPhone15_Camera"/>
+  <hasMemory rdf:resource="#iPhone15_RAM"/>
+  <hasStorage rdf:resource="#iPhone15_SSD"/>
+  <modelName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">iPhone 15</modelName>
+  <releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2023</releaseYear>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#iPhone15_Screen">
+  <rdf:type rdf:resource="#Screen"/>
+  <screenSizeInches rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.1</screenSizeInches>
+  <resolution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2556x1179</resolution>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#A16Bionic">
+  <rdf:type rdf:resource="#Processor"/>
+  <clockSpeedGHz rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.46</clockSpeedGHz>
+  <coreCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</coreCount>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#iPhone15_Battery">
+  <rdf:type rdf:resource="#Battery"/>
+  <capacityMAh rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3349</capacityMAh>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#iPhone15_Camera">
+  <rdf:type rdf:resource="#Camera"/>
+  <megapixels rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.0</megapixels>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#iPhone15_RAM">
+  <rdf:type rdf:resource="#Memory"/>
+  <sizeGB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</sizeGB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#iPhone15_SSD">
+  <rdf:type rdf:resource="#Storage"/>
+  <sizeGB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">128</sizeGB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#GalaxyS24">
+  <rdf:type rdf:resource="#Smartphone"/>
+  <manufacturedBy rdf:resource="#Samsung"/>
+  <runsOn rdf:resource="#Android"/>
+  <hasScreen rdf:resource="#GalaxyS24_Screen"/>
+  <hasProcessor rdf:resource="#Exynos2400"/>
+  <hasBattery rdf:resource="#GalaxyS24_Battery"/>
+  <hasCamera rdf:resource="#GalaxyS24_Camera"/>
+  <hasMemory rdf:resource="#GalaxyS24_RAM"/>
+  <hasStorage rdf:resource="#GalaxyS24_SSD"/>
+  <modelName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Galaxy S24</modelName>
+  <releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2024</releaseYear>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#GalaxyS24_Screen">
+  <rdf:type rdf:resource="#Screen"/>
+  <screenSizeInches rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.2</screenSizeInches>
+  <resolution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2340x1080</resolution>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Exynos2400">
+  <rdf:type rdf:resource="#Processor"/>
+  <clockSpeedGHz rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.2</clockSpeedGHz>
+  <coreCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</coreCount>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#GalaxyS24_Battery">
+  <rdf:type rdf:resource="#Battery"/>
+  <capacityMAh rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4000</capacityMAh>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#GalaxyS24_Camera">
+  <rdf:type rdf:resource="#Camera"/>
+  <megapixels rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50.0</megapixels>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#GalaxyS24_RAM">
+  <rdf:type rdf:resource="#Memory"/>
+  <sizeGB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</sizeGB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#GalaxyS24_SSD">
+  <rdf:type rdf:resource="#Storage"/>
+  <sizeGB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">128</sizeGB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#GalaxyTabS9">
+  <rdf:type rdf:resource="#Tablet"/>
+  <manufacturedBy rdf:resource="#Samsung"/>
+  <runsOn rdf:resource="#Android"/>
+  <hasScreen rdf:resource="#GalaxyTabS9_Screen"/>
+  <hasProcessor rdf:resource="#Snapdragon8Gen2"/>
+  <hasBattery rdf:resource="#GalaxyTabS9_Battery"/>
+  <hasCamera rdf:resource="#GalaxyTabS9_Camera"/>
+  <hasMemory rdf:resource="#GalaxyTabS9_RAM"/>
+  <hasStorage rdf:resource="#GalaxyTabS9_SSD"/>
+  <modelName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Galaxy Tab S9</modelName>
+  <releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2023</releaseYear>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#GalaxyTabS9_Screen">
+  <rdf:type rdf:resource="#Screen"/>
+  <screenSizeInches rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">11.0</screenSizeInches>
+  <resolution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2560x1600</resolution>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Snapdragon8Gen2">
+  <rdf:type rdf:resource="#Processor"/>
+  <clockSpeedGHz rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.36</clockSpeedGHz>
+  <coreCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</coreCount>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#GalaxyTabS9_Battery">
+  <rdf:type rdf:resource="#Battery"/>
+  <capacityMAh rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8400</capacityMAh>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#GalaxyTabS9_Camera">
+  <rdf:type rdf:resource="#Camera"/>
+  <megapixels rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">13.0</megapixels>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#GalaxyTabS9_RAM">
+  <rdf:type rdf:resource="#Memory"/>
+  <sizeGB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</sizeGB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#GalaxyTabS9_SSD">
+  <rdf:type rdf:resource="#Storage"/>
+  <sizeGB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">128</sizeGB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#MacBookAirM3">
+  <rdf:type rdf:resource="#Laptop"/>
+  <manufacturedBy rdf:resource="#Apple"/>
+  <runsOn rdf:resource="#macOS"/>
+  <hasScreen rdf:resource="#MacBookAirM3_Screen"/>
+  <hasProcessor rdf:resource="#AppleM3"/>
+  <hasBattery rdf:resource="#MacBookAirM3_Battery"/>
+  <hasCamera rdf:resource="#MacBookAirM3_Camera"/>
+  <hasMemory rdf:resource="#MacBookAirM3_RAM"/>
+  <hasStorage rdf:resource="#MacBookAirM3_SSD"/>
+  <modelName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MacBook Air 13 M3</modelName>
+  <releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2024</releaseYear>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#MacBookAirM3_Screen">
+  <rdf:type rdf:resource="#Screen"/>
+  <screenSizeInches rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">13.6</screenSizeInches>
+  <resolution rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2560x1664</resolution>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#AppleM3">
+  <rdf:type rdf:resource="#Processor"/>
+  <clockSpeedGHz rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.05</clockSpeedGHz>
+  <coreCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</coreCount>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#MacBookAirM3_Battery">
+  <rdf:type rdf:resource="#Battery"/>
+  <capacityMAh rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4614</capacityMAh>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#MacBookAirM3_Camera">
+  <rdf:type rdf:resource="#Camera"/>
+  <megapixels rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.1</megapixels>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#MacBookAirM3_RAM">
+  <rdf:type rdf:resource="#Memory"/>
+  <sizeGB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</sizeGB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#MacBookAirM3_SSD">
+  <rdf:type rdf:resource="#Storage"/>
+  <sizeGB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">256</sizeGB>
+</owl:NamedIndividual>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Screen"/>
+    <rdf:Description rdf:about="#Processor"/>
+    <rdf:Description rdf:about="#Battery"/>
+    <rdf:Description rdf:about="#Camera"/>
+    <rdf:Description rdf:about="#Memory"/>
+    <rdf:Description rdf:about="#Storage"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Smartphone"/>
+    <rdf:Description rdf:about="#Tablet"/>
+    <rdf:Description rdf:about="#Laptop"/>
+    <rdf:Description rdf:about="#Smartwatch"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Device"/>
+    <rdf:Description rdf:about="#Component"/>
+    <rdf:Description rdf:about="#Manufacturer"/>
+    <rdf:Description rdf:about="#OperatingSystem"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+
+</rdf:RDF>

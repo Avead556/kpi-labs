@@ -1,0 +1,118 @@
+subscribed to telecom-client-service-time as group service-time-metrics
+p0 offset    0: C-000001 store         581.6 s | average over 1 clients  581.6 s
+p0 offset    1: C-000002 call-center    79.9 s | average over 2 clients  330.8 s
+p0 offset    2: C-000003 self-service   62.5 s | average over 3 clients  241.3 s
+p0 offset    3: C-000004 chat          308.0 s | average over 4 clients  258.0 s
+p0 offset    4: C-000005 store         452.3 s | average over 5 clients  296.9 s
+p0 offset    5: C-000006 call-center   253.1 s | average over 6 clients  289.6 s
+p0 offset    6: C-000007 chat          524.5 s | average over 7 clients  323.1 s
+p0 offset    7: C-000008 chat          428.6 s | average over 8 clients  336.3 s
+p0 offset    8: C-000009 self-service   79.2 s | average over 9 clients  307.7 s
+p0 offset    9: C-000010 self-service   90.1 s | average over 10 clients  286.0 s
+  -- 10 clients: average 286.0 s (4.77 min), std 202.0 s, min 62.5 s, max 581.6 s
+p0 offset   10: C-000011 chat          723.8 s | average over 11 clients  325.8 s
+p0 offset   11: C-000012 chat          423.4 s | average over 12 clients  333.9 s
+p0 offset   12: C-000013 chat          326.4 s | average over 13 clients  333.3 s
+p0 offset   13: C-000014 chat          791.2 s | average over 14 clients  366.0 s
+p0 offset   14: C-000015 chat          730.6 s | average over 15 clients  390.3 s
+p0 offset   15: C-000016 call-center   200.3 s | average over 16 clients  378.5 s
+p0 offset   16: C-000017 self-service   65.7 s | average over 17 clients  360.1 s
+p0 offset   17: C-000018 store         697.0 s | average over 18 clients  378.8 s
+p0 offset   18: C-000019 call-center   123.7 s | average over 19 clients  365.4 s
+p0 offset   19: C-000020 store         422.1 s | average over 20 clients  368.2 s
+  -- 20 clients: average 368.2 s (6.14 min), std 247.8 s, min 62.5 s, max 791.2 s
+p0 offset   20: C-000021 store         427.0 s | average over 21 clients  371.0 s
+p0 offset   21: C-000022 self-service   62.1 s | average over 22 clients  357.0 s
+p0 offset   22: C-000023 chat          801.8 s | average over 23 clients  376.3 s
+p0 offset   23: C-000024 store         790.5 s | average over 24 clients  393.6 s
+p0 offset   24: C-000025 self-service   95.0 s | average over 25 clients  381.6 s
+p0 offset   25: C-000026 self-service   64.0 s | average over 26 clients  369.4 s
+p0 offset   26: C-000027 call-center   105.0 s | average over 27 clients  359.6 s
+p0 offset   27: C-000028 chat          488.7 s | average over 28 clients  364.2 s
+p0 offset   28: C-000029 chat          743.6 s | average over 29 clients  377.3 s
+p0 offset   29: C-000030 store         395.8 s | average over 30 clients  377.9 s
+  -- 30 clients: average 377.9 s (6.30 min), std 263.9 s, min 62.1 s, max 801.8 s
+p0 offset   30: C-000031 store         615.3 s | average over 31 clients  385.6 s
+p0 offset   31: C-000032 store         505.6 s | average over 32 clients  389.3 s
+p0 offset   32: C-000033 store        1070.2 s | average over 33 clients  410.0 s
+p0 offset   33: C-000034 chat          502.6 s | average over 34 clients  412.7 s
+p0 offset   34: C-000035 store         758.7 s | average over 35 clients  422.6 s
+p0 offset   35: C-000036 call-center   199.6 s | average over 36 clients  416.4 s
+p0 offset   36: C-000037 store         476.2 s | average over 37 clients  418.0 s
+p0 offset   37: C-000038 chat          672.1 s | average over 38 clients  424.7 s
+p0 offset   38: C-000039 store         718.7 s | average over 39 clients  432.2 s
+p0 offset   39: C-000040 call-center   238.9 s | average over 40 clients  427.4 s
+  -- 40 clients: average 427.4 s (7.12 min), std 272.6 s, min 62.1 s, max 1070.2 s
+p0 offset   40: C-000041 self-service   92.2 s | average over 41 clients  419.2 s
+p0 offset   41: C-000042 store         665.3 s | average over 42 clients  425.1 s
+p0 offset   42: C-000043 self-service   93.9 s | average over 43 clients  417.4 s
+p0 offset   43: C-000044 call-center   438.3 s | average over 44 clients  417.8 s
+p0 offset   44: C-000045 self-service   53.1 s | average over 45 clients  409.7 s
+p0 offset   45: C-000046 chat          508.2 s | average over 46 clients  411.9 s
+p0 offset   46: C-000047 self-service   76.7 s | average over 47 clients  404.7 s
+p0 offset   47: C-000048 call-center   299.7 s | average over 48 clients  402.6 s
+p0 offset   48: C-000049 self-service   53.9 s | average over 49 clients  395.4 s
+p0 offset   49: C-000050 chat          578.3 s | average over 50 clients  399.1 s
+  -- 50 clients: average 399.1 s (6.65 min), std 270.6 s, min 53.1 s, max 1070.2 s
+p0 offset   50: C-000051 self-service   89.6 s | average over 51 clients  393.0 s
+p0 offset   51: C-000052 self-service   52.4 s | average over 52 clients  386.5 s
+p0 offset   52: C-000053 store         176.7 s | average over 53 clients  382.5 s
+p0 offset   53: C-000054 self-service   68.1 s | average over 54 clients  376.7 s
+p0 offset   54: C-000055 chat          296.8 s | average over 55 clients  375.2 s
+p0 offset   55: C-000056 chat          293.7 s | average over 56 clients  373.8 s
+p0 offset   56: C-000057 self-service   55.1 s | average over 57 clients  368.2 s
+p0 offset   57: C-000058 store         945.7 s | average over 58 clients  378.2 s
+p0 offset   58: C-000059 store         499.2 s | average over 59 clients  380.2 s
+p0 offset   59: C-000060 store         322.3 s | average over 60 clients  379.2 s
+  -- 60 clients: average 379.2 s (6.32 min), std 272.9 s, min 52.4 s, max 1070.2 s
+p0 offset   60: C-000061 store         680.1 s | average over 61 clients  384.2 s
+p0 offset   61: C-000062 store         465.1 s | average over 62 clients  385.5 s
+p0 offset   62: C-000063 chat          400.0 s | average over 63 clients  385.7 s
+p0 offset   63: C-000064 store         585.2 s | average over 64 clients  388.8 s
+p0 offset   64: C-000065 store         241.5 s | average over 65 clients  386.6 s
+p0 offset   65: C-000066 store         685.0 s | average over 66 clients  391.1 s
+p0 offset   66: C-000067 store         397.9 s | average over 67 clients  391.2 s
+p0 offset   67: C-000068 self-service   34.3 s | average over 68 clients  385.9 s
+p0 offset   68: C-000069 chat          576.7 s | average over 69 clients  388.7 s
+p0 offset   69: C-000070 store         377.3 s | average over 70 clients  388.5 s
+  -- 70 clients: average 388.5 s (6.48 min), std 263.7 s, min 34.3 s, max 1070.2 s
+p0 offset   70: C-000071 chat          331.1 s | average over 71 clients  387.7 s
+p0 offset   71: C-000072 store         577.9 s | average over 72 clients  390.4 s
+p0 offset   72: C-000073 self-service   58.3 s | average over 73 clients  385.8 s
+p0 offset   73: C-000074 self-service   67.9 s | average over 74 clients  381.5 s
+p0 offset   74: C-000075 self-service   51.8 s | average over 75 clients  377.1 s
+p0 offset   75: C-000076 store         840.1 s | average over 76 clients  383.2 s
+p0 offset   76: C-000077 call-center   280.1 s | average over 77 clients  381.9 s
+p0 offset   77: C-000078 chat          607.8 s | average over 78 clients  384.8 s
+p0 offset   78: C-000079 chat          390.1 s | average over 79 clients  384.8 s
+p0 offset   79: C-000080 chat          387.9 s | average over 80 clients  384.9 s
+  -- 80 clients: average 384.9 s (6.41 min), std 262.1 s, min 34.3 s, max 1070.2 s
+p0 offset   80: C-000081 call-center   273.9 s | average over 81 clients  383.5 s
+p0 offset   81: C-000082 self-service   53.9 s | average over 82 clients  379.5 s
+p0 offset   82: C-000083 call-center   167.8 s | average over 83 clients  376.9 s
+p0 offset   83: C-000084 call-center   282.4 s | average over 84 clients  375.8 s
+p0 offset   84: C-000085 chat          444.7 s | average over 85 clients  376.6 s
+p0 offset   85: C-000086 store        1030.9 s | average over 86 clients  384.2 s
+p0 offset   86: C-000087 store         847.7 s | average over 87 clients  389.6 s
+p0 offset   87: C-000088 store         284.2 s | average over 88 clients  388.4 s
+p0 offset   88: C-000089 store         807.8 s | average over 89 clients  393.1 s
+p0 offset   89: C-000090 store         740.9 s | average over 90 clients  396.9 s
+  -- 90 clients: average 396.9 s (6.62 min), std 271.1 s, min 34.3 s, max 1070.2 s
+p0 offset   90: C-000091 chat          180.1 s | average over 91 clients  394.6 s
+p0 offset   91: C-000092 store         778.2 s | average over 92 clients  398.7 s
+p0 offset   92: C-000093 chat          501.5 s | average over 93 clients  399.8 s
+p0 offset   93: C-000094 chat          542.8 s | average over 94 clients  401.4 s
+p0 offset   94: C-000095 call-center   127.0 s | average over 95 clients  398.5 s
+p0 offset   95: C-000096 self-service   94.1 s | average over 96 clients  395.3 s
+p0 offset   96: C-000097 store         346.9 s | average over 97 clients  394.8 s
+p0 offset   97: C-000098 store         488.9 s | average over 98 clients  395.8 s
+p0 offset   98: C-000099 self-service   10.5 s | average over 99 clients  391.9 s
+p0 offset   99: C-000100 store         836.0 s | average over 100 clients  396.3 s
+  -- 100 clients: average 396.3 s (6.61 min), std 271.3 s, min 10.5 s, max 1070.2 s
+
+== Summary: 100 clients in 30.3 s ==
+average service time 396.3 s (6.61 min), std 271.3 s, min 10.5 s, max 1070.2 s
+  store          36 clients, average  598.1 s
+  chat           27 clients, average  500.2 s
+  call-center    14 clients, average  219.3 s
+  self-service   23 clients, average   66.3 s

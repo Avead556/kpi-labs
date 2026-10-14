@@ -1,0 +1,885 @@
+Prefix: : <http://kpi.ua/ontologies/devices.owl#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+Ontology: <http://kpi.ua/ontologies/devices.owl>
+
+
+Annotations: 
+    rdfs:comment "Технічні пристрої (смартфон, планшет, ноутбук, смарт-годинник, настільний комп'ютер), їхні компоненти, виробники й операційні системи. Варіант 5 лабораторної роботи №3 з дисципліни «Обробка надвеликих масивів даних»"@uk,
+    rdfs:label "Онтологія технічних пристроїв"@uk,
+    owl:versionInfo "1.0"
+
+AnnotationProperty: owl:versionInfo
+
+    
+AnnotationProperty: rdfs:comment
+
+    
+AnnotationProperty: rdfs:label
+
+    
+Datatype: rdf:PlainLiteral
+
+    
+Datatype: xsd:decimal
+
+    
+Datatype: xsd:integer
+
+    
+Datatype: xsd:string
+
+    
+ObjectProperty: developedBy
+
+    Annotations: 
+        rdfs:label "розроблена"@uk
+    
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        OperatingSystem
+    
+    Range: 
+        Manufacturer
+    
+    
+ObjectProperty: hasBattery
+
+    Annotations: 
+        rdfs:label "має акумулятор"@uk
+    
+    SubPropertyOf: 
+        hasComponent
+    
+    Range: 
+        Battery
+    
+    
+ObjectProperty: hasCamera
+
+    Annotations: 
+        rdfs:label "має камеру"@uk
+    
+    SubPropertyOf: 
+        hasComponent
+    
+    Range: 
+        Camera
+    
+    
+ObjectProperty: hasComponent
+
+    Annotations: 
+        rdfs:label "має компонент"@uk
+    
+    Domain: 
+        Device
+    
+    Range: 
+        Component
+    
+    InverseOf: 
+        isComponentOf
+    
+    
+ObjectProperty: hasMemory
+
+    Annotations: 
+        rdfs:label "має оперативну пам'ять"@uk
+    
+    SubPropertyOf: 
+        hasComponent
+    
+    Range: 
+        Memory
+    
+    
+ObjectProperty: hasProcessor
+
+    Annotations: 
+        rdfs:label "має процесор"@uk
+    
+    SubPropertyOf: 
+        hasComponent
+    
+    Range: 
+        Processor
+    
+    
+ObjectProperty: hasScreen
+
+    Annotations: 
+        rdfs:label "має екран"@uk
+    
+    SubPropertyOf: 
+        hasComponent
+    
+    Range: 
+        Screen
+    
+    
+ObjectProperty: hasStorage
+
+    Annotations: 
+        rdfs:label "має накопичувач"@uk
+    
+    SubPropertyOf: 
+        hasComponent
+    
+    Range: 
+        Storage
+    
+    
+ObjectProperty: isComponentOf
+
+    Annotations: 
+        rdfs:label "є компонентом"@uk
+    
+    InverseOf: 
+        hasComponent
+    
+    
+ObjectProperty: manufacturedBy
+
+    Annotations: 
+        rdfs:label "виготовлений"@uk
+    
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Device
+    
+    Range: 
+        Manufacturer
+    
+    InverseOf: 
+        manufactures
+    
+    
+ObjectProperty: manufactures
+
+    Annotations: 
+        rdfs:label "виготовляє"@uk
+    
+    InverseOf: 
+        manufacturedBy
+    
+    
+ObjectProperty: runsOn
+
+    Annotations: 
+        rdfs:label "працює під"@uk
+    
+    Domain: 
+        Device
+    
+    Range: 
+        OperatingSystem
+    
+    
+DataProperty: capacityMAh
+
+    Annotations: 
+        rdfs:label "ємність акумулятора, мА·год"@uk
+    
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Battery
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: clockSpeedGHz
+
+    Annotations: 
+        rdfs:label "частота процесора, ГГц"@uk
+    
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Processor
+    
+    Range: 
+        xsd:decimal
+    
+    
+DataProperty: coreCount
+
+    Annotations: 
+        rdfs:label "кількість ядер"@uk
+    
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Processor
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: megapixels
+
+    Annotations: 
+        rdfs:label "роздільність камери, Мп"@uk
+    
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Camera
+    
+    Range: 
+        xsd:decimal
+    
+    
+DataProperty: modelName
+
+    Annotations: 
+        rdfs:label "модель"@uk
+    
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Device
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: releaseYear
+
+    Annotations: 
+        rdfs:label "рік випуску"@uk
+    
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Device
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: resolution
+
+    Annotations: 
+        rdfs:label "роздільна здатність"@uk
+    
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Screen
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: screenSizeInches
+
+    Annotations: 
+        rdfs:label "розмір екрана, дюймів"@uk
+    
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Screen
+    
+    Range: 
+        xsd:decimal
+    
+    
+DataProperty: sizeGB
+
+    Annotations: 
+        rdfs:label "обсяг, ГБ"@uk
+    
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Memory or Storage
+    
+    Range: 
+        xsd:integer
+    
+    
+Class: Battery
+
+    Annotations: 
+        rdfs:label "Акумулятор"@uk
+    
+    SubClassOf: 
+        Component
+    
+    
+Class: Camera
+
+    Annotations: 
+        rdfs:label "Камера"@uk
+    
+    SubClassOf: 
+        Component
+    
+    
+Class: CameraDevice
+
+    Annotations: 
+        rdfs:comment "Визначений клас: пристрій, що має хоча б одну камеру"@uk,
+        rdfs:label "Пристрій з камерою"@uk
+    
+    EquivalentTo: 
+        Device
+         and (hasCamera some Camera)
+    
+    SubClassOf: 
+        Device
+    
+    
+Class: Component
+
+    Annotations: 
+        rdfs:comment "Складова частина пристрою"@uk,
+        rdfs:label "Компонент"@uk
+    
+    SubClassOf: 
+        owl:Thing
+    
+    
+Class: DesktopComputer
+
+    Annotations: 
+        rdfs:label "Настільний комп'ютер"@uk
+    
+    SubClassOf: 
+        StationaryDevice,
+        hasProcessor some Processor,
+        hasScreen max 0 Screen
+    
+    
+Class: Device
+
+    Annotations: 
+        rdfs:comment "Електронний пристрій, яким користується людина"@uk,
+        rdfs:label "Технічний пристрій"@uk
+    
+    SubClassOf: 
+        owl:Thing
+    
+    
+Class: Laptop
+
+    Annotations: 
+        rdfs:label "Ноутбук"@uk
+    
+    SubClassOf: 
+        PortableDevice,
+        hasMemory some Memory,
+        hasProcessor some Processor,
+        hasStorage some Storage,
+        hasScreen exactly 1 Screen
+    
+    
+Class: LargeScreenDevice
+
+    Annotations: 
+        rdfs:comment "Визначений клас: екран від 10 дюймів"@uk,
+        rdfs:label "Пристрій з великим екраном"@uk
+    
+    EquivalentTo: 
+        Device
+         and (hasScreen some 
+            (Screen
+             and (screenSizeInches some xsd:decimal[>= 10.0])))
+    
+    SubClassOf: 
+        Device
+    
+    
+Class: Manufacturer
+
+    Annotations: 
+        rdfs:label "Виробник"@uk
+    
+    SubClassOf: 
+        owl:Thing
+    
+    
+Class: Memory
+
+    Annotations: 
+        rdfs:label "Оперативна пам'ять"@uk
+    
+    SubClassOf: 
+        Component
+    
+    
+Class: OperatingSystem
+
+    Annotations: 
+        rdfs:label "Операційна система"@uk
+    
+    SubClassOf: 
+        owl:Thing
+    
+    
+Class: PortableDevice
+
+    Annotations: 
+        rdfs:comment "Пристрій з власним акумулятором, який носять із собою"@uk,
+        rdfs:label "Портативний пристрій"@uk
+    
+    SubClassOf: 
+        Device,
+        hasBattery some Battery
+    
+    DisjointWith: 
+        StationaryDevice
+    
+    
+Class: Processor
+
+    Annotations: 
+        rdfs:label "Процесор"@uk
+    
+    SubClassOf: 
+        Component
+    
+    
+Class: Screen
+
+    Annotations: 
+        rdfs:label "Екран"@uk
+    
+    SubClassOf: 
+        Component
+    
+    
+Class: Smartphone
+
+    Annotations: 
+        rdfs:label "Смартфон"@uk
+    
+    SubClassOf: 
+        PortableDevice,
+        hasCamera some Camera,
+        hasProcessor some Processor,
+        runsOn some OperatingSystem,
+        hasBattery exactly 1 Battery,
+        hasScreen exactly 1 Screen
+    
+    
+Class: Smartwatch
+
+    Annotations: 
+        rdfs:label "Смарт-годинник"@uk
+    
+    SubClassOf: 
+        PortableDevice,
+        hasScreen exactly 1 Screen,
+        hasCamera max 0 Camera
+    
+    
+Class: StationaryDevice
+
+    Annotations: 
+        rdfs:comment "Пристрій, що працює від мережі на одному місці"@uk,
+        rdfs:label "Стаціонарний пристрій"@uk
+    
+    SubClassOf: 
+        Device
+    
+    DisjointWith: 
+        PortableDevice
+    
+    
+Class: Storage
+
+    Annotations: 
+        rdfs:label "Накопичувач"@uk
+    
+    SubClassOf: 
+        Component
+    
+    
+Class: Tablet
+
+    Annotations: 
+        rdfs:label "Планшет"@uk
+    
+    SubClassOf: 
+        PortableDevice,
+        hasProcessor some Processor,
+        hasScreen exactly 1 Screen
+    
+    
+Class: owl:Thing
+
+    
+Individual: A16Bionic
+
+    Types: 
+        Processor
+    
+    Facts:  
+     clockSpeedGHz  3.46,
+     coreCount  6
+    
+    
+Individual: Android
+
+    Types: 
+        OperatingSystem
+    
+    Facts:  
+     developedBy  Google
+    
+    
+Individual: Apple
+
+    Types: 
+        Manufacturer
+    
+    
+Individual: AppleM3
+
+    Types: 
+        Processor
+    
+    Facts:  
+     clockSpeedGHz  4.05,
+     coreCount  8
+    
+    
+Individual: Exynos2400
+
+    Types: 
+        Processor
+    
+    Facts:  
+     clockSpeedGHz  3.2,
+     coreCount  10
+    
+    
+Individual: GalaxyS24
+
+    Types: 
+        Smartphone
+    
+    Facts:  
+     hasBattery  GalaxyS24_Battery,
+     hasCamera  GalaxyS24_Camera,
+     hasMemory  GalaxyS24_RAM,
+     hasProcessor  Exynos2400,
+     hasScreen  GalaxyS24_Screen,
+     hasStorage  GalaxyS24_SSD,
+     manufacturedBy  Samsung,
+     runsOn  Android,
+     modelName  "Galaxy S24",
+     releaseYear  2024
+    
+    
+Individual: GalaxyS24_Battery
+
+    Types: 
+        Battery
+    
+    Facts:  
+     capacityMAh  4000
+    
+    
+Individual: GalaxyS24_Camera
+
+    Types: 
+        Camera
+    
+    Facts:  
+     megapixels  50.0
+    
+    
+Individual: GalaxyS24_RAM
+
+    Types: 
+        Memory
+    
+    Facts:  
+     sizeGB  8
+    
+    
+Individual: GalaxyS24_SSD
+
+    Types: 
+        Storage
+    
+    Facts:  
+     sizeGB  128
+    
+    
+Individual: GalaxyS24_Screen
+
+    Types: 
+        Screen
+    
+    Facts:  
+     resolution  "2340x1080",
+     screenSizeInches  6.2
+    
+    
+Individual: GalaxyTabS9
+
+    Types: 
+        Tablet
+    
+    Facts:  
+     hasBattery  GalaxyTabS9_Battery,
+     hasCamera  GalaxyTabS9_Camera,
+     hasMemory  GalaxyTabS9_RAM,
+     hasProcessor  Snapdragon8Gen2,
+     hasScreen  GalaxyTabS9_Screen,
+     hasStorage  GalaxyTabS9_SSD,
+     manufacturedBy  Samsung,
+     runsOn  Android,
+     modelName  "Galaxy Tab S9",
+     releaseYear  2023
+    
+    
+Individual: GalaxyTabS9_Battery
+
+    Types: 
+        Battery
+    
+    Facts:  
+     capacityMAh  8400
+    
+    
+Individual: GalaxyTabS9_Camera
+
+    Types: 
+        Camera
+    
+    Facts:  
+     megapixels  13.0
+    
+    
+Individual: GalaxyTabS9_RAM
+
+    Types: 
+        Memory
+    
+    Facts:  
+     sizeGB  8
+    
+    
+Individual: GalaxyTabS9_SSD
+
+    Types: 
+        Storage
+    
+    Facts:  
+     sizeGB  128
+    
+    
+Individual: GalaxyTabS9_Screen
+
+    Types: 
+        Screen
+    
+    Facts:  
+     resolution  "2560x1600",
+     screenSizeInches  11.0
+    
+    
+Individual: Google
+
+    Types: 
+        Manufacturer
+    
+    
+Individual: MacBookAirM3
+
+    Types: 
+        Laptop
+    
+    Facts:  
+     hasBattery  MacBookAirM3_Battery,
+     hasCamera  MacBookAirM3_Camera,
+     hasMemory  MacBookAirM3_RAM,
+     hasProcessor  AppleM3,
+     hasScreen  MacBookAirM3_Screen,
+     hasStorage  MacBookAirM3_SSD,
+     manufacturedBy  Apple,
+     runsOn  macOS,
+     modelName  "MacBook Air 13 M3",
+     releaseYear  2024
+    
+    
+Individual: MacBookAirM3_Battery
+
+    Types: 
+        Battery
+    
+    Facts:  
+     capacityMAh  4614
+    
+    
+Individual: MacBookAirM3_Camera
+
+    Types: 
+        Camera
+    
+    Facts:  
+     megapixels  2.1
+    
+    
+Individual: MacBookAirM3_RAM
+
+    Types: 
+        Memory
+    
+    Facts:  
+     sizeGB  8
+    
+    
+Individual: MacBookAirM3_SSD
+
+    Types: 
+        Storage
+    
+    Facts:  
+     sizeGB  256
+    
+    
+Individual: MacBookAirM3_Screen
+
+    Types: 
+        Screen
+    
+    Facts:  
+     resolution  "2560x1664",
+     screenSizeInches  13.6
+    
+    
+Individual: Samsung
+
+    Types: 
+        Manufacturer
+    
+    
+Individual: Snapdragon8Gen2
+
+    Types: 
+        Processor
+    
+    Facts:  
+     clockSpeedGHz  3.36,
+     coreCount  8
+    
+    
+Individual: iOS
+
+    Types: 
+        OperatingSystem
+    
+    Facts:  
+     developedBy  Apple
+    
+    
+Individual: iPhone15
+
+    Types: 
+        Smartphone
+    
+    Facts:  
+     hasBattery  iPhone15_Battery,
+     hasCamera  iPhone15_Camera,
+     hasMemory  iPhone15_RAM,
+     hasProcessor  A16Bionic,
+     hasScreen  iPhone15_Screen,
+     hasStorage  iPhone15_SSD,
+     manufacturedBy  Apple,
+     runsOn  iOS,
+     modelName  "iPhone 15",
+     releaseYear  2023
+    
+    
+Individual: iPhone15_Battery
+
+    Types: 
+        Battery
+    
+    Facts:  
+     capacityMAh  3349
+    
+    
+Individual: iPhone15_Camera
+
+    Types: 
+        Camera
+    
+    Facts:  
+     megapixels  48.0
+    
+    
+Individual: iPhone15_RAM
+
+    Types: 
+        Memory
+    
+    Facts:  
+     sizeGB  6
+    
+    
+Individual: iPhone15_SSD
+
+    Types: 
+        Storage
+    
+    Facts:  
+     sizeGB  128
+    
+    
+Individual: iPhone15_Screen
+
+    Types: 
+        Screen
+    
+    Facts:  
+     resolution  "2556x1179",
+     screenSizeInches  6.1
+    
+    
+Individual: macOS
+
+    Types: 
+        OperatingSystem
+    
+    Facts:  
+     developedBy  Apple
+    
+    
+DisjointClasses: 
+    Battery,Camera,Memory,Processor,Screen,Storage
+
+DisjointClasses: 
+    Component,Device,Manufacturer,OperatingSystem
+
+DisjointClasses: 
+    Laptop,Smartphone,Smartwatch,Tablet
+

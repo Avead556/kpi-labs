@@ -1,0 +1,7 @@
+devices.owl: 452 triples
+format     file               bytes  lines  read back
+RDF/XML    devices.owl        48718    713  452 triples, same graph
+Turtle     devices.ttl        14736    465  452 triples, same graph
+N-Triples  devices.nt         65221    452  452 triples, same graph
+N3         devices.n3         14736    465  452 triples, same graph
+JSON-LD    devices.jsonld     56454   2098  452 triples, same graph
